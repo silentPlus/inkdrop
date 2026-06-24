@@ -1,0 +1,153 @@
+[
+  {
+    "id": "lv_001",
+    "name": "第一滴墨",
+    "difficulty": 1,
+    "board": { "rows": 4, "cols": 4 },
+    "sources": [
+      { "id": "s1", "row": 0, "col": 0, "color": "#EF4444", "name": "red" }
+    ],
+    "obstacles": [],
+    "targets": [],
+    "solution": ["s1"],
+    "par_steps": 1,
+    "hint": "点击红色墨滴源点，墨水会自动填满所有空格"
+  },
+  {
+    "id": "lv_002",
+    "name": "涟漪扩散",
+    "difficulty": 1,
+    "board": { "rows": 4, "cols": 4 },
+    "sources": [
+      { "id": "s1", "row": 2, "col": 2, "color": "#3B82F6", "name": "blue" }
+    ],
+    "obstacles": [],
+    "targets": [],
+    "solution": ["s1"],
+    "par_steps": 1,
+    "hint": "源点在中间，墨水会向四个方向扩散"
+  },
+  {
+    "id": "lv_003",
+    "name": "双墨齐下",
+    "difficulty": 1,
+    "board": { "rows": 4, "cols": 4 },
+    "sources": [
+      { "id": "s1", "row": 0, "col": 0, "color": "#F59E0B", "name": "yellow" },
+      { "id": "s2", "row": 3, "col": 3, "color": "#F59E0B", "name": "yellow" }
+    ],
+    "obstacles": [],
+    "targets": [],
+    "solution": ["s1", "s2"],
+    "par_steps": 2,
+    "hint": "两个源点颜色相同，点击顺序不影响结果"
+  },
+  {
+    "id": "lv_004",
+    "name": "双色共舞",
+    "difficulty": 1,
+    "board": { "rows": 4, "cols": 4 },
+    "sources": [
+      { "id": "s1", "row": 0, "col": 0, "color": "#EF4444", "name": "red" },
+      { "id": "s2", "row": 3, "col": 0, "color": "#3B82F6", "name": "blue" }
+    ],
+    "obstacles": [],
+    "targets": [],
+    "solution": ["s1", "s2"],
+    "par_steps": 2,
+    "hint": "两种不同颜色的墨水各自扩散，中间自然交界"
+  },
+  {
+    "id": "lv_005",
+    "name": "紫气东来",
+    "difficulty": 1,
+    "board": { "rows": 4, "cols": 4 },
+    "sources": [
+      { "id": "s1", "row": 0, "col": 0, "color": "#EF4444", "name": "red" },
+      { "id": "s2", "row": 0, "col": 3, "color": "#3B82F6", "name": "blue" }
+    ],
+    "obstacles": [],
+    "targets": [],
+    "solution": ["s1", "s2"],
+    "par_steps": 2,
+    "hint": "先扩散红色，它碰到蓝色源点时会产生混合色「紫色」"
+  },
+  {
+    "id": "lv_006",
+    "name": "橙意满满",
+    "difficulty": 1,
+    "board": { "rows": 4, "cols": 4 },
+    "sources": [
+      { "id": "s1", "row": 3, "col": 0, "color": "#EF4444", "name": "red" },
+      { "id": "s2", "row": 3, "col": 3, "color": "#F59E0B", "name": "yellow" }
+    ],
+    "obstacles": [],
+    "targets": [],
+    "solution": ["s2", "s1"],
+    "par_steps": 2,
+    "hint": "红+黄=橙！先扩散哪种颜色？试试看"
+  },
+  {
+    "id": "lv_007",
+    "name": "春意盎然",
+    "difficulty": 2,
+    "board": { "rows": 4, "cols": 4 },
+    "sources": [
+      { "id": "s1", "row": 0, "col": 0, "color": "#3B82F6", "name": "blue" },
+      { "id": "s2", "row": 3, "col": 3, "color": "#F59E0B", "name": "yellow" }
+    ],
+    "obstacles": [],
+    "targets": [],
+    "solution": ["s1", "s2"],
+    "par_steps": 2,
+    "hint": "蓝+黄=绿！让蓝色先扩散，碰到黄色源点变绿后再继续"
+  },
+  {
+    "id": "lv_008",
+    "name": "三色堇",
+    "difficulty": 2,
+    "board": { "rows": 4, "cols": 4 },
+    "sources": [
+      { "id": "s1", "row": 0, "col": 0, "color": "#EF4444", "name": "red" },
+      { "id": "s2", "row": 0, "col": 3, "color": "#3B82F6", "name": "blue" },
+      { "id": "s3", "row": 3, "col": 1, "color": "#F59E0B", "name": "yellow" }
+    ],
+    "obstacles": [],
+    "targets": [],
+    "solution": ["s1", "s3", "s2"],
+    "par_steps": 3,
+    "hint": "三个源点！考虑哪种扩散顺序能让所有颜色完美混合"
+  },
+  {
+    "id": "lv_009",
+    "name": "彩虹初现",
+    "difficulty": 2,
+    "board": { "rows": 4, "cols": 4 },
+    "sources": [
+      { "id": "s1", "row": 2, "col": 0, "color": "#EF4444", "name": "red" },
+      { "id": "s2", "row": 0, "col": 2, "color": "#3B82F6", "name": "blue" },
+      { "id": "s3", "row": 2, "col": 3, "color": "#F59E0B", "name": "yellow" }
+    ],
+    "obstacles": [],
+    "targets": [],
+    "solution": ["s1", "s2", "s3"],
+    "par_steps": 3,
+    "hint": "仔细观察源点位置——它们互相能「看到」彼此吗？"
+  },
+  {
+    "id": "lv_010",
+    "name": "调色大师",
+    "difficulty": 2,
+    "board": { "rows": 4, "cols": 4 },
+    "sources": [
+      { "id": "s1", "row": 0, "col": 1, "color": "#EC4899", "name": "magenta" },
+      { "id": "s2", "row": 3, "col": 1, "color": "#3B82F6", "name": "blue" },
+      { "id": "s3", "row": 1, "col": 3, "color": "#F59E0B", "name": "yellow" }
+    ],
+    "obstacles": [],
+    "targets": [],
+    "solution": ["s2", "s3", "s1"],
+    "par_steps": 3,
+    "hint": "洋红是进阶色！蓝+黄先合绿，再与洋红交汇——会是什么颜色？"
+  }
+]
