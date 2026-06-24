@@ -1,0 +1,812 @@
+[
+  {
+    "id": "lv_011",
+    "name": "五分棋局",
+    "difficulty": 2,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 0,
+        "col": 0,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s2",
+        "row": 0,
+        "col": 4,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s3",
+        "row": 4,
+        "col": 2,
+        "color": "#F59E0B",
+        "name": "yellow"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 2,
+        "col": 2
+      }
+    ],
+    "hint": "5x5初体验",
+    "solution": [
+      "s1",
+      "s2",
+      "s3"
+    ],
+    "targets": [
+      {
+        "row": 1,
+        "col": 4,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 2,
+        "col": 4,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 3,
+        "col": 3,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 4,
+        "col": 4,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "par_steps": 3
+  },
+  {
+    "id": "lv_012",
+    "name": "双壁之间",
+    "difficulty": 2,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 0,
+        "col": 0,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s2",
+        "row": 4,
+        "col": 4,
+        "color": "#3B82F6",
+        "name": "blue"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 1,
+        "col": 1
+      },
+      {
+        "row": 2,
+        "col": 2
+      },
+      {
+        "row": 3,
+        "col": 3
+      }
+    ],
+    "hint": "对角线障碍",
+    "solution": [
+      "s1",
+      "s2"
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 1,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "row": 1,
+        "col": 0,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "row": 2,
+        "col": 0,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "row": 4,
+        "col": 0,
+        "color": "#EF4444",
+        "name": "red"
+      }
+    ],
+    "par_steps": 2
+  },
+  {
+    "id": "lv_013",
+    "name": "三角共济",
+    "difficulty": 2,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 0,
+        "col": 2,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s2",
+        "row": 4,
+        "col": 0,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s3",
+        "row": 4,
+        "col": 4,
+        "color": "#F59E0B",
+        "name": "yellow"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 2,
+        "col": 0
+      },
+      {
+        "row": 2,
+        "col": 1
+      },
+      {
+        "row": 2,
+        "col": 3
+      },
+      {
+        "row": 2,
+        "col": 4
+      }
+    ],
+    "hint": "三角布局",
+    "solution": [
+      "s1",
+      "s2",
+      "s3"
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 0,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "row": 1,
+        "col": 0,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "row": 2,
+        "col": 2,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "row": 4,
+        "col": 1,
+        "color": "#EF4444",
+        "name": "red"
+      }
+    ],
+    "par_steps": 3
+  },
+  {
+    "id": "lv_014",
+    "name": "狭缝求生",
+    "difficulty": 2,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 0,
+        "col": 0,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s2",
+        "row": 2,
+        "col": 4,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s3",
+        "row": 4,
+        "col": 0,
+        "color": "#F59E0B",
+        "name": "yellow"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 0,
+        "col": 3
+      },
+      {
+        "row": 1,
+        "col": 2
+      },
+      {
+        "row": 2,
+        "col": 1
+      },
+      {
+        "row": 3,
+        "col": 3
+      },
+      {
+        "row": 4,
+        "col": 2
+      }
+    ],
+    "hint": "Z形障碍",
+    "solution": [
+      "s1",
+      "s2",
+      "s3"
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 1,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "row": 1,
+        "col": 0,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "row": 2,
+        "col": 0,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "row": 4,
+        "col": 1,
+        "color": "#3B82F6",
+        "name": "blue"
+      }
+    ],
+    "par_steps": 3
+  },
+  {
+    "id": "lv_015",
+    "name": "十字迷途",
+    "difficulty": 3,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 0,
+        "col": 0,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s2",
+        "row": 0,
+        "col": 4,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s3",
+        "row": 4,
+        "col": 0,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s4",
+        "row": 4,
+        "col": 4,
+        "color": "#EC4899",
+        "name": "magenta"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 2,
+        "col": 0
+      },
+      {
+        "row": 2,
+        "col": 1
+      },
+      {
+        "row": 2,
+        "col": 3
+      },
+      {
+        "row": 2,
+        "col": 4
+      }
+    ],
+    "hint": "十字障碍",
+    "solution": [
+      "s1",
+      "s2",
+      "s3",
+      "s4"
+    ],
+    "targets": [
+      {
+        "row": 1,
+        "col": 4,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "par_steps": 4
+  },
+  {
+    "id": "lv_016",
+    "name": "蛇形走廊",
+    "difficulty": 3,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 0,
+        "col": 0,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s2",
+        "row": 4,
+        "col": 4,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s3",
+        "row": 2,
+        "col": 2,
+        "color": "#F59E0B",
+        "name": "yellow"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 1,
+        "col": 1
+      },
+      {
+        "row": 2,
+        "col": 0
+      },
+      {
+        "row": 2,
+        "col": 4
+      },
+      {
+        "row": 3,
+        "col": 3
+      }
+    ],
+    "hint": "蛇形障碍",
+    "solution": [
+      "s1",
+      "s2",
+      "s3"
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 4,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 1,
+        "col": 4,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 2,
+        "col": 3,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 4,
+        "col": 0,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "par_steps": 3
+  },
+  {
+    "id": "lv_017",
+    "name": "三塔奇阵",
+    "difficulty": 3,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 1,
+        "col": 0,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s2",
+        "row": 1,
+        "col": 4,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s3",
+        "row": 3,
+        "col": 2,
+        "color": "#F59E0B",
+        "name": "yellow"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 0,
+        "col": 2
+      },
+      {
+        "row": 2,
+        "col": 2
+      },
+      {
+        "row": 4,
+        "col": 1
+      },
+      {
+        "row": 4,
+        "col": 3
+      }
+    ],
+    "hint": "竖列障碍",
+    "solution": [
+      "s1",
+      "s2",
+      "s3"
+    ],
+    "targets": [
+      {
+        "row": 4,
+        "col": 2,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "par_steps": 3
+  },
+  {
+    "id": "lv_018",
+    "name": "四象归元",
+    "difficulty": 3,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 0,
+        "col": 1,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s2",
+        "row": 1,
+        "col": 3,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s3",
+        "row": 3,
+        "col": 1,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s4",
+        "row": 4,
+        "col": 3,
+        "color": "#EC4899",
+        "name": "magenta"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 2,
+        "col": 0
+      },
+      {
+        "row": 2,
+        "col": 1
+      },
+      {
+        "row": 2,
+        "col": 3
+      },
+      {
+        "row": 2,
+        "col": 4
+      }
+    ],
+    "hint": "中央障碍墙",
+    "solution": [
+      "s1",
+      "s2",
+      "s3",
+      "s4"
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 4,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 1,
+        "col": 4,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "par_steps": 4
+  },
+  {
+    "id": "lv_019",
+    "name": "回形迷宫",
+    "difficulty": 3,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 0,
+        "col": 2,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s2",
+        "row": 2,
+        "col": 4,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s3",
+        "row": 4,
+        "col": 2,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s4",
+        "row": 2,
+        "col": 0,
+        "color": "#EC4899",
+        "name": "magenta"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 1,
+        "col": 0
+      },
+      {
+        "row": 1,
+        "col": 4
+      },
+      {
+        "row": 2,
+        "col": 1
+      },
+      {
+        "row": 2,
+        "col": 3
+      },
+      {
+        "row": 3,
+        "col": 0
+      },
+      {
+        "row": 3,
+        "col": 4
+      }
+    ],
+    "hint": "十字+环形",
+    "solution": [
+      "s1",
+      "s2",
+      "s3",
+      "s4"
+    ],
+    "targets": [
+      {
+        "row": 3,
+        "col": 1,
+        "color": "#F97316",
+        "name": "orange"
+      },
+      {
+        "row": 4,
+        "col": 0,
+        "color": "#F97316",
+        "name": "orange"
+      },
+      {
+        "row": 4,
+        "col": 1,
+        "color": "#F97316",
+        "name": "orange"
+      },
+      {
+        "row": 4,
+        "col": 4,
+        "color": "#F97316",
+        "name": "orange"
+      }
+    ],
+    "par_steps": 4
+  },
+  {
+    "id": "lv_020",
+    "name": "五路棋局",
+    "difficulty": 3,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 0,
+        "col": 0,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s2",
+        "row": 0,
+        "col": 4,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s3",
+        "row": 2,
+        "col": 2,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s4",
+        "row": 4,
+        "col": 0,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s5",
+        "row": 4,
+        "col": 4,
+        "color": "#10B981",
+        "name": "green"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 1,
+        "col": 1
+      },
+      {
+        "row": 1,
+        "col": 3
+      },
+      {
+        "row": 3,
+        "col": 1
+      },
+      {
+        "row": 3,
+        "col": 3
+      }
+    ],
+    "hint": "五源点",
+    "solution": [
+      "s1",
+      "s2",
+      "s3",
+      "s4",
+      "s5"
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 1,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "row": 1,
+        "col": 0,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "row": 2,
+        "col": 0,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "row": 4,
+        "col": 1,
+        "color": "#F59E0B",
+        "name": "yellow"
+      }
+    ],
+    "par_steps": 5
+  }
+]
