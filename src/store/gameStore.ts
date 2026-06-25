@@ -9,7 +9,7 @@ import type { LevelData } from '../engine/types';
 import { loadLevelById } from '../levels';
 import { analytics } from '../utils/analytics';
 
-export type GamePhase = 'idle' | 'loading' | 'playing' | 'animating' | 'win' | 'lose';
+export type GamePhase = 'idle' | 'loading' | 'playing' | 'animating' | 'undoing' | 'win' | 'lose';
 
 interface GameState {
   phase: GamePhase;
@@ -18,12 +18,16 @@ interface GameState {
   stepCount: number;
 
   // 动画结果（渲染层读取）
-  lastFlood: { affected: FloodAffected[]; mixes: MixEvent[] } | null;
+  lastFlood: { affected: FloodAffected[]; mixes: MixEvent[]; obstaclesHit: { row: number; col: number; delay: number }[] } | null;
+
+  // 撤销动画格子
+  undoCells: FloodAffected[] | null;
 
   // 操作
   loadLevel: (id: string) => void;
   clickSource: (sourceId: string) => void;
   onAnimationDone: () => void;
+  finishUndo: () => void;
   undo: () => void;
   reset: () => void;
 }
@@ -34,6 +38,7 @@ export const useGameStore = create<GameState>((set, get) => ({
   currentLevel: null,
   stepCount: 0,
   lastFlood: null,
+  undoCells: null,
 
   loadLevel: (id: string) => {
     set({ phase: 'loading' });
@@ -90,8 +95,37 @@ export const useGameStore = create<GameState>((set, get) => ({
   },
 
   undo: () => {
-    const { board, phase } = get();
+    const { board, phase, lastFlood } = get();
     if (!board || (phase !== 'playing' && phase !== 'lose')) return;
+
+    const undoAffected = lastFlood?.affected ?? [];
+    // 无可动画的格子 → 直接撤销
+    if (undoAffected.length === 0) {
+      const ok = board.undo();
+      if (ok) {
+        set({
+          stepCount: board.stepCount,
+          phase: 'playing',
+          lastFlood: null,
+          undoCells: null,
+        });
+        analytics.undoUsed(board.levelId);
+      }
+      return;
+    }
+
+    // 有动画格子 → 先播放回缩动画，再撤销状态
+    set({
+      phase: 'undoing',
+      undoCells: [...undoAffected],
+      lastFlood: null,
+    });
+    // board.undo() 在 finishUndo 中调用
+  },
+
+  finishUndo: () => {
+    const { board } = get();
+    if (!board) return;
 
     const ok = board.undo();
     if (ok) {
@@ -99,6 +133,7 @@ export const useGameStore = create<GameState>((set, get) => ({
         stepCount: board.stepCount,
         phase: 'playing',
         lastFlood: null,
+        undoCells: null,
       });
       analytics.undoUsed(board.levelId);
     }
@@ -113,6 +148,7 @@ export const useGameStore = create<GameState>((set, get) => ({
       phase: 'playing',
       stepCount: 0,
       lastFlood: null,
+      undoCells: null,
     });
     analytics.retryUsed(board.levelId);
   },

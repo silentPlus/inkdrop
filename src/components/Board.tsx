@@ -12,9 +12,11 @@ export function Board({ onCapture }: { onCapture?: (fn: () => string) => void })
   const board = useGameStore((s) => s.board);
   const stepCount = useGameStore((s) => s.stepCount);
   const lastFlood = useGameStore((s) => s.lastFlood);
+  const undoCells = useGameStore((s) => s.undoCells);
   const phase = useGameStore((s) => s.phase);
   const clickSource = useGameStore((s) => s.clickSource);
   const onAnimationDone = useGameStore((s) => s.onAnimationDone);
+  const finishUndo = useGameStore((s) => s.finishUndo);
   const colorblindMode = useSettingsStore((s) => s.colorblindMode);
   const themeId = useSettingsStore((s) => s.themeId);
 
@@ -39,6 +41,9 @@ export function Board({ onCapture }: { onCapture?: (fn: () => string) => void })
         };
         renderer.onFloodComplete = () => {
           onAnimationDone();
+        };
+        renderer.onUndoComplete = () => {
+          finishUndo();
         };
         renderer.setColorblindMode(colorblindMode);
         renderer.setTheme(themeId);
@@ -71,15 +76,17 @@ export function Board({ onCapture }: { onCapture?: (fn: () => string) => void })
     }
   }, [board]);
 
-  // 有扩散结果 → 启动逐格动画；否则普通重绘
+  // 有扩散/撤销结果 → 启动对应动画；否则普通重绘
   useEffect(() => {
     if (!rendererRef.current) return;
-    if (lastFlood) {
-      rendererRef.current.animateFlood(lastFlood.affected);
+    if (undoCells) {
+      rendererRef.current.animateUndo(undoCells);
+    } else if (lastFlood) {
+      rendererRef.current.animateFlood(lastFlood.affected, lastFlood.mixes, lastFlood.obstaclesHit);
     } else {
       rendererRef.current.refresh();
     }
-  }, [stepCount, lastFlood]);
+  }, [stepCount, lastFlood, undoCells]);
 
   useEffect(() => {
     const onResize = () => rendererRef.current?.refresh();

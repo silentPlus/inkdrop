@@ -3,7 +3,7 @@
  */
 import { Application, Container, Graphics, Rectangle, Sprite, Texture } from 'pixi.js';
 import { CellType, GameBoard } from '../engine/GameBoard';
-import { previewFlood, type FloodAffected } from '../engine/InkFlooder';
+import { previewFlood, type FloodAffected, type MixEvent, type ObstacleHit } from '../engine/InkFlooder';
 import { THEMES, type Theme } from './themes';
 
 const C = {
@@ -20,6 +20,8 @@ export class PixiRenderer {
   private sourcesContainer = new Container();
   private targetsContainer = new Container();
   private gridContainer = new Container(); // 网格线独立容器，置顶
+  private mixOverlayContainer = new Container(); // 颜色混合过渡叠加
+  private particlesContainer = new Container(); // 粒子尾迹
   private board: GameBoard | null = null;
   private colorblindMode = false;
   private theme: Theme = THEMES[0];
@@ -29,6 +31,8 @@ export class PixiRenderer {
   private startTime = 0;
   private sourceSprites = new Map<string, Container>();
   private cellContainerMap = new Map<string, Container>();
+  private obstacleMap = new Map<string, Container>();     // 障碍物震动用
+  private obstacleBasePos = new Map<string, { x: number; y: number }>(); // 原始坐标
 
   // 水彩纹理
   private textures: Texture[] = [];
@@ -36,10 +40,20 @@ export class PixiRenderer {
 
   // 扩散动画状态
   private floodCells: FloodAffected[] | null = null;
+  private floodMixes: MixEvent[] = [];
+  private floodObstacles: ObstacleHit[] = [];
   private floodStartTime = 0;
+
+  // 撤销动画状态
+  private undoCells: FloodAffected[] | null = null;
+  private undoStartTime = 0;
+
+  // 粒子
+  private particles: Array<{ x: number; y: number; vx: number; vy: number; color: number; alpha: number; size: number; life: number; maxLife: number }> = [];
 
   onSourceClick?: (sourceId: string) => void;
   onFloodComplete?: () => void;
+  onUndoComplete?: () => void;
 
   private constructor() {}
 
@@ -66,9 +80,13 @@ export class PixiRenderer {
     r.app.stage.addChild(r.boardContainer);
     r.app.stage.addChild(r.previewContainer);
     r.app.stage.addChild(r.targetsContainer);
+    r.app.stage.addChild(r.mixOverlayContainer);
     r.app.stage.addChild(r.sourcesContainer);
+    r.app.stage.addChild(r.particlesContainer);
     r.app.stage.addChild(r.gridContainer); // 网格线在最顶层，不被任何元素覆盖
     r.gridContainer.eventMode = 'none'; // 透传点击
+    r.mixOverlayContainer.eventMode = 'none';
+    r.particlesContainer.eventMode = 'none';
     r.app.stage.eventMode = 'static';
     r.app.stage.hitArea = r.app.screen;
     r.startTime = performance.now();
@@ -113,8 +131,12 @@ export class PixiRenderer {
     this.sourcesContainer.removeChildren();
     this.targetsContainer.removeChildren();
     this.gridContainer.removeChildren();
+    this.mixOverlayContainer.removeChildren();
+    this.particlesContainer.removeChildren();
     this.sourceSprites.clear();
     this.cellContainerMap.clear();
+    this.obstacleMap.clear();
+    this.obstacleBasePos.clear();
 
     this.drawCells();
     this.drawGrid();
@@ -244,12 +266,19 @@ export class PixiRenderer {
           }
           case CellType.Obstacle: {
             const g = new Graphics();
-            g.rect(x, y, s, s).fill(C.obstacle);
+            // Container 会负责定位，Graphics 用相对坐标 (0,0)
+            g.rect(0, 0, s, s).fill(C.obstacle);
             g.setStrokeStyle({ width: 1, color: C.obstacleStroke, alpha: 0.6 });
-            g.moveTo(x, y).lineTo(x + s, y + s);
-            g.moveTo(x + s, y).lineTo(x, y + s);
+            g.moveTo(0, 0).lineTo(s, s);
+            g.moveTo(s, 0).lineTo(0, s);
             g.stroke();
-            this.boardContainer.addChild(g);
+            const ctr = new Container();
+            ctr.x = x;
+            ctr.y = y;
+            ctr.addChild(g);
+            this.boardContainer.addChild(ctr);
+            this.obstacleMap.set(`${r},${c}`, ctr);
+            this.obstacleBasePos.set(`${r},${c}`, { x, y });
             break;
           }
           case CellType.Source: {
@@ -444,8 +473,10 @@ export class PixiRenderer {
   }
 
   /** 启动逐格扩散动画（墨滴膨胀风格） */
-  animateFlood(affected: FloodAffected[]): void {
+  animateFlood(affected: FloodAffected[], mixes: MixEvent[], obstaclesHit: ObstacleHit[]): void {
     this.floodCells = affected;
+    this.floodMixes = mixes;
+    this.floodObstacles = obstaclesHit;
     this.floodStartTime = performance.now();
     this.layoutAndDraw(); // 重绘，affected 格子初始 scale=0.15 / alpha=0
     this.app.ticker.add(this.updateFlood, this);
@@ -453,6 +484,12 @@ export class PixiRenderer {
 
   /** 每格独立动画时长 (ms) */
   private readonly ANIM_DURATION = 300;
+
+  /** 颜色混合过渡时长 (ms) */
+  private readonly MIX_DURATION = 400;
+
+  /** 障碍物震动时长 (ms) */
+  private readonly SHAKE_DURATION = 200;
 
   private updateFlood = (): void => {
     if (!this.floodCells || this.floodCells.length === 0) {
@@ -462,6 +499,7 @@ export class PixiRenderer {
     const elapsed = performance.now() - this.floodStartTime;
     let allDone = true;
 
+    // 1. 墨滴膨胀动画
     for (const c of this.floodCells) {
       const ctr = this.cellContainerMap.get(`${c.row},${c.col}`);
       if (!ctr) continue;
@@ -472,33 +510,237 @@ export class PixiRenderer {
         continue;
       }
 
-      // easeOutCubic: 1 - (1-t)^3 —— 快速起势、缓慢收尾，像墨滴洇开
       const t = Math.min(localT, 1);
       const ease = 1 - Math.pow(1 - t, 3);
 
       ctr.scale.set(0.15 + 0.85 * ease);
       ctr.alpha = ease;
 
+      // 粒子尾迹：格子开始可见时发射 2-3 个粒子
+      if (localT >= 0 && localT < 0.2) {
+        this.emitParticles(c.row, c.col, c.color);
+      }
+
       if (t < 1) allDone = false;
     }
+
+    // 2. 颜色混合涡旋过渡
+    for (const mix of this.floodMixes) {
+      this.animateMixOverlay(mix, elapsed);
+    }
+
+    // 3. 障碍物震动
+    for (const ob of this.floodObstacles) {
+      this.animateObstacleShake(ob, elapsed);
+    }
+
+    // 4. 粒子生命周期
+    this.updateParticles();
 
     if (allDone) {
       this.finishFlood();
     }
   };
 
+  /* -------- 颜色混合涡旋过渡 -------- */
+
+  private animateMixOverlay(mix: MixEvent, elapsed: number): void {
+    const key = `${mix.sourceRow},${mix.sourceCol}`;
+    const ctr = this.cellContainerMap.get(key);
+    if (!ctr) return;
+
+    // 找到对应格子最后的 delay
+    let delay = 0;
+    if (this.floodCells) {
+      for (const c of this.floodCells) {
+        if (c.row === mix.sourceRow && c.col === mix.sourceCol) {
+          delay = c.delay;
+          break;
+        }
+      }
+    }
+
+    const localT = (elapsed - delay - 50) / this.MIX_DURATION; // 格子膨胀完成后 50ms 开始混合
+    if (localT < 0) return;
+
+    const t = Math.min(localT, 1);
+    // easeInOutQuad
+    const ease = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+
+    // 在叠加层绘制旧色圆环 → 逐渐缩小/透明，露出下方新色
+    this.mixOverlayContainer.removeChildren();
+    if (t >= 1) return;
+
+    const cs = this.cellSize;
+    const cx = this.offsetX + mix.sourceCol * cs + cs / 2;
+    const cy = this.offsetY + mix.sourceRow * cs + cs / 2;
+    const maxR = cs * 0.35;
+    const r = maxR * (1 - ease);
+    const alpha = 1 - ease;
+    const oldColor = parseInt(mix.oldColor.replace('#', ''), 16);
+
+    const g = new Graphics();
+    g.circle(cx, cy, r).fill({ color: oldColor, alpha });
+    g.circle(cx, cy, r).stroke({ width: 2, color: 0xFFFFFF, alpha: alpha * 0.5 });
+    this.mixOverlayContainer.addChild(g);
+  }
+
+  /* -------- 障碍物震动 -------- */
+
+  private animateObstacleShake(ob: ObstacleHit, elapsed: number): void {
+    const key = `${ob.row},${ob.col}`;
+    const ctr = this.obstacleMap.get(key);
+    const base = this.obstacleBasePos.get(key);
+    if (!ctr || !base) return;
+
+    const localT = (elapsed - ob.delay) / this.SHAKE_DURATION;
+    if (localT < 0 || localT > 1) {
+      ctr.x = base.x;
+      ctr.y = base.y;
+      return;
+    }
+
+    // 快速衰减正弦震动（偏移叠加在原始位置上）
+    const decay = 1 - localT;
+    const freq = 30;
+    const amp = 2 * decay;
+    ctr.x = base.x + Math.sin(localT * freq) * amp;
+    ctr.y = base.y + Math.cos(localT * freq * 1.3) * amp;
+  }
+
+  /* -------- 粒子尾迹 -------- */
+
+  private emitParticles(row: number, col: number, colorHex: string): void {
+    const cs = this.cellSize;
+    const cx = this.offsetX + col * cs + cs / 2;
+    const cy = this.offsetY + row * cs + cs / 2;
+    const color = parseInt(colorHex.replace('#', ''), 16);
+    const count = 2 + Math.floor(Math.random() * 2); // 2-3 个
+
+    for (let i = 0; i < count; i++) {
+      const angle = Math.random() * Math.PI * 2;
+      const speed = 0.3 + Math.random() * 0.8;
+      this.particles.push({
+        x: cx + (Math.random() - 0.5) * cs * 0.3,
+        y: cy + (Math.random() - 0.5) * cs * 0.3,
+        vx: Math.cos(angle) * speed,
+        vy: Math.sin(angle) * speed,
+        color,
+        alpha: 0.8,
+        size: 1.5 + Math.random() * 2,
+        life: 0,
+        maxLife: 400 + Math.random() * 300,
+      });
+    }
+  }
+
+  private updateParticles(): void {
+    this.particlesContainer.removeChildren();
+    const alive: typeof this.particles = [];
+
+    for (const p of this.particles) {
+      p.life += this.app.ticker.deltaMS;
+      if (p.life >= p.maxLife) continue;
+
+      p.x += p.vx;
+      p.y += p.vy;
+      const progress = p.life / p.maxLife;
+      p.alpha = 0.8 * (1 - progress);
+
+      const g = new Graphics();
+      g.circle(p.x, p.y, p.size * (1 - progress * 0.5)).fill({ color: p.color, alpha: p.alpha });
+      this.particlesContainer.addChild(g);
+
+      alive.push(p);
+    }
+    this.particles = alive;
+  }
+
   private finishFlood(): void {
     this.floodCells = null;
+    this.floodMixes = [];
+    this.floodObstacles = [];
+    this.mixOverlayContainer.removeChildren();
     this.app.ticker.remove(this.updateFlood, this);
-    // 确保所有格子都归位（兜底）
+    // 确保所有格子都归位 + 障碍物复位（兜底）
     for (const ctr of this.cellContainerMap.values()) {
       ctr.scale.set(1);
       ctr.alpha = 1;
     }
+    for (const [key, ctr] of this.obstacleMap.entries()) {
+      const base = this.obstacleBasePos.get(key);
+      if (base) { ctr.x = base.x; ctr.y = base.y; }
+    }
+    // 粒子自然消散，不强制清除
     this.onFloodComplete?.();
   }
 
-  /* ========== 生命周期 ========== */
+  /* ========== 撤销回缩动画 ========== */
+
+  /** 反向播放扩散动画：已填充格子从 scale=1 → 0.15 收缩消失 */
+  animateUndo(affected: FloodAffected[]): void {
+    // 按 delay 降序排列（距离最远的先收缩，靠近源点的后收缩）
+    const reversed = [...affected].sort((a, b) => b.delay - a.delay);
+    // 重新计算 delay：最远的 delay=0，最近的 delay 最大
+    const maxDelay = reversed.length > 0 ? reversed[0].delay : 0;
+    for (const c of reversed) {
+      c.delay = maxDelay - c.delay;
+    }
+
+    this.undoCells = reversed;
+    this.undoStartTime = performance.now();
+    this.app.ticker.add(this.updateUndo, this);
+  }
+
+  private updateUndo = (): void => {
+    if (!this.undoCells || this.undoCells.length === 0) {
+      this.finishUndo();
+      return;
+    }
+    const elapsed = performance.now() - this.undoStartTime;
+    let allDone = true;
+
+    for (const c of this.undoCells) {
+      const ctr = this.cellContainerMap.get(`${c.row},${c.col}`);
+      if (!ctr) continue;
+
+      const localT = (elapsed - c.delay) / this.ANIM_DURATION;
+      if (localT < 0) {
+        allDone = false;
+        continue;
+      }
+
+      const t = Math.min(localT, 1);
+      const ease = 1 - Math.pow(1 - t, 3); // easeOutCubic
+
+      ctr.scale.set(1 - 0.85 * ease);  // 1 → 0.15
+      ctr.alpha = 1 - ease;            // 1 → 0
+
+      // 收缩时也发射粒子（墨水回缩的尾迹感）
+      if (localT >= 0 && localT < 0.15) {
+        const cell = this.board?.cells[c.row]?.[c.col];
+        if (cell?.color) this.emitParticles(c.row, c.col, cell.color);
+      }
+
+      if (t < 1) allDone = false;
+    }
+
+    this.updateParticles();
+
+    if (allDone) {
+      this.finishUndo();
+    }
+  };
+
+  private finishUndo(): void {
+    this.undoCells = null;
+    this.app.ticker.remove(this.updateUndo, this);
+    for (const ctr of this.cellContainerMap.values()) {
+      ctr.scale.set(1);
+      ctr.alpha = 1;
+    }
+    this.onUndoComplete?.();
+  }
 
   /** 导出当前画布为 PNG data URL */
   captureImage(): string {

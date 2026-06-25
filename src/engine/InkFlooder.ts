@@ -31,9 +31,16 @@ export interface MixEvent {
   mixedWith: string;    // 与之混合的墨水颜色
 }
 
+export interface ObstacleHit {
+  row: number;
+  col: number;
+  delay: number;  // 延迟（ms），与相邻扩散格相同，用于对齐震动时机
+}
+
 export interface FloodResult {
   affected: FloodAffected[];  // 所有被填充的格子（含颜色 + 延迟）
   mixes: MixEvent[];          // 发生的颜色混合事件
+  obstaclesHit: ObstacleHit[]; // 被触及的障碍物（用于震动动画）
 }
 
 /* ====================== 扩散算法 ====================== */
@@ -53,11 +60,12 @@ const DIRS = [
 export function flood(board: GameBoard, sourceId: string): FloodResult {
   const src = board.getSourceById(sourceId);
   if (!src || !src.activated) {
-    return { affected: [], mixes: [] };
+    return { affected: [], mixes: [], obstaclesHit: [] };
   }
 
   const affected: FloodAffected[] = [];
   const mixes: MixEvent[] = [];
+  const obstaclesHit: ObstacleHit[] = [];
   const visited = new Set<string>();
 
   // BFS 队列：存储已确定要扩散的格子
@@ -124,16 +132,20 @@ export function flood(board: GameBoard, sourceId: string): FloodResult {
           delay: distance * 75 + (Math.random() - 0.5) * 30,
         });
         // 碰到未激活源点 → 立即终止扩散，留出空间给混合后的颜色
-        return { affected, mixes };
+        return { affected, mixes, obstaclesHit };
       }
       // 已激活的源点 / 已经混合过的 → 视为障碍，不继续扩散
       continue;
     }
 
     // 其他情况（障碍物/边界/已填充/已激活源点）→ 不扩散，不回填入 affected
+    // 障碍物 → 记录震动事件
+    if (cell.type === CellType.Obstacle) {
+      obstaclesHit.push({ row, col, delay: distance * 75 + (Math.random() - 0.5) * 30 });
+    }
   }
 
-  return { affected, mixes };
+  return { affected, mixes, obstaclesHit };
 }
 
 function inBounds(board: GameBoard, row: number, col: number): boolean {

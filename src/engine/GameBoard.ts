@@ -145,6 +145,30 @@ export class GameBoard {
     return this.getUnactivatedSources().length === 0;
   }
 
+  /** 返回死局原因，用于精确的失败提示 */
+  getDeadlockReason(): { emptyCells: boolean; targetMismatches: number } {
+    let emptyCells = false;
+    for (let r = 0; r < this.rows; r++) {
+      for (let c = 0; c < this.cols; c++) {
+        if (this.cells[r][c].type === CellType.Empty) {
+          emptyCells = true;
+          break;
+        }
+      }
+      if (emptyCells) break;
+    }
+
+    let targetMismatches = 0;
+    for (const t of this.targets) {
+      const cell = this.cells[t.row][t.col];
+      if (cell.type === CellType.Filled && cell.color !== t.color) {
+        targetMismatches++;
+      }
+    }
+
+    return { emptyCells, targetMismatches };
+  }
+
   /** 获取空格数量 */
   getEmptyCount(): number {
     let count = 0;

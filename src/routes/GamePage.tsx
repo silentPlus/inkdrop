@@ -20,6 +20,7 @@ export function GamePage() {
   const onAnimationDone = useGameStore((s) => s.onAnimationDone);
   const undo = useGameStore((s) => s.undo);
   const reset = useGameStore((s) => s.reset);
+  const finishUndo = useGameStore((s) => s.finishUndo);
 
   const completeLevel = useProgressStore((s) => s.completeLevel);
   const addGalleryItem = useGalleryStore((s) => s.addItem);
@@ -40,12 +41,13 @@ export function GamePage() {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
+      const currentPhase = useGameStore.getState().phase;
       if (e.key === 'z' || e.key === 'Z') {
         e.preventDefault();
-        undo();
+        if (currentPhase === 'playing' || currentPhase === 'lose') undo();
       } else if (e.key === 'r' || e.key === 'R') {
         e.preventDefault();
-        reset();
+        if (currentPhase === 'playing' || currentPhase === 'lose' || currentPhase === 'undoing') reset();
       }
     };
     window.addEventListener('keydown', onKey);
@@ -59,7 +61,7 @@ export function GamePage() {
     }
   }, [levelId, loadLevel]);
 
-  // 扩散动画由 PixiRenderer 驱动；此处仅做最大超时兜底
+  // 扩散/撤销动画超时兜底
   useEffect(() => {
     if (phase === 'animating') {
       const timer = setTimeout(() => {
@@ -67,7 +69,13 @@ export function GamePage() {
       }, 5000);
       return () => clearTimeout(timer);
     }
-  }, [phase, onAnimationDone]);
+    if (phase === 'undoing') {
+      const timer = setTimeout(() => {
+        finishUndo();
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [phase, onAnimationDone, finishUndo]);
 
   // 通关时记录进度 + 插屏广告
   const handleNextLevel = useCallback(async () => {
