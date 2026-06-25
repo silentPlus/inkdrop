@@ -57,13 +57,12 @@ export function GamePage() {
     }
   }, [levelId, loadLevel]);
 
-  // 动画完成后检查通关
+  // 扩散动画由 PixiRenderer 驱动；此处仅做最大超时兜底
   useEffect(() => {
     if (phase === 'animating') {
-      // 模拟动画播放时间
       const timer = setTimeout(() => {
         onAnimationDone();
-      }, 800);
+      }, 5000);
       return () => clearTimeout(timer);
     }
   }, [phase, onAnimationDone]);

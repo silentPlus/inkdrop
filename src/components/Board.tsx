@@ -11,8 +11,10 @@ export function Board() {
   const rendererRef = useRef<PixiRenderer | null>(null);
   const board = useGameStore((s) => s.board);
   const stepCount = useGameStore((s) => s.stepCount);
+  const lastFlood = useGameStore((s) => s.lastFlood);
   const phase = useGameStore((s) => s.phase);
   const clickSource = useGameStore((s) => s.clickSource);
+  const onAnimationDone = useGameStore((s) => s.onAnimationDone);
   const colorblindMode = useSettingsStore((s) => s.colorblindMode);
   const themeId = useSettingsStore((s) => s.themeId);
 
@@ -32,6 +34,9 @@ export function Board() {
           if (phaseRef.current === 'playing') {
             clickSource(sourceId);
           }
+        };
+        renderer.onFloodComplete = () => {
+          onAnimationDone();
         };
         renderer.setColorblindMode(colorblindMode);
         renderer.setTheme(themeId);
@@ -62,9 +67,15 @@ export function Board() {
     }
   }, [board]);
 
+  // 有扩散结果 → 启动逐格动画；否则普通重绘
   useEffect(() => {
-    rendererRef.current?.refresh();
-  }, [stepCount]);
+    if (!rendererRef.current) return;
+    if (lastFlood) {
+      rendererRef.current.animateFlood(lastFlood.affected);
+    } else {
+      rendererRef.current.refresh();
+    }
+  }, [stepCount, lastFlood]);
 
   useEffect(() => {
     const onResize = () => rendererRef.current?.refresh();

@@ -86,7 +86,7 @@ export function flood(board: GameBoard, sourceId: string): FloodResult {
         row,
         col,
         color,
-        delay: distance * 80, // 每格 80ms 延迟
+        delay: distance * 75 + (Math.random() - 0.5) * 30, // 逐格 75ms 基准 + ±15ms 抖动
       });
 
       // 继续向四方向扩散
@@ -121,7 +121,7 @@ export function flood(board: GameBoard, sourceId: string): FloodResult {
           row,
           col,
           color: newColor,
-          delay: distance * 80,
+          delay: distance * 75 + (Math.random() - 0.5) * 30,
         });
         // 碰到未激活源点 → 立即终止扩散，留出空间给混合后的颜色
         return { affected, mixes };

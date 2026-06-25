@@ -3,7 +3,7 @@
  */
 import { Application, Container, Graphics, Rectangle } from 'pixi.js';
 import { CellType, GameBoard } from '../engine/GameBoard';
-import { previewFlood } from '../engine/InkFlooder';
+import { previewFlood, type FloodAffected } from '../engine/InkFlooder';
 import { THEMES, type Theme } from './themes';
 
 const C = {
@@ -27,8 +27,14 @@ export class PixiRenderer {
   private offsetY = 0;
   private startTime = 0;
   private sourceSprites = new Map<string, Container>();
+  private cellContainerMap = new Map<string, Container>();
+
+  // 扩散动画状态
+  private floodCells: FloodAffected[] | null = null;
+  private floodStartTime = 0;
 
   onSourceClick?: (sourceId: string) => void;
+  onFloodComplete?: () => void;
 
   private constructor() {}
 
@@ -66,7 +72,7 @@ export class PixiRenderer {
 
   setBoard(board: GameBoard): void {
     this.board = board;
-    this.layoutAndDraw();
+    this.refresh();
   }
 
   setColorblindMode(on: boolean): void {
@@ -100,6 +106,7 @@ export class PixiRenderer {
     this.sourcesContainer.removeChildren();
     this.targetsContainer.removeChildren();
     this.sourceSprites.clear();
+    this.cellContainerMap.clear();
 
     this.drawGrid();
     this.drawCells();
@@ -147,14 +154,26 @@ export class PixiRenderer {
         switch (cell.type) {
           case CellType.Filled: {
             const color = parseInt(cell.color!.replace('#', ''), 16);
-            const g = new Graphics();
-            g.rect(x, y, s, s).fill(color);
-            g.rect(x, y, s, s).stroke({ width: 0.5, color: 0x000000, alpha: 0.08 });
-            this.boardContainer.addChild(g);
-
+            const cx = x + s / 2;
+            const cy = y + s / 2;
+            const h = s / 2;
+            const ctr = new Container();
+            ctr.x = cx;
+            ctr.y = cy;
+            const fill = new Graphics();
+            fill.roundRect(-h, -h, s, s, s * 0.1).fill(color);
+            fill.roundRect(-h, -h, s, s, s * 0.1).stroke({ width: 0.5, color: 0x000000, alpha: 0.06 });
+            ctr.addChild(fill);
+            // 扩散动画中未到时的格子：缩小+透明，随后从中心膨胀展开
+            if (this.isFloodCell(r, c)) {
+              ctr.scale.set(0.15);
+              ctr.alpha = 0;
+            }
+            this.boardContainer.addChild(ctr);
+            this.cellContainerMap.set(`${r},${c}`, ctr);
             // 色盲模式图案叠加
             if (this.colorblindMode) {
-              this.drawPattern(x, y, s, cell.color!);
+              ctr.addChild(this.buildPattern(s, cell.color!));
             }
             break;
           }
@@ -178,30 +197,36 @@ export class PixiRenderer {
     this.drawTargets();
   }
 
-  /* ========== 色盲模式图案 ========== */
+  /* ========== 色盲模式图案（相对坐标） ========== */
 
   private readonly COLOR_PATTERN: Record<string, number> = {
     '#EF4444': 0, '#3B82F6': 1, '#F59E0B': 2, '#10B981': 3, '#EC4899': 4,
     '#F97316': 2, '#8B5CF6': 1, '#06B6D4': 1, '#FB7185': 0, '#7C3AEA': 1, '#78716C': 3,
   };
 
-  private drawPattern(x: number, y: number, size: number, colorHex: string): void {
+  /** 返回绘制在相对坐标 (0,0) 处的色盲图案 Graphics */
+  private buildPattern(size: number, colorHex: string): Graphics {
     const pattern = this.COLOR_PATTERN[colorHex] ?? 0;
     const g = new Graphics();
     const pad = 3;
     const alpha = 0.75;
+    const h = size / 2;
+    const x0 = -h + pad;
+    const y0 = -h + pad;
+    const x1 = h - pad;
+    const y1 = h - pad;
 
     switch (pattern) {
       case 0: // 横线 — red系
         g.setStrokeStyle({ width: 1.5, color: 0xFFFFFF, alpha });
-        for (let py = y + pad; py < y + size - pad; py += 4) {
-          g.moveTo(x + pad, py).lineTo(x + size - pad, py);
+        for (let py = y0; py < y1; py += 4) {
+          g.moveTo(x0, py).lineTo(x1, py);
         }
         g.stroke();
         break;
       case 1: { // 圆点 — blue系
-        for (let py = y + pad + 2; py < y + size - pad; py += 6) {
-          for (let px = x + pad + 2; px < x + size - pad; px += 6) {
+        for (let py = y0 + 2; py < y1; py += 6) {
+          for (let px = x0 + 2; px < x1; px += 6) {
             g.circle(px, py, 1.2).fill({ color: 0xFFFFFF, alpha });
           }
         }
@@ -210,30 +235,30 @@ export class PixiRenderer {
       case 2: // 斜线 — yellow系
         g.setStrokeStyle({ width: 1.5, color: 0xFFFFFF, alpha });
         for (let d = -size; d < size * 2; d += 5) {
-          g.moveTo(x + pad, y + pad + d).lineTo(x + pad + d, y + pad);
+          g.moveTo(x0, y0 + d).lineTo(x0 + d, y0);
         }
         g.stroke();
         break;
       case 3: // 交叉 — green系
         g.setStrokeStyle({ width: 1, color: 0xFFFFFF, alpha });
         for (let d = -size; d < size * 2; d += 6) {
-          g.moveTo(x + pad, y + pad + d).lineTo(x + pad + d, y + pad);
-          g.moveTo(x + size - pad, y + pad + d).lineTo(x + size - pad - d, y + pad);
+          g.moveTo(x0, y0 + d).lineTo(x0 + d, y0);
+          g.moveTo(x1, y0 + d).lineTo(x1 - d, y0);
         }
         g.stroke();
         break;
       case 4: // 网格 — magenta系
         g.setStrokeStyle({ width: 1, color: 0xFFFFFF, alpha });
-        for (let py = y + pad; py < y + size - pad; py += 5) {
-          g.moveTo(x + pad, py).lineTo(x + size - pad, py);
+        for (let py = y0; py < y1; py += 5) {
+          g.moveTo(x0, py).lineTo(x1, py);
         }
-        for (let px = x + pad; px < x + size - pad; px += 5) {
-          g.moveTo(px, y + pad).lineTo(px, y + size - pad);
+        for (let px = x0; px < x1; px += 5) {
+          g.moveTo(px, y0).lineTo(px, y1);
         }
         g.stroke();
         break;
     }
-    this.boardContainer.addChild(g);
+    return g;
   }
 
   /* ========== 源点 ========== */
@@ -340,6 +365,72 @@ export class PixiRenderer {
       if (!sprite) continue;
       sprite.scale.set(src.activated ? 0.4 : pulse);
     }
+  }
+
+  /* ========== 扩散动画 ========== */
+
+  /** 检查某个格子是否属于当前扩散动画中尚未揭示的格子 */
+  private isFloodCell(row: number, col: number): boolean {
+    if (!this.floodCells) return false;
+    for (const c of this.floodCells) {
+      if (c.row === row && c.col === col) return true;
+    }
+    return false;
+  }
+
+  /** 启动逐格扩散动画（墨滴膨胀风格） */
+  animateFlood(affected: FloodAffected[]): void {
+    this.floodCells = affected;
+    this.floodStartTime = performance.now();
+    this.layoutAndDraw(); // 重绘，affected 格子初始 scale=0.15 / alpha=0
+    this.app.ticker.add(this.updateFlood, this);
+  }
+
+  /** 每格独立动画时长 (ms) */
+  private readonly ANIM_DURATION = 300;
+
+  private updateFlood = (): void => {
+    if (!this.floodCells || this.floodCells.length === 0) {
+      this.finishFlood();
+      return;
+    }
+    const elapsed = performance.now() - this.floodStartTime;
+    let allDone = true;
+
+    for (const c of this.floodCells) {
+      const ctr = this.cellContainerMap.get(`${c.row},${c.col}`);
+      if (!ctr) continue;
+
+      const localT = (elapsed - c.delay) / this.ANIM_DURATION;
+      if (localT < 0) {
+        allDone = false;
+        continue;
+      }
+
+      // easeOutCubic: 1 - (1-t)^3 —— 快速起势、缓慢收尾，像墨滴洇开
+      const t = Math.min(localT, 1);
+      const ease = 1 - Math.pow(1 - t, 3);
+
+      ctr.scale.set(0.15 + 0.85 * ease);
+      ctr.alpha = ease;
+
+      if (t < 1) allDone = false;
+    }
+
+    if (allDone) {
+      this.finishFlood();
+    }
+  };
+
+  private finishFlood(): void {
+    this.floodCells = null;
+    this.app.ticker.remove(this.updateFlood, this);
+    // 确保所有格子都归位（兜底）
+    for (const ctr of this.cellContainerMap.values()) {
+      ctr.scale.set(1);
+      ctr.alpha = 1;
+    }
+    this.onFloodComplete?.();
   }
 
   /* ========== 生命周期 ========== */
