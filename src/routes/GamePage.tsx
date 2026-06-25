@@ -1,7 +1,8 @@
 import { useEffect, useCallback, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useGameStore } from '@/store/gameStore';
 import { useProgressStore } from '@/store/progressStore';
+import { useGalleryStore } from '@/store/galleryStore';
 import { Board } from '@/components/Board';
 import { Toolbar } from '@/components/Toolbar';
 import { WinAnimation } from '@/components/WinAnimation';
@@ -13,6 +14,7 @@ export function GamePage() {
 
   const phase = useGameStore((s) => s.phase);
   const board = useGameStore((s) => s.board);
+  const currentLevel = useGameStore((s) => s.currentLevel);
   const stepCount = useGameStore((s) => s.stepCount);
   const loadLevel = useGameStore((s) => s.loadLevel);
   const onAnimationDone = useGameStore((s) => s.onAnimationDone);
@@ -20,6 +22,7 @@ export function GamePage() {
   const reset = useGameStore((s) => s.reset);
 
   const completeLevel = useProgressStore((s) => s.completeLevel);
+  const addGalleryItem = useGalleryStore((s) => s.addItem);
   const [showWinEffect, setShowWinEffect] = useState(false);
 
   // 通关时播放绽放动画
@@ -69,6 +72,24 @@ export function GamePage() {
   const handleNextLevel = useCallback(async () => {
     if (board) {
       completeLevel(board.levelId, board.getStars());
+
+      // 保存画作到画廊
+      const flat: string[] = [];
+      for (let r = 0; r < board.rows; r++) {
+        for (let c = 0; c < board.cols; c++) {
+          const cell = board.cells[r][c];
+          flat.push(cell.color ?? cell.type === 1 ? (cell.color ?? '#FAF7F2') : '#FAF7F2');
+        }
+      }
+      addGalleryItem({
+        levelId: board.levelId,
+        levelName: currentLevel?.name ?? board.levelId,
+        timestamp: Date.now(),
+        stars: board.getStars(),
+        rows: board.rows,
+        cols: board.cols,
+        cells: flat,
+      });
       const num = parseInt(board.levelId.replace('lv_', ''), 10);
       await adManager.showLevelInterstitial(num);
     }
@@ -208,6 +229,15 @@ export function GamePage() {
                 下一关
               </button>
             </div>
+            <Link to="/gallery" style={{
+              display: 'block',
+              marginTop: 12,
+              fontSize: 12,
+              color: 'var(--text-tertiary)',
+              textDecoration: 'none',
+            }}>
+              🎨 查看画廊
+            </Link>
           </div>
         </div>
       )}

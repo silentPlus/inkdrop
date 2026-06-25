@@ -19,6 +19,11 @@ export function HomePage() {
           </button>
         </Link>
       </div>
+      <div style={{ marginTop: 20 }}>
+        <Link to="/gallery" style={{ fontSize: 14, color: 'var(--text-secondary)', textDecoration: 'none' }}>
+          🎨 画作画廊
+        </Link>
+      </div>
     </div>
   );
 }

@@ -4,6 +4,7 @@ import { HomePage } from './routes/HomePage';
 import { GamePage } from './routes/GamePage';
 import { LevelSelectPage } from './routes/LevelSelectPage';
 import { SettingsPage } from './routes/SettingsPage';
+import { GalleryPage } from './routes/GalleryPage';
 
 export function App() {
   return (
@@ -14,6 +15,7 @@ export function App() {
           <Route path="/levels" element={<LevelSelectPage />} />
           <Route path="/game/:levelId" element={<GamePage />} />
           <Route path="/settings" element={<SettingsPage />} />
+          <Route path="/gallery" element={<GalleryPage />} />
         </Routes>
       </BrowserRouter>
     </ThemeProvider>
