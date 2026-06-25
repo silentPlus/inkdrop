@@ -6,7 +6,7 @@ import { useGameStore } from '@/store/gameStore';
 import { useSettingsStore } from '@/store/settingsStore';
 import { PixiRenderer } from '@/renderer/PixiRenderer';
 
-export function Board() {
+export function Board({ onCapture }: { onCapture?: (fn: () => string) => void }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const rendererRef = useRef<PixiRenderer | null>(null);
   const board = useGameStore((s) => s.board);
@@ -20,6 +20,8 @@ export function Board() {
 
   const phaseRef = useRef(phase);
   phaseRef.current = phase;
+  const onCaptureRef = useRef(onCapture);
+  onCaptureRef.current = onCapture;
 
   useEffect(() => {
     const container = containerRef.current;
@@ -42,6 +44,8 @@ export function Board() {
         renderer.setTheme(themeId);
         const currentBoard = useGameStore.getState().board;
         if (currentBoard) renderer.setBoard(currentBoard);
+        // 暴露截图能力给父组件
+        onCaptureRef.current?.(() => renderer.captureImage());
       })
       .catch((err) => console.error('PixiJS:', err));
 

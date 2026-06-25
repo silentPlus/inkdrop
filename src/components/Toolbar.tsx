@@ -3,9 +3,10 @@
  */
 import { useGameStore } from '@/store/gameStore';
 
-export function Toolbar() {
+export function Toolbar({ onHint }: { onHint?: () => void }) {
   const phase = useGameStore((s) => s.phase);
   const board = useGameStore((s) => s.board);
+  const currentLevel = useGameStore((s) => s.currentLevel);
   const undo = useGameStore((s) => s.undo);
   const reset = useGameStore((s) => s.reset);
 
@@ -13,6 +14,7 @@ export function Toolbar() {
 
   const canAct = phase === 'playing' || phase === 'lose';
   const canUndo = canAct && board.getHistoryLength() > 0;
+  const hasHint = !!(currentLevel?.hint);
 
   return (
     <div style={{
@@ -38,6 +40,14 @@ export function Toolbar() {
         onClick={reset}
         disabled={!canAct}
       />
+      {hasHint && (
+        <ToolButton
+          label="提示"
+          icon="💡"
+          onClick={onHint ?? (() => {})}
+          disabled={!canAct}
+        />
+      )}
     </div>
   );
 }

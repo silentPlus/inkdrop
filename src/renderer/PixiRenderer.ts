@@ -1,7 +1,7 @@
 /**
  * PixiRenderer — PixiJS v8 渲染引擎
  */
-import { Application, Container, Graphics, Rectangle } from 'pixi.js';
+import { Application, Container, Graphics, Rectangle, Sprite, Texture } from 'pixi.js';
 import { CellType, GameBoard } from '../engine/GameBoard';
 import { previewFlood, type FloodAffected } from '../engine/InkFlooder';
 import { THEMES, type Theme } from './themes';
@@ -19,6 +19,7 @@ export class PixiRenderer {
   private previewContainer = new Container();
   private sourcesContainer = new Container();
   private targetsContainer = new Container();
+  private gridContainer = new Container(); // 网格线独立容器，置顶
   private board: GameBoard | null = null;
   private colorblindMode = false;
   private theme: Theme = THEMES[0];
@@ -28,6 +29,10 @@ export class PixiRenderer {
   private startTime = 0;
   private sourceSprites = new Map<string, Container>();
   private cellContainerMap = new Map<string, Container>();
+
+  // 水彩纹理
+  private textures: Texture[] = [];
+  private texturesGenerated = false;
 
   // 扩散动画状态
   private floodCells: FloodAffected[] | null = null;
@@ -62,6 +67,8 @@ export class PixiRenderer {
     r.app.stage.addChild(r.previewContainer);
     r.app.stage.addChild(r.targetsContainer);
     r.app.stage.addChild(r.sourcesContainer);
+    r.app.stage.addChild(r.gridContainer); // 网格线在最顶层，不被任何元素覆盖
+    r.gridContainer.eventMode = 'none'; // 透传点击
     r.app.stage.eventMode = 'static';
     r.app.stage.hitArea = r.app.screen;
     r.startTime = performance.now();
@@ -105,11 +112,12 @@ export class PixiRenderer {
     this.previewContainer.removeChildren();
     this.sourcesContainer.removeChildren();
     this.targetsContainer.removeChildren();
+    this.gridContainer.removeChildren();
     this.sourceSprites.clear();
     this.cellContainerMap.clear();
 
-    this.drawGrid();
     this.drawCells();
+    this.drawGrid();
   }
 
   /* ========== 网格 ========== */
@@ -123,18 +131,65 @@ export class PixiRenderer {
     const bw = cs * this.board.cols;
     const bh = cs * this.board.rows;
 
-    g.rect(ox, oy, bw, bh).fill(this.theme.emptyCell);
-    g.setStrokeStyle({ width: 0.5, color: this.theme.gridLine });
+    // 网格线用细矩形逐条绘制，避免 PixiJS v8 moveTo/lineTo 与 fill 的路径冲突
     for (let i = 0; i <= this.board.rows; i++) {
       const y = oy + i * cs;
-      g.moveTo(ox, y).lineTo(ox + bw, y);
+      g.rect(ox, y, bw, 0.5).fill(this.theme.gridLine);
     }
     for (let j = 0; j <= this.board.cols; j++) {
       const x = ox + j * cs;
-      g.moveTo(x, oy).lineTo(x, oy + bh);
+      g.rect(x, oy, 0.5, bh).fill(this.theme.gridLine);
     }
-    g.stroke();
-    this.boardContainer.addChild(g);
+    this.gridContainer.addChild(g);
+  }
+
+  /* ========== 水彩纹理 ========== */
+
+  private generateTextures(): void {
+    if (this.texturesGenerated) return;
+    this.texturesGenerated = true;
+
+    const texSize = 64;
+    const dpr = window.devicePixelRatio || 1;
+
+    for (let t = 0; t < 8; t++) {
+      const offscreen = document.createElement('canvas');
+      offscreen.width = texSize * dpr;
+      offscreen.height = texSize * dpr;
+      const tctx = offscreen.getContext('2d')!;
+      tctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+      // 不规则透明斑点模拟水彩纹理
+      const seed = t * 137;
+      for (let i = 0; i < 30; i++) {
+        const cx = ((seed + i * 73) % 100) / 100 * texSize;
+        const cy = ((seed + i * 47) % 100) / 100 * texSize;
+        const r = 2 + ((seed + i * 31) % 8);
+        const alpha = 0.02 + ((seed + i * 19) % 10) / 100;
+
+        tctx.fillStyle = `rgba(255,255,255,${alpha})`;
+        tctx.beginPath();
+        tctx.arc(cx, cy, r, 0, Math.PI * 2);
+        tctx.fill();
+      }
+
+      this.textures.push(Texture.from(offscreen));
+    }
+  }
+
+  /** 为格子添加水彩纹理叠加层 */
+  private addWatercolorOverlay(ctr: Container, row: number, col: number, size: number): void {
+    this.generateTextures();
+    const tex = this.textures[Math.abs((row * 31 + col * 17)) % 8];
+    const sprite = new Sprite(tex);
+    sprite.width = size;
+    sprite.height = size;
+    sprite.alpha = 0.3;
+    sprite.blendMode = 'screen';
+    const h = size / 2;
+    sprite.x = -h;
+    sprite.y = -h;
+    ctr.addChild(sprite);
   }
 
   /* ========== 格子 ========== */
@@ -144,6 +199,14 @@ export class PixiRenderer {
     const cs = this.cellSize;
     const ox = this.offsetX;
     const oy = this.offsetY;
+    const bw = cs * this.board.cols;
+    const bh = cs * this.board.rows;
+
+    // 棋盘底色（置于 boardContainer 最下层，不遮挡源点和目标）
+    const bg = new Graphics();
+    bg.rect(ox, oy, bw, bh).fill(this.theme.emptyCell);
+    this.boardContainer.addChild(bg);
+
     for (let r = 0; r < this.board.rows; r++) {
       for (let c = 0; c < this.board.cols; c++) {
         const cell = this.board.cells[r][c];
@@ -161,9 +224,11 @@ export class PixiRenderer {
             ctr.x = cx;
             ctr.y = cy;
             const fill = new Graphics();
-            fill.roundRect(-h, -h, s, s, s * 0.1).fill(color);
-            fill.roundRect(-h, -h, s, s, s * 0.1).stroke({ width: 0.5, color: 0x000000, alpha: 0.06 });
+            fill.roundRect(-h, -h, s, s, 3).fill(color);
+            fill.roundRect(-h, -h, s, s, 3).stroke({ width: 0.5, color: 0x000000, alpha: 0.06 });
             ctr.addChild(fill);
+            // 水彩纹理叠加
+            this.addWatercolorOverlay(ctr, r, c, s);
             // 扩散动画中未到时的格子：缩小+透明，随后从中心膨胀展开
             if (this.isFloodCell(r, c)) {
               ctr.scale.set(0.15);
@@ -434,6 +499,11 @@ export class PixiRenderer {
   }
 
   /* ========== 生命周期 ========== */
+
+  /** 导出当前画布为 PNG data URL */
+  captureImage(): string {
+    return (this.app.canvas as HTMLCanvasElement).toDataURL('image/png');
+  }
 
   refresh(): void {
     if (!this.board) return;

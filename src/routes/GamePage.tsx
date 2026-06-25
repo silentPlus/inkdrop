@@ -1,4 +1,4 @@
-import { useEffect, useCallback, useState } from 'react';
+import { useEffect, useCallback, useState, useRef } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useGameStore } from '@/store/gameStore';
 import { useProgressStore } from '@/store/progressStore';
@@ -24,6 +24,8 @@ export function GamePage() {
   const completeLevel = useProgressStore((s) => s.completeLevel);
   const addGalleryItem = useGalleryStore((s) => s.addItem);
   const [showWinEffect, setShowWinEffect] = useState(false);
+  const [hintVisible, setHintVisible] = useState(false);
+  const captureRef = useRef<(() => string) | null>(null);
 
   // 通关时播放绽放动画
   useEffect(() => {
@@ -110,6 +112,48 @@ export function GamePage() {
     }
   }, [levelId, loadLevel]);
 
+  // 提示
+  const handleHint = useCallback(() => {
+    setHintVisible(true);
+  }, []);
+
+  const closeHint = useCallback(() => {
+    setHintVisible(false);
+  }, []);
+
+  // 保存画作图片
+  const handleSaveImage = useCallback(() => {
+    const fn = captureRef.current;
+    if (!fn) return;
+    const dataUrl = fn();
+    const a = document.createElement('a');
+    a.href = dataUrl;
+    a.download = board ? `${board.levelName}_${Date.now()}.png` : 'inkdrop.png';
+    a.click();
+  }, [board]);
+
+  // 分享画作
+  const handleShare = useCallback(async () => {
+    const fn = captureRef.current;
+    if (!fn) return;
+    try {
+      const dataUrl = fn();
+      const blob = await (await fetch(dataUrl)).blob();
+      const file = new File([blob], 'inkdrop.png', { type: 'image/png' });
+      if (navigator.share && navigator.canShare?.({ files: [file] })) {
+        await navigator.share({
+          title: board ? `墨滴 - ${board.levelName}` : '墨滴',
+          files: [file],
+        });
+      } else {
+        await navigator.clipboard.writeText(window.location.href);
+        alert('链接已复制到剪贴板');
+      }
+    } catch {
+      // User cancelled or not supported
+    }
+  }, [board]);
+
   if (phase === 'loading') {
     return (
       <div className="game-page" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
@@ -163,11 +207,11 @@ export function GamePage() {
         minHeight: 0,
         padding: 8,
       }}>
-        <Board />
+        <Board onCapture={(fn) => { captureRef.current = fn; }} />
       </div>
 
       {/* 工具栏 */}
-      <Toolbar />
+      <Toolbar onHint={handleHint} />
 
       {/* 通关绽放动画 */}
       {showWinEffect && (
@@ -202,7 +246,7 @@ export function GamePage() {
                 </>
               )}
             </p>
-            <div style={{ display: 'flex', gap: 10, justifyContent: 'center', marginTop: 16 }}>
+            <div style={{ display: 'flex', gap: 10, justifyContent: 'center', marginTop: 16, flexWrap: 'wrap' }}>
               <button onClick={handleRetry}
                 style={{
                   padding: '10px 20px',
@@ -228,6 +272,32 @@ export function GamePage() {
                 }}
               >
                 下一关
+              </button>
+            </div>
+            <div style={{ display: 'flex', gap: 10, justifyContent: 'center', marginTop: 10 }}>
+              <button onClick={handleSaveImage}
+                style={{
+                  padding: '10px 20px',
+                  borderRadius: 10,
+                  border: '1px solid var(--border)',
+                  background: 'white',
+                  fontSize: 14,
+                  cursor: 'pointer',
+                }}
+              >
+                💾 保存图片
+              </button>
+              <button onClick={handleShare}
+                style={{
+                  padding: '10px 20px',
+                  borderRadius: 10,
+                  border: '1px solid var(--border)',
+                  background: 'white',
+                  fontSize: 14,
+                  cursor: 'pointer',
+                }}
+              >
+                📤 分享
               </button>
             </div>
             <Link to="/gallery" style={{
@@ -265,7 +335,20 @@ export function GamePage() {
             <div style={{ fontSize: 48, marginBottom: 8 }}>😢</div>
             <h2 style={{ fontSize: 22, marginBottom: 4 }}>无法继续</h2>
             <p style={{ color: 'var(--text-secondary)', fontSize: 14 }}>
-              所有源点已激活，但仍有空格未填充
+              {(() => {
+                if (!board) return '所有源点已激活，但仍有空格未填充';
+                const reason = board.getDeadlockReason();
+                if (reason.emptyCells && reason.targetMismatches > 0) {
+                  return `所有源点已激活，但有空格未填充（${reason.targetMismatches} 个目标格颜色不正确）`;
+                }
+                if (reason.emptyCells) {
+                  return '所有源点已激活，但仍有空格未填充';
+                }
+                if (reason.targetMismatches > 0) {
+                  return `所有格子已填充，但 ${reason.targetMismatches} 个目标格颜色不正确`;
+                }
+                return '所有源点已激活，但仍有空格未填充';
+              })()}
             </p>
             <button onClick={handleRetry}
               style={{
@@ -281,6 +364,48 @@ export function GamePage() {
               }}
             >
               重试
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* 提示弹窗 */}
+      {hintVisible && currentLevel?.hint && (
+        <div style={{
+          position: 'fixed',
+          inset: 0,
+          background: 'rgba(0,0,0,0.35)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          zIndex: 100,
+        }} onClick={closeHint}>
+          <div style={{
+            background: 'white',
+            borderRadius: 16,
+            padding: '24px 22px',
+            textAlign: 'center',
+            maxWidth: 280,
+            width: '85%',
+          }} onClick={(e) => e.stopPropagation()}>
+            <div style={{ fontSize: 36, marginBottom: 6 }}>💡</div>
+            <p style={{ fontSize: 14, lineHeight: 1.7, color: 'var(--text-secondary)', margin: 0 }}>
+              {currentLevel.hint}
+            </p>
+            <button onClick={closeHint}
+              style={{
+                padding: '8px 24px',
+                borderRadius: 10,
+                border: 'none',
+                background: 'var(--accent)',
+                color: 'white',
+                fontSize: 14,
+                fontWeight: 600,
+                cursor: 'pointer',
+                marginTop: 14,
+              }}
+            >
+              知道了
             </button>
           </div>
         </div>
