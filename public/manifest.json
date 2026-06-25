@@ -1,0 +1,13 @@
+{
+  "name": "Ink Drop · 墨滴扩散",
+  "short_name": "Ink Drop",
+  "description": "彩色墨滴自动扩散填充谜题",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8f9fb",
+  "theme_color": "#7c3aed",
+  "orientation": "portrait",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

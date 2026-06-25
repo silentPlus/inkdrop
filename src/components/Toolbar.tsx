@@ -27,12 +27,14 @@ export function Toolbar() {
       <ToolButton
         label="撤销"
         icon="↩"
+        shortcut="Z"
         onClick={undo}
         disabled={!canUndo}
       />
       <ToolButton
         label="重试"
         icon="🔄"
+        shortcut="R"
         onClick={reset}
         disabled={!canAct}
       />
@@ -43,11 +45,13 @@ export function Toolbar() {
 function ToolButton({
   label,
   icon,
+  shortcut,
   onClick,
   disabled,
 }: {
   label: string;
   icon: string;
+  shortcut?: string;
   onClick: () => void;
   disabled: boolean;
 }) {
@@ -55,12 +59,13 @@ function ToolButton({
     <button
       onClick={onClick}
       disabled={disabled}
+      title={shortcut ? `${label} (${shortcut})` : label}
       style={{
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        gap: 4,
-        padding: '8px 20px',
+        gap: 2,
+        padding: '6px 18px',
         borderRadius: 10,
         border: '1px solid var(--border)',
         background: disabled ? '#f5f5f5' : 'white',
@@ -73,6 +78,9 @@ function ToolButton({
     >
       <span style={{ fontSize: 22 }}>{icon}</span>
       <span>{label}</span>
+      {shortcut && (
+        <span style={{ fontSize: 9, color: 'var(--text-tertiary)' }}>{shortcut}</span>
+      )}
     </button>
   );
 }

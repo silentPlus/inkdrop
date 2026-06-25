@@ -1,74 +1,81 @@
 /**
- * Board — Canvas 棋盘 React 组件
- *
- * 挂载 Canvas，管理 CanvasRenderer 生命周期，
- * 桥接 gameStore 到渲染层。
+ * Board — PixiJS 棋盘 React 组件
  */
 import { useEffect, useRef } from 'react';
 import { useGameStore } from '@/store/gameStore';
-import { CanvasRenderer } from '@/renderer/CanvasRenderer';
+import { useSettingsStore } from '@/store/settingsStore';
+import { PixiRenderer } from '@/renderer/PixiRenderer';
 
 export function Board() {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const rendererRef = useRef<CanvasRenderer | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const rendererRef = useRef<PixiRenderer | null>(null);
   const board = useGameStore((s) => s.board);
+  const stepCount = useGameStore((s) => s.stepCount);
   const phase = useGameStore((s) => s.phase);
   const clickSource = useGameStore((s) => s.clickSource);
+  const colorblindMode = useSettingsStore((s) => s.colorblindMode);
+  const themeId = useSettingsStore((s) => s.themeId);
 
-  // ref 避免闭包陷阱
-  const clickSourceRef = useRef(clickSource);
-  clickSourceRef.current = clickSource;
   const phaseRef = useRef(phase);
   phaseRef.current = phase;
 
   useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
+    const container = containerRef.current;
+    if (!container) return;
 
-    const renderer = new CanvasRenderer(canvas);
-    rendererRef.current = renderer;
-
-    renderer.onSourceClick = (sourceId: string) => {
-      if (phaseRef.current === 'playing') {
-        clickSourceRef.current(sourceId);
-      }
-    };
-
-    renderer.startRendering();
+    let cancelled = false;
+    PixiRenderer.create(container)
+      .then((renderer) => {
+        if (cancelled) { renderer.destroy(); return; }
+        rendererRef.current = renderer;
+        renderer.onSourceClick = (sourceId: string) => {
+          if (phaseRef.current === 'playing') {
+            clickSource(sourceId);
+          }
+        };
+        renderer.setColorblindMode(colorblindMode);
+        renderer.setTheme(themeId);
+        const currentBoard = useGameStore.getState().board;
+        if (currentBoard) renderer.setBoard(currentBoard);
+      })
+      .catch((err) => console.error('PixiJS:', err));
 
     return () => {
-      renderer.destroy();
-      rendererRef.current = null;
+      cancelled = true;
+      rendererRef.current?.destroy();
     };
-  }, []); // 只挂载一次
+  }, []);
 
-  // board 变化时更新渲染器
+  // 色盲模式切换
+  useEffect(() => {
+    rendererRef.current?.setColorblindMode(colorblindMode);
+  }, [colorblindMode]);
+
+  // 主题切换
+  useEffect(() => {
+    rendererRef.current?.setTheme(themeId);
+  }, [themeId]);
+
   useEffect(() => {
     if (rendererRef.current && board) {
       rendererRef.current.setBoard(board);
     }
   }, [board]);
 
-  // 适配容器大小
   useEffect(() => {
-    const onResize = () => {
-      if (rendererRef.current && board) {
-        rendererRef.current.setBoard(board);
-      }
-    };
+    rendererRef.current?.refresh();
+  }, [stepCount]);
+
+  useEffect(() => {
+    const onResize = () => rendererRef.current?.refresh();
     window.addEventListener('resize', onResize);
     return () => window.removeEventListener('resize', onResize);
-  }, [board]);
+  }, []);
 
   return (
-    <canvas
-      ref={canvasRef}
-      style={{
-        width: '100%',
-        height: '100%',
-        display: 'block',
-        touchAction: 'none',
-      }}
+    <div
+      ref={containerRef}
+      style={{ width: '100%', height: '100%', overflow: 'hidden' }}
     />
   );
 }

@@ -1,0 +1,9328 @@
+[
+  {
+    "id": "lv_021",
+    "name": "初入江湖",
+    "difficulty": 2,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 1,
+        "col": 4,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s2",
+        "row": 3,
+        "col": 4,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s3",
+        "row": 4,
+        "col": 3,
+        "color": "#EC4899",
+        "name": "magenta"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 1,
+        "col": 1
+      },
+      {
+        "row": 3,
+        "col": 0
+      },
+      {
+        "row": 2,
+        "col": 2
+      }
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 0,
+        "color": "#F97316",
+        "name": "orange"
+      },
+      {
+        "row": 1,
+        "col": 3,
+        "color": "#F97316",
+        "name": "orange"
+      },
+      {
+        "row": 2,
+        "col": 0,
+        "color": "#F97316",
+        "name": "orange"
+      },
+      {
+        "row": 2,
+        "col": 3,
+        "color": "#F97316",
+        "name": "orange"
+      }
+    ],
+    "solution": [
+      "s2",
+      "s1",
+      "s3"
+    ],
+    "par_steps": 3,
+    "hint": ""
+  },
+  {
+    "id": "lv_022",
+    "name": "小试牛刀",
+    "difficulty": 2,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 3,
+        "col": 0,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s2",
+        "row": 3,
+        "col": 2,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s3",
+        "row": 4,
+        "col": 3,
+        "color": "#10B981",
+        "name": "green"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 2,
+        "col": 3
+      },
+      {
+        "row": 1,
+        "col": 0
+      },
+      {
+        "row": 2,
+        "col": 4
+      }
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 0,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 0,
+        "col": 1,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 0,
+        "col": 2,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 1,
+        "col": 4,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s3",
+      "s2"
+    ],
+    "par_steps": 3,
+    "hint": ""
+  },
+  {
+    "id": "lv_023",
+    "name": "轻车熟路",
+    "difficulty": 2,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 1,
+        "col": 0,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s2",
+        "row": 1,
+        "col": 3,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s3",
+        "row": 3,
+        "col": 1,
+        "color": "#3B82F6",
+        "name": "blue"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 0,
+        "col": 0
+      },
+      {
+        "row": 3,
+        "col": 0
+      },
+      {
+        "row": 3,
+        "col": 3
+      }
+    ],
+    "targets": [
+      {
+        "row": 2,
+        "col": 3,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 4,
+        "col": 0,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 4,
+        "col": 1,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 4,
+        "col": 2,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s3",
+      "s2"
+    ],
+    "par_steps": 3,
+    "hint": ""
+  },
+  {
+    "id": "lv_024",
+    "name": "得心应手",
+    "difficulty": 2,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 4,
+        "col": 2,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s2",
+        "row": 0,
+        "col": 2,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s3",
+        "row": 2,
+        "col": 4,
+        "color": "#10B981",
+        "name": "green"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 1,
+        "col": 2
+      },
+      {
+        "row": 3,
+        "col": 0
+      },
+      {
+        "row": 4,
+        "col": 3
+      }
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 1,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 1,
+        "col": 0,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 1,
+        "col": 1,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 2,
+        "col": 0,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s3",
+      "s1",
+      "s2"
+    ],
+    "par_steps": 3,
+    "hint": ""
+  },
+  {
+    "id": "lv_025",
+    "name": "雨后初晴",
+    "difficulty": 2,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 2,
+        "col": 4,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s2",
+        "row": 0,
+        "col": 1,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s3",
+        "row": 2,
+        "col": 1,
+        "color": "#EC4899",
+        "name": "magenta"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 1,
+        "col": 3
+      },
+      {
+        "row": 1,
+        "col": 1
+      },
+      {
+        "row": 3,
+        "col": 2
+      }
+    ],
+    "targets": [
+      {
+        "row": 3,
+        "col": 1,
+        "color": "#FB7185",
+        "name": "coral"
+      },
+      {
+        "row": 4,
+        "col": 0,
+        "color": "#FB7185",
+        "name": "coral"
+      },
+      {
+        "row": 4,
+        "col": 1,
+        "color": "#FB7185",
+        "name": "coral"
+      },
+      {
+        "row": 4,
+        "col": 2,
+        "color": "#FB7185",
+        "name": "coral"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s2",
+      "s3"
+    ],
+    "par_steps": 3,
+    "hint": ""
+  },
+  {
+    "id": "lv_026",
+    "name": "露珠",
+    "difficulty": 2,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 3,
+        "col": 0,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s2",
+        "row": 4,
+        "col": 4,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s3",
+        "row": 3,
+        "col": 2,
+        "color": "#F59E0B",
+        "name": "yellow"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 3,
+        "col": 4
+      },
+      {
+        "row": 1,
+        "col": 1
+      },
+      {
+        "row": 0,
+        "col": 4
+      }
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 0,
+        "color": "#FB7185",
+        "name": "coral"
+      },
+      {
+        "row": 0,
+        "col": 1,
+        "color": "#FB7185",
+        "name": "coral"
+      },
+      {
+        "row": 1,
+        "col": 2,
+        "color": "#FB7185",
+        "name": "coral"
+      },
+      {
+        "row": 2,
+        "col": 2,
+        "color": "#FB7185",
+        "name": "coral"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s2",
+      "s3"
+    ],
+    "par_steps": 3,
+    "hint": ""
+  },
+  {
+    "id": "lv_027",
+    "name": "晨光",
+    "difficulty": 2,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 4,
+        "col": 4,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s2",
+        "row": 2,
+        "col": 3,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s3",
+        "row": 2,
+        "col": 0,
+        "color": "#EF4444",
+        "name": "red"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 2,
+        "col": 4
+      },
+      {
+        "row": 1,
+        "col": 4
+      },
+      {
+        "row": 4,
+        "col": 1
+      }
+    ],
+    "targets": [
+      {
+        "row": 1,
+        "col": 1,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 1,
+        "col": 2,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 2,
+        "col": 1,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 3,
+        "col": 1,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s2",
+      "s3"
+    ],
+    "par_steps": 3,
+    "hint": ""
+  },
+  {
+    "id": "lv_028",
+    "name": "新芽",
+    "difficulty": 2,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 3,
+        "col": 1,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s2",
+        "row": 0,
+        "col": 4,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s3",
+        "row": 0,
+        "col": 0,
+        "color": "#10B981",
+        "name": "green"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 1,
+        "col": 1
+      },
+      {
+        "row": 1,
+        "col": 4
+      },
+      {
+        "row": 4,
+        "col": 3
+      }
+    ],
+    "targets": [
+      {
+        "row": 2,
+        "col": 2,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 3,
+        "col": 2,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 3,
+        "col": 3,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 3,
+        "col": 4,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s3",
+      "s1",
+      "s2"
+    ],
+    "par_steps": 3,
+    "hint": ""
+  },
+  {
+    "id": "lv_029",
+    "name": "浅溪",
+    "difficulty": 2,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 3,
+        "col": 3,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s2",
+        "row": 0,
+        "col": 4,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s3",
+        "row": 4,
+        "col": 2,
+        "color": "#EF4444",
+        "name": "red"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 1,
+        "col": 0
+      },
+      {
+        "row": 2,
+        "col": 3
+      },
+      {
+        "row": 2,
+        "col": 1
+      }
+    ],
+    "targets": [
+      {
+        "row": 2,
+        "col": 0,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 3,
+        "col": 1,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 4,
+        "col": 0,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 4,
+        "col": 1,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s2",
+      "s3"
+    ],
+    "par_steps": 3,
+    "hint": ""
+  },
+  {
+    "id": "lv_030",
+    "name": "微风",
+    "difficulty": 2,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 3,
+        "col": 3,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s2",
+        "row": 0,
+        "col": 4,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s3",
+        "row": 2,
+        "col": 0,
+        "color": "#3B82F6",
+        "name": "blue"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 2,
+        "col": 3
+      },
+      {
+        "row": 0,
+        "col": 3
+      },
+      {
+        "row": 0,
+        "col": 1
+      }
+    ],
+    "targets": [
+      {
+        "row": 2,
+        "col": 4,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 3,
+        "col": 4,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 4,
+        "col": 3,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 4,
+        "col": 4,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s3",
+      "s1",
+      "s2"
+    ],
+    "par_steps": 3,
+    "hint": ""
+  },
+  {
+    "id": "lv_031",
+    "name": "浮萍",
+    "difficulty": 2,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 0,
+        "col": 1,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s2",
+        "row": 2,
+        "col": 0,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s3",
+        "row": 2,
+        "col": 3,
+        "color": "#F59E0B",
+        "name": "yellow"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 4,
+        "col": 0
+      },
+      {
+        "row": 0,
+        "col": 4
+      },
+      {
+        "row": 1,
+        "col": 1
+      }
+    ],
+    "targets": [
+      {
+        "row": 3,
+        "col": 0,
+        "color": "#8B5CF6",
+        "name": "purple"
+      },
+      {
+        "row": 3,
+        "col": 4,
+        "color": "#FB7185",
+        "name": "coral"
+      },
+      {
+        "row": 4,
+        "col": 1,
+        "color": "#8B5CF6",
+        "name": "purple"
+      },
+      {
+        "row": 4,
+        "col": 3,
+        "color": "#8B5CF6",
+        "name": "purple"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s2",
+      "s3"
+    ],
+    "par_steps": 3,
+    "hint": ""
+  },
+  {
+    "id": "lv_032",
+    "name": "柳絮",
+    "difficulty": 2,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 4,
+        "col": 3,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s2",
+        "row": 0,
+        "col": 2,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s3",
+        "row": 1,
+        "col": 3,
+        "color": "#EF4444",
+        "name": "red"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 2,
+        "col": 1
+      },
+      {
+        "row": 1,
+        "col": 2
+      },
+      {
+        "row": 2,
+        "col": 3
+      }
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 3,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 1,
+        "col": 0,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 1,
+        "col": 1,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 2,
+        "col": 0,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s3",
+      "s2"
+    ],
+    "par_steps": 3,
+    "hint": ""
+  },
+  {
+    "id": "lv_033",
+    "name": "萤火",
+    "difficulty": 2,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 2,
+        "col": 2,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s2",
+        "row": 0,
+        "col": 0,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s3",
+        "row": 1,
+        "col": 4,
+        "color": "#10B981",
+        "name": "green"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 4,
+        "col": 0
+      },
+      {
+        "row": 2,
+        "col": 0
+      },
+      {
+        "row": 1,
+        "col": 1
+      }
+    ],
+    "targets": [
+      {
+        "row": 3,
+        "col": 0,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 3,
+        "col": 1,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 3,
+        "col": 2,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 4,
+        "col": 1,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s2",
+      "s3",
+      "s1"
+    ],
+    "par_steps": 3,
+    "hint": ""
+  },
+  {
+    "id": "lv_034",
+    "name": "清泉",
+    "difficulty": 2,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 1,
+        "col": 0,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s2",
+        "row": 0,
+        "col": 1,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s3",
+        "row": 4,
+        "col": 2,
+        "color": "#F59E0B",
+        "name": "yellow"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 1,
+        "col": 1
+      },
+      {
+        "row": 2,
+        "col": 1
+      },
+      {
+        "row": 3,
+        "col": 1
+      }
+    ],
+    "targets": [
+      {
+        "row": 1,
+        "col": 2,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 3,
+        "col": 2,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 3,
+        "col": 4,
+        "color": "#F97316",
+        "name": "orange"
+      },
+      {
+        "row": 4,
+        "col": 3,
+        "color": "#F97316",
+        "name": "orange"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s2",
+      "s3"
+    ],
+    "par_steps": 3,
+    "hint": ""
+  },
+  {
+    "id": "lv_035",
+    "name": "竹韵",
+    "difficulty": 2,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 2,
+        "col": 2,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s2",
+        "row": 3,
+        "col": 0,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s3",
+        "row": 3,
+        "col": 3,
+        "color": "#EF4444",
+        "name": "red"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 1,
+        "col": 4
+      },
+      {
+        "row": 2,
+        "col": 1
+      },
+      {
+        "row": 2,
+        "col": 3
+      }
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 1,
+        "color": "#8B5CF6",
+        "name": "purple"
+      },
+      {
+        "row": 0,
+        "col": 2,
+        "color": "#8B5CF6",
+        "name": "purple"
+      },
+      {
+        "row": 0,
+        "col": 4,
+        "color": "#8B5CF6",
+        "name": "purple"
+      },
+      {
+        "row": 1,
+        "col": 2,
+        "color": "#8B5CF6",
+        "name": "purple"
+      }
+    ],
+    "solution": [
+      "s2",
+      "s1",
+      "s3"
+    ],
+    "par_steps": 3,
+    "hint": ""
+  },
+  {
+    "id": "lv_036",
+    "name": "石径",
+    "difficulty": 2,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 3,
+        "col": 0,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s2",
+        "row": 1,
+        "col": 1,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s3",
+        "row": 4,
+        "col": 1,
+        "color": "#EC4899",
+        "name": "magenta"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 0,
+        "col": 0
+      },
+      {
+        "row": 1,
+        "col": 2
+      },
+      {
+        "row": 0,
+        "col": 3
+      },
+      {
+        "row": 2,
+        "col": 3
+      },
+      {
+        "row": 1,
+        "col": 3
+      }
+    ],
+    "targets": [
+      {
+        "row": 2,
+        "col": 4,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "row": 3,
+        "col": 4,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "row": 4,
+        "col": 2,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "row": 4,
+        "col": 3,
+        "color": "#EF4444",
+        "name": "red"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s2",
+      "s3"
+    ],
+    "par_steps": 3,
+    "hint": ""
+  },
+  {
+    "id": "lv_037",
+    "name": "烟波",
+    "difficulty": 2,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 1,
+        "col": 1,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s2",
+        "row": 3,
+        "col": 4,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s3",
+        "row": 3,
+        "col": 0,
+        "color": "#10B981",
+        "name": "green"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 0,
+        "col": 4
+      },
+      {
+        "row": 0,
+        "col": 2
+      },
+      {
+        "row": 3,
+        "col": 2
+      },
+      {
+        "row": 4,
+        "col": 0
+      },
+      {
+        "row": 4,
+        "col": 3
+      }
+    ],
+    "targets": [
+      {
+        "row": 3,
+        "col": 1,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 4,
+        "col": 1,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 4,
+        "col": 2,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s2",
+      "s1",
+      "s3"
+    ],
+    "par_steps": 3,
+    "hint": ""
+  },
+  {
+    "id": "lv_038",
+    "name": "渔舟",
+    "difficulty": 2,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 1,
+        "col": 3,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s2",
+        "row": 3,
+        "col": 0,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s3",
+        "row": 4,
+        "col": 2,
+        "color": "#3B82F6",
+        "name": "blue"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 4,
+        "col": 4
+      },
+      {
+        "row": 1,
+        "col": 2
+      },
+      {
+        "row": 3,
+        "col": 3
+      },
+      {
+        "row": 0,
+        "col": 2
+      },
+      {
+        "row": 0,
+        "col": 0
+      }
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 1,
+        "color": "#FB7185",
+        "name": "coral"
+      },
+      {
+        "row": 1,
+        "col": 0,
+        "color": "#FB7185",
+        "name": "coral"
+      },
+      {
+        "row": 3,
+        "col": 1,
+        "color": "#8B5CF6",
+        "name": "purple"
+      },
+      {
+        "row": 4,
+        "col": 0,
+        "color": "#8B5CF6",
+        "name": "purple"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s3",
+      "s2"
+    ],
+    "par_steps": 3,
+    "hint": ""
+  },
+  {
+    "id": "lv_039",
+    "name": "松涛",
+    "difficulty": 2,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 0,
+        "col": 0,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s2",
+        "row": 3,
+        "col": 2,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s3",
+        "row": 2,
+        "col": 4,
+        "color": "#EF4444",
+        "name": "red"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 0,
+        "col": 2
+      },
+      {
+        "row": 2,
+        "col": 0
+      },
+      {
+        "row": 0,
+        "col": 4
+      },
+      {
+        "row": 4,
+        "col": 4
+      },
+      {
+        "row": 4,
+        "col": 1
+      }
+    ],
+    "targets": [
+      {
+        "row": 1,
+        "col": 0,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 3,
+        "col": 1,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 4,
+        "col": 0,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 4,
+        "col": 2,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s3",
+      "s2",
+      "s1"
+    ],
+    "par_steps": 3,
+    "hint": ""
+  },
+  {
+    "id": "lv_040",
+    "name": "梅影",
+    "difficulty": 2,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 3,
+        "col": 2,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s2",
+        "row": 2,
+        "col": 0,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s3",
+        "row": 0,
+        "col": 0,
+        "color": "#EC4899",
+        "name": "magenta"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 1,
+        "col": 0
+      },
+      {
+        "row": 2,
+        "col": 3
+      },
+      {
+        "row": 4,
+        "col": 4
+      },
+      {
+        "row": 1,
+        "col": 1
+      },
+      {
+        "row": 0,
+        "col": 4
+      }
+    ],
+    "targets": [
+      {
+        "row": 2,
+        "col": 4,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 3,
+        "col": 3,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 3,
+        "col": 4,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 4,
+        "col": 3,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s2",
+      "s1",
+      "s3"
+    ],
+    "par_steps": 3,
+    "hint": ""
+  },
+  {
+    "id": "lv_041",
+    "name": "初入江湖",
+    "difficulty": 2,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 4,
+        "col": 3,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s2",
+        "row": 2,
+        "col": 2,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s3",
+        "row": 0,
+        "col": 4,
+        "color": "#10B981",
+        "name": "green"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 0,
+        "col": 2
+      },
+      {
+        "row": 3,
+        "col": 3
+      },
+      {
+        "row": 3,
+        "col": 2
+      },
+      {
+        "row": 1,
+        "col": 2
+      },
+      {
+        "row": 3,
+        "col": 4
+      }
+    ],
+    "targets": [
+      {
+        "row": 2,
+        "col": 0,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 2,
+        "col": 1,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 3,
+        "col": 0,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 3,
+        "col": 1,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s3",
+      "s2",
+      "s1"
+    ],
+    "par_steps": 3,
+    "hint": ""
+  },
+  {
+    "id": "lv_042",
+    "name": "小试牛刀",
+    "difficulty": 2,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 1,
+        "col": 3,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s2",
+        "row": 0,
+        "col": 4,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s3",
+        "row": 1,
+        "col": 1,
+        "color": "#EC4899",
+        "name": "magenta"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 2,
+        "col": 1
+      },
+      {
+        "row": 0,
+        "col": 2
+      },
+      {
+        "row": 2,
+        "col": 0
+      },
+      {
+        "row": 1,
+        "col": 0
+      },
+      {
+        "row": 4,
+        "col": 0
+      }
+    ],
+    "targets": [
+      {
+        "row": 2,
+        "col": 3,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 3,
+        "col": 0,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 3,
+        "col": 4,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 4,
+        "col": 1,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s2",
+      "s3",
+      "s1"
+    ],
+    "par_steps": 3,
+    "hint": ""
+  },
+  {
+    "id": "lv_043",
+    "name": "轻车熟路",
+    "difficulty": 2,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 0,
+        "col": 2,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s2",
+        "row": 0,
+        "col": 4,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s3",
+        "row": 3,
+        "col": 3,
+        "color": "#EF4444",
+        "name": "red"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 1,
+        "col": 2
+      },
+      {
+        "row": 3,
+        "col": 1
+      },
+      {
+        "row": 1,
+        "col": 3
+      },
+      {
+        "row": 4,
+        "col": 3
+      },
+      {
+        "row": 4,
+        "col": 4
+      }
+    ],
+    "targets": [
+      {
+        "row": 1,
+        "col": 4,
+        "color": "#F97316",
+        "name": "orange"
+      },
+      {
+        "row": 2,
+        "col": 3,
+        "color": "#F97316",
+        "name": "orange"
+      },
+      {
+        "row": 2,
+        "col": 4,
+        "color": "#F97316",
+        "name": "orange"
+      },
+      {
+        "row": 3,
+        "col": 4,
+        "color": "#F97316",
+        "name": "orange"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s2",
+      "s3"
+    ],
+    "par_steps": 3,
+    "hint": ""
+  },
+  {
+    "id": "lv_044",
+    "name": "得心应手",
+    "difficulty": 2,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 3,
+        "col": 0,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s2",
+        "row": 1,
+        "col": 4,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s3",
+        "row": 0,
+        "col": 3,
+        "color": "#10B981",
+        "name": "green"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 2,
+        "col": 1
+      },
+      {
+        "row": 3,
+        "col": 2
+      },
+      {
+        "row": 1,
+        "col": 1
+      },
+      {
+        "row": 2,
+        "col": 2
+      },
+      {
+        "row": 3,
+        "col": 4
+      }
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 4,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 1,
+        "col": 3,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 2,
+        "col": 3,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s3",
+      "s2"
+    ],
+    "par_steps": 3,
+    "hint": ""
+  },
+  {
+    "id": "lv_045",
+    "name": "雨后初晴",
+    "difficulty": 2,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 0,
+        "col": 0,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s2",
+        "row": 2,
+        "col": 0,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s3",
+        "row": 2,
+        "col": 2,
+        "color": "#3B82F6",
+        "name": "blue"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 1,
+        "col": 2
+      },
+      {
+        "row": 1,
+        "col": 4
+      },
+      {
+        "row": 1,
+        "col": 3
+      },
+      {
+        "row": 2,
+        "col": 4
+      },
+      {
+        "row": 3,
+        "col": 3
+      }
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 1,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 0,
+        "col": 3,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 0,
+        "col": 4,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 1,
+        "col": 1,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s2",
+      "s1",
+      "s3"
+    ],
+    "par_steps": 3,
+    "hint": ""
+  },
+  {
+    "id": "lv_046",
+    "name": "露珠",
+    "difficulty": 2,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 4,
+        "col": 3,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s2",
+        "row": 0,
+        "col": 0,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s3",
+        "row": 1,
+        "col": 2,
+        "color": "#3B82F6",
+        "name": "blue"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 3,
+        "col": 2
+      },
+      {
+        "row": 1,
+        "col": 3
+      },
+      {
+        "row": 2,
+        "col": 2
+      },
+      {
+        "row": 2,
+        "col": 3
+      },
+      {
+        "row": 1,
+        "col": 4
+      }
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 2,
+        "color": "#8B5CF6",
+        "name": "purple"
+      },
+      {
+        "row": 0,
+        "col": 3,
+        "color": "#8B5CF6",
+        "name": "purple"
+      },
+      {
+        "row": 0,
+        "col": 4,
+        "color": "#8B5CF6",
+        "name": "purple"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s2",
+      "s3"
+    ],
+    "par_steps": 3,
+    "hint": ""
+  },
+  {
+    "id": "lv_047",
+    "name": "晨光",
+    "difficulty": 2,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 4,
+        "col": 2,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s2",
+        "row": 2,
+        "col": 1,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s3",
+        "row": 0,
+        "col": 4,
+        "color": "#F59E0B",
+        "name": "yellow"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 1,
+        "col": 1
+      },
+      {
+        "row": 2,
+        "col": 4
+      },
+      {
+        "row": 3,
+        "col": 0
+      },
+      {
+        "row": 3,
+        "col": 2
+      },
+      {
+        "row": 3,
+        "col": 4
+      }
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 0,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 0,
+        "col": 1,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 0,
+        "col": 2,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 2,
+        "col": 2,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s2",
+      "s3"
+    ],
+    "par_steps": 3,
+    "hint": ""
+  },
+  {
+    "id": "lv_048",
+    "name": "新芽",
+    "difficulty": 2,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 0,
+        "col": 0,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s2",
+        "row": 0,
+        "col": 2,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s3",
+        "row": 3,
+        "col": 2,
+        "color": "#F59E0B",
+        "name": "yellow"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 0,
+        "col": 1
+      },
+      {
+        "row": 4,
+        "col": 3
+      },
+      {
+        "row": 1,
+        "col": 3
+      },
+      {
+        "row": 3,
+        "col": 1
+      },
+      {
+        "row": 2,
+        "col": 1
+      }
+    ],
+    "targets": [
+      {
+        "row": 2,
+        "col": 4,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 3,
+        "col": 3,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 4,
+        "col": 1,
+        "color": "#F97316",
+        "name": "orange"
+      },
+      {
+        "row": 4,
+        "col": 2,
+        "color": "#F97316",
+        "name": "orange"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s2",
+      "s3"
+    ],
+    "par_steps": 3,
+    "hint": ""
+  },
+  {
+    "id": "lv_049",
+    "name": "浅溪",
+    "difficulty": 2,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 4,
+        "col": 3,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s2",
+        "row": 3,
+        "col": 4,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s3",
+        "row": 1,
+        "col": 0,
+        "color": "#EF4444",
+        "name": "red"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 3,
+        "col": 2
+      },
+      {
+        "row": 3,
+        "col": 1
+      },
+      {
+        "row": 1,
+        "col": 2
+      },
+      {
+        "row": 2,
+        "col": 0
+      },
+      {
+        "row": 1,
+        "col": 3
+      }
+    ],
+    "targets": [
+      {
+        "row": 3,
+        "col": 0,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 4,
+        "col": 0,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 4,
+        "col": 1,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 4,
+        "col": 2,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s2",
+      "s1",
+      "s3"
+    ],
+    "par_steps": 3,
+    "hint": ""
+  },
+  {
+    "id": "lv_050",
+    "name": "微风",
+    "difficulty": 2,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 2,
+        "col": 1,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s2",
+        "row": 0,
+        "col": 1,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s3",
+        "row": 0,
+        "col": 3,
+        "color": "#3B82F6",
+        "name": "blue"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 3,
+        "col": 0
+      },
+      {
+        "row": 3,
+        "col": 1
+      },
+      {
+        "row": 1,
+        "col": 2
+      },
+      {
+        "row": 2,
+        "col": 0
+      },
+      {
+        "row": 1,
+        "col": 0
+      }
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 0,
+        "color": "#8B5CF6",
+        "name": "purple"
+      },
+      {
+        "row": 0,
+        "col": 2,
+        "color": "#8B5CF6",
+        "name": "purple"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s2",
+      "s3"
+    ],
+    "par_steps": 3,
+    "hint": ""
+  },
+  {
+    "id": "lv_051",
+    "name": "釜底抽薪",
+    "difficulty": 3,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 1,
+        "col": 1,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s2",
+        "row": 4,
+        "col": 0,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s3",
+        "row": 0,
+        "col": 3,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s4",
+        "row": 3,
+        "col": 2,
+        "color": "#EC4899",
+        "name": "magenta"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 3,
+        "col": 3
+      },
+      {
+        "row": 0,
+        "col": 4
+      },
+      {
+        "row": 2,
+        "col": 3
+      },
+      {
+        "row": 3,
+        "col": 0
+      }
+    ],
+    "targets": [
+      {
+        "row": 2,
+        "col": 0,
+        "color": "#06B6D4",
+        "name": "cyan"
+      },
+      {
+        "row": 3,
+        "col": 1,
+        "color": "#06B6D4",
+        "name": "cyan"
+      },
+      {
+        "row": 3,
+        "col": 4,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 4,
+        "col": 2,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s3",
+      "s1",
+      "s2",
+      "s4"
+    ],
+    "par_steps": 4,
+    "hint": ""
+  },
+  {
+    "id": "lv_052",
+    "name": "金蝉脱壳",
+    "difficulty": 3,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 0,
+        "col": 1,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s2",
+        "row": 4,
+        "col": 2,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s3",
+        "row": 0,
+        "col": 3,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s4",
+        "row": 3,
+        "col": 1,
+        "color": "#10B981",
+        "name": "green"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 1,
+        "col": 2
+      },
+      {
+        "row": 2,
+        "col": 2
+      },
+      {
+        "row": 2,
+        "col": 0
+      },
+      {
+        "row": 4,
+        "col": 0
+      }
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 4,
+        "color": "#06B6D4",
+        "name": "cyan"
+      },
+      {
+        "row": 1,
+        "col": 4,
+        "color": "#06B6D4",
+        "name": "cyan"
+      },
+      {
+        "row": 2,
+        "col": 3,
+        "color": "#06B6D4",
+        "name": "cyan"
+      },
+      {
+        "row": 2,
+        "col": 4,
+        "color": "#06B6D4",
+        "name": "cyan"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s2",
+      "s3",
+      "s4"
+    ],
+    "par_steps": 4,
+    "hint": ""
+  },
+  {
+    "id": "lv_053",
+    "name": "远交近攻",
+    "difficulty": 3,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 0,
+        "col": 0,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s2",
+        "row": 0,
+        "col": 3,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s3",
+        "row": 4,
+        "col": 2,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s4",
+        "row": 2,
+        "col": 0,
+        "color": "#EF4444",
+        "name": "red"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 0,
+        "col": 2
+      },
+      {
+        "row": 0,
+        "col": 1
+      },
+      {
+        "row": 0,
+        "col": 4
+      },
+      {
+        "row": 2,
+        "col": 4
+      }
+    ],
+    "targets": [
+      {
+        "row": 3,
+        "col": 0,
+        "color": "#06B6D4",
+        "name": "cyan"
+      },
+      {
+        "row": 3,
+        "col": 1,
+        "color": "#06B6D4",
+        "name": "cyan"
+      },
+      {
+        "row": 4,
+        "col": 0,
+        "color": "#06B6D4",
+        "name": "cyan"
+      },
+      {
+        "row": 4,
+        "col": 1,
+        "color": "#06B6D4",
+        "name": "cyan"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s2",
+      "s3",
+      "s4"
+    ],
+    "par_steps": 4,
+    "hint": ""
+  },
+  {
+    "id": "lv_054",
+    "name": "偷梁换柱",
+    "difficulty": 3,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 0,
+        "col": 1,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s2",
+        "row": 2,
+        "col": 0,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s3",
+        "row": 2,
+        "col": 2,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s4",
+        "row": 3,
+        "col": 4,
+        "color": "#10B981",
+        "name": "green"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 0,
+        "col": 4
+      },
+      {
+        "row": 3,
+        "col": 2
+      },
+      {
+        "row": 0,
+        "col": 0
+      },
+      {
+        "row": 2,
+        "col": 4
+      }
+    ],
+    "targets": [
+      {
+        "row": 1,
+        "col": 3,
+        "color": "#F97316",
+        "name": "orange"
+      },
+      {
+        "row": 2,
+        "col": 3,
+        "color": "#F97316",
+        "name": "orange"
+      },
+      {
+        "row": 3,
+        "col": 3,
+        "color": "#F97316",
+        "name": "orange"
+      },
+      {
+        "row": 4,
+        "col": 3,
+        "color": "#F97316",
+        "name": "orange"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s3",
+      "s2",
+      "s4"
+    ],
+    "par_steps": 4,
+    "hint": ""
+  },
+  {
+    "id": "lv_055",
+    "name": "指桑骂槐",
+    "difficulty": 3,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 4,
+        "col": 4,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s2",
+        "row": 1,
+        "col": 3,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s3",
+        "row": 1,
+        "col": 0,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s4",
+        "row": 4,
+        "col": 1,
+        "color": "#EF4444",
+        "name": "red"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 2,
+        "col": 0
+      },
+      {
+        "row": 0,
+        "col": 2
+      },
+      {
+        "row": 2,
+        "col": 2
+      },
+      {
+        "row": 1,
+        "col": 2
+      }
+    ],
+    "targets": [
+      {
+        "row": 3,
+        "col": 0,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 4,
+        "col": 0,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s2",
+      "s3",
+      "s4"
+    ],
+    "par_steps": 4,
+    "hint": ""
+  },
+  {
+    "id": "lv_056",
+    "name": "假痴不癫",
+    "difficulty": 3,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 1,
+        "col": 4,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s2",
+        "row": 3,
+        "col": 0,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s3",
+        "row": 2,
+        "col": 1,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s4",
+        "row": 0,
+        "col": 0,
+        "color": "#EF4444",
+        "name": "red"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 3,
+        "col": 3
+      },
+      {
+        "row": 2,
+        "col": 2
+      },
+      {
+        "row": 2,
+        "col": 0
+      },
+      {
+        "row": 1,
+        "col": 1
+      }
+    ],
+    "targets": [
+      {
+        "row": 2,
+        "col": 4,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 3,
+        "col": 2,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 3,
+        "col": 4,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 4,
+        "col": 2,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s2",
+      "s3",
+      "s4",
+      "s1"
+    ],
+    "par_steps": 4,
+    "hint": ""
+  },
+  {
+    "id": "lv_057",
+    "name": "上屋抽梯",
+    "difficulty": 3,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 4,
+        "col": 3,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s2",
+        "row": 0,
+        "col": 2,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s3",
+        "row": 4,
+        "col": 1,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s4",
+        "row": 0,
+        "col": 4,
+        "color": "#3B82F6",
+        "name": "blue"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 4,
+        "col": 0
+      },
+      {
+        "row": 2,
+        "col": 3
+      },
+      {
+        "row": 1,
+        "col": 4
+      },
+      {
+        "row": 2,
+        "col": 2
+      }
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 0,
+        "color": "#8B5CF6",
+        "name": "purple"
+      },
+      {
+        "row": 1,
+        "col": 2,
+        "color": "#8B5CF6",
+        "name": "purple"
+      },
+      {
+        "row": 2,
+        "col": 4,
+        "color": "#06B6D4",
+        "name": "cyan"
+      },
+      {
+        "row": 3,
+        "col": 3,
+        "color": "#06B6D4",
+        "name": "cyan"
+      }
+    ],
+    "solution": [
+      "s3",
+      "s1",
+      "s4",
+      "s2"
+    ],
+    "par_steps": 4,
+    "hint": ""
+  },
+  {
+    "id": "lv_058",
+    "name": "树上开花",
+    "difficulty": 3,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 1,
+        "col": 0,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s2",
+        "row": 4,
+        "col": 0,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s3",
+        "row": 0,
+        "col": 2,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s4",
+        "row": 3,
+        "col": 2,
+        "color": "#3B82F6",
+        "name": "blue"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 1,
+        "col": 3
+      },
+      {
+        "row": 2,
+        "col": 1
+      },
+      {
+        "row": 3,
+        "col": 0
+      },
+      {
+        "row": 4,
+        "col": 4
+      }
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 3,
+        "color": "#06B6D4",
+        "name": "cyan"
+      },
+      {
+        "row": 0,
+        "col": 4,
+        "color": "#06B6D4",
+        "name": "cyan"
+      },
+      {
+        "row": 1,
+        "col": 4,
+        "color": "#06B6D4",
+        "name": "cyan"
+      },
+      {
+        "row": 2,
+        "col": 2,
+        "color": "#06B6D4",
+        "name": "cyan"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s2",
+      "s3",
+      "s4"
+    ],
+    "par_steps": 4,
+    "hint": ""
+  },
+  {
+    "id": "lv_059",
+    "name": "反客为主",
+    "difficulty": 3,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 1,
+        "col": 3,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s2",
+        "row": 4,
+        "col": 0,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s3",
+        "row": 0,
+        "col": 2,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s4",
+        "row": 1,
+        "col": 0,
+        "color": "#EF4444",
+        "name": "red"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 3,
+        "col": 3
+      },
+      {
+        "row": 2,
+        "col": 1
+      },
+      {
+        "row": 0,
+        "col": 1
+      },
+      {
+        "row": 3,
+        "col": 2
+      }
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 4,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 1,
+        "col": 4,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 2,
+        "col": 3,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 2,
+        "col": 4,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s2",
+      "s3",
+      "s1",
+      "s4"
+    ],
+    "par_steps": 4,
+    "hint": ""
+  },
+  {
+    "id": "lv_060",
+    "name": "连环计",
+    "difficulty": 3,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 3,
+        "col": 4,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s2",
+        "row": 3,
+        "col": 0,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s3",
+        "row": 4,
+        "col": 2,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s4",
+        "row": 1,
+        "col": 0,
+        "color": "#10B981",
+        "name": "green"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 4,
+        "col": 1
+      },
+      {
+        "row": 3,
+        "col": 2
+      },
+      {
+        "row": 0,
+        "col": 3
+      },
+      {
+        "row": 3,
+        "col": 1
+      }
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 0,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 0,
+        "col": 1,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 1,
+        "col": 2,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 2,
+        "col": 1,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s2",
+      "s3",
+      "s4"
+    ],
+    "par_steps": 4,
+    "hint": ""
+  },
+  {
+    "id": "lv_061",
+    "name": "墨池泛波",
+    "difficulty": 3,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 4,
+        "col": 0,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s2",
+        "row": 0,
+        "col": 0,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s3",
+        "row": 1,
+        "col": 1,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s4",
+        "row": 3,
+        "col": 1,
+        "color": "#F59E0B",
+        "name": "yellow"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 0,
+        "col": 1
+      },
+      {
+        "row": 0,
+        "col": 2
+      },
+      {
+        "row": 2,
+        "col": 0
+      },
+      {
+        "row": 4,
+        "col": 4
+      }
+    ],
+    "targets": [
+      {
+        "row": 1,
+        "col": 2,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 2,
+        "col": 1,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s2",
+      "s3",
+      "s4"
+    ],
+    "par_steps": 4,
+    "hint": ""
+  },
+  {
+    "id": "lv_062",
+    "name": "暗香浮动",
+    "difficulty": 3,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 0,
+        "col": 2,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s2",
+        "row": 2,
+        "col": 2,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s3",
+        "row": 3,
+        "col": 1,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s4",
+        "row": 1,
+        "col": 1,
+        "color": "#F59E0B",
+        "name": "yellow"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 1,
+        "col": 3
+      },
+      {
+        "row": 2,
+        "col": 3
+      },
+      {
+        "row": 1,
+        "col": 2
+      },
+      {
+        "row": 4,
+        "col": 1
+      }
+    ],
+    "targets": [
+      {
+        "row": 1,
+        "col": 0,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 1,
+        "col": 4,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 3,
+        "col": 4,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 4,
+        "col": 3,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s2",
+      "s3",
+      "s4",
+      "s1"
+    ],
+    "par_steps": 4,
+    "hint": ""
+  },
+  {
+    "id": "lv_063",
+    "name": "柳暗花明",
+    "difficulty": 3,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 4,
+        "col": 3,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s2",
+        "row": 2,
+        "col": 3,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s3",
+        "row": 0,
+        "col": 1,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s4",
+        "row": 3,
+        "col": 4,
+        "color": "#10B981",
+        "name": "green"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 1,
+        "col": 4
+      },
+      {
+        "row": 3,
+        "col": 3
+      },
+      {
+        "row": 3,
+        "col": 0
+      },
+      {
+        "row": 2,
+        "col": 2
+      }
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 2,
+        "color": "#F97316",
+        "name": "orange"
+      },
+      {
+        "row": 0,
+        "col": 3,
+        "color": "#F97316",
+        "name": "orange"
+      },
+      {
+        "row": 1,
+        "col": 2,
+        "color": "#F97316",
+        "name": "orange"
+      },
+      {
+        "row": 1,
+        "col": 3,
+        "color": "#F97316",
+        "name": "orange"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s4",
+      "s2",
+      "s3"
+    ],
+    "par_steps": 4,
+    "hint": ""
+  },
+  {
+    "id": "lv_064",
+    "name": "曲水流觞",
+    "difficulty": 3,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 4,
+        "col": 2,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s2",
+        "row": 4,
+        "col": 0,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s3",
+        "row": 1,
+        "col": 3,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s4",
+        "row": 3,
+        "col": 4,
+        "color": "#F59E0B",
+        "name": "yellow"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 3,
+        "col": 3
+      },
+      {
+        "row": 2,
+        "col": 1
+      },
+      {
+        "row": 0,
+        "col": 2
+      },
+      {
+        "row": 1,
+        "col": 1
+      }
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 0,
+        "color": "#06B6D4",
+        "name": "cyan"
+      },
+      {
+        "row": 0,
+        "col": 1,
+        "color": "#06B6D4",
+        "name": "cyan"
+      },
+      {
+        "row": 2,
+        "col": 0,
+        "color": "#06B6D4",
+        "name": "cyan"
+      },
+      {
+        "row": 3,
+        "col": 0,
+        "color": "#06B6D4",
+        "name": "cyan"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s2",
+      "s3",
+      "s4"
+    ],
+    "par_steps": 4,
+    "hint": ""
+  },
+  {
+    "id": "lv_065",
+    "name": "云开见日",
+    "difficulty": 3,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 4,
+        "col": 3,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s2",
+        "row": 3,
+        "col": 1,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s3",
+        "row": 0,
+        "col": 1,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s4",
+        "row": 1,
+        "col": 3,
+        "color": "#F59E0B",
+        "name": "yellow"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 3,
+        "col": 0
+      },
+      {
+        "row": 3,
+        "col": 2
+      },
+      {
+        "row": 2,
+        "col": 3
+      },
+      {
+        "row": 1,
+        "col": 4
+      }
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 0,
+        "color": "#F97316",
+        "name": "orange"
+      },
+      {
+        "row": 1,
+        "col": 0,
+        "color": "#F97316",
+        "name": "orange"
+      }
+    ],
+    "solution": [
+      "s2",
+      "s1",
+      "s4",
+      "s3"
+    ],
+    "par_steps": 4,
+    "hint": ""
+  },
+  {
+    "id": "lv_066",
+    "name": "龙蛇起陆",
+    "difficulty": 3,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 4,
+        "col": 0,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s2",
+        "row": 0,
+        "col": 0,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s3",
+        "row": 3,
+        "col": 3,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s4",
+        "row": 1,
+        "col": 4,
+        "color": "#EC4899",
+        "name": "magenta"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 4,
+        "col": 2
+      },
+      {
+        "row": 1,
+        "col": 2
+      },
+      {
+        "row": 2,
+        "col": 0
+      },
+      {
+        "row": 2,
+        "col": 4
+      },
+      {
+        "row": 3,
+        "col": 2
+      },
+      {
+        "row": 1,
+        "col": 1
+      }
+    ],
+    "targets": [
+      {
+        "row": 3,
+        "col": 4,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "row": 4,
+        "col": 3,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "row": 4,
+        "col": 4,
+        "color": "#EF4444",
+        "name": "red"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s2",
+      "s3",
+      "s4"
+    ],
+    "par_steps": 4,
+    "hint": ""
+  },
+  {
+    "id": "lv_067",
+    "name": "对影成三",
+    "difficulty": 3,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 2,
+        "col": 0,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s2",
+        "row": 3,
+        "col": 1,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s3",
+        "row": 2,
+        "col": 4,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s4",
+        "row": 2,
+        "col": 2,
+        "color": "#3B82F6",
+        "name": "blue"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 3,
+        "col": 0
+      },
+      {
+        "row": 4,
+        "col": 0
+      },
+      {
+        "row": 1,
+        "col": 0
+      },
+      {
+        "row": 2,
+        "col": 3
+      },
+      {
+        "row": 4,
+        "col": 4
+      },
+      {
+        "row": 1,
+        "col": 1
+      }
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 0,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 0,
+        "col": 2,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 0,
+        "col": 3,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 1,
+        "col": 3,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s2",
+      "s4",
+      "s3"
+    ],
+    "par_steps": 4,
+    "hint": ""
+  },
+  {
+    "id": "lv_068",
+    "name": "咫尺天涯",
+    "difficulty": 3,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 2,
+        "col": 1,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s2",
+        "row": 4,
+        "col": 4,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s3",
+        "row": 4,
+        "col": 0,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s4",
+        "row": 2,
+        "col": 3,
+        "color": "#F59E0B",
+        "name": "yellow"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 0,
+        "col": 0
+      },
+      {
+        "row": 2,
+        "col": 4
+      },
+      {
+        "row": 3,
+        "col": 4
+      },
+      {
+        "row": 1,
+        "col": 4
+      },
+      {
+        "row": 0,
+        "col": 4
+      },
+      {
+        "row": 1,
+        "col": 0
+      }
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 2,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 0,
+        "col": 3,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 1,
+        "col": 3,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s2",
+      "s3",
+      "s4"
+    ],
+    "par_steps": 4,
+    "hint": ""
+  },
+  {
+    "id": "lv_069",
+    "name": "围魏救赵",
+    "difficulty": 3,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 4,
+        "col": 0,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s2",
+        "row": 2,
+        "col": 3,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s3",
+        "row": 4,
+        "col": 3,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s4",
+        "row": 0,
+        "col": 2,
+        "color": "#10B981",
+        "name": "green"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 2,
+        "col": 4
+      },
+      {
+        "row": 3,
+        "col": 4
+      },
+      {
+        "row": 3,
+        "col": 1
+      },
+      {
+        "row": 1,
+        "col": 2
+      },
+      {
+        "row": 3,
+        "col": 3
+      },
+      {
+        "row": 4,
+        "col": 1
+      }
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 3,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 0,
+        "col": 4,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 1,
+        "col": 3,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 1,
+        "col": 4,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s2",
+      "s3",
+      "s4"
+    ],
+    "par_steps": 4,
+    "hint": ""
+  },
+  {
+    "id": "lv_070",
+    "name": "声东击西",
+    "difficulty": 3,
+    "board": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 1,
+        "col": 0,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s2",
+        "row": 4,
+        "col": 1,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s3",
+        "row": 0,
+        "col": 2,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s4",
+        "row": 2,
+        "col": 4,
+        "color": "#3B82F6",
+        "name": "blue"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 4,
+        "col": 3
+      },
+      {
+        "row": 0,
+        "col": 4
+      },
+      {
+        "row": 0,
+        "col": 1
+      },
+      {
+        "row": 2,
+        "col": 2
+      },
+      {
+        "row": 4,
+        "col": 4
+      },
+      {
+        "row": 4,
+        "col": 0
+      }
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 3,
+        "color": "#F97316",
+        "name": "orange"
+      },
+      {
+        "row": 1,
+        "col": 4,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s2",
+      "s3",
+      "s4"
+    ],
+    "par_steps": 4,
+    "hint": ""
+  },
+  {
+    "id": "lv_071",
+    "name": "星辰大海",
+    "difficulty": 4,
+    "board": {
+      "rows": 6,
+      "cols": 6
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 4,
+        "col": 1,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s2",
+        "row": 5,
+        "col": 2,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s3",
+        "row": 5,
+        "col": 4,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s4",
+        "row": 0,
+        "col": 2,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s5",
+        "row": 2,
+        "col": 1,
+        "color": "#EF4444",
+        "name": "red"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 5,
+        "col": 5
+      },
+      {
+        "row": 3,
+        "col": 3
+      },
+      {
+        "row": 1,
+        "col": 2
+      },
+      {
+        "row": 2,
+        "col": 3
+      },
+      {
+        "row": 1,
+        "col": 1
+      },
+      {
+        "row": 5,
+        "col": 1
+      }
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 0,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 0,
+        "col": 1,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 1,
+        "col": 0,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 3,
+        "col": 0,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s2",
+      "s3",
+      "s4",
+      "s5",
+      "s1"
+    ],
+    "par_steps": 5,
+    "hint": ""
+  },
+  {
+    "id": "lv_072",
+    "name": "星河万里",
+    "difficulty": 4,
+    "board": {
+      "rows": 6,
+      "cols": 6
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 3,
+        "col": 2,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s2",
+        "row": 4,
+        "col": 4,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s3",
+        "row": 0,
+        "col": 1,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s4",
+        "row": 0,
+        "col": 4,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s5",
+        "row": 1,
+        "col": 5,
+        "color": "#F59E0B",
+        "name": "yellow"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 1,
+        "col": 3
+      },
+      {
+        "row": 4,
+        "col": 3
+      },
+      {
+        "row": 3,
+        "col": 4
+      },
+      {
+        "row": 5,
+        "col": 4
+      },
+      {
+        "row": 0,
+        "col": 3
+      },
+      {
+        "row": 3,
+        "col": 1
+      }
+    ],
+    "targets": [
+      {
+        "row": 1,
+        "col": 4,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 3,
+        "col": 3,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 4,
+        "col": 1,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 5,
+        "col": 3,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s2",
+      "s3",
+      "s1",
+      "s4",
+      "s5"
+    ],
+    "par_steps": 5,
+    "hint": ""
+  },
+  {
+    "id": "lv_073",
+    "name": "日月同辉",
+    "difficulty": 4,
+    "board": {
+      "rows": 6,
+      "cols": 6
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 5,
+        "col": 5,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s2",
+        "row": 1,
+        "col": 0,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s3",
+        "row": 5,
+        "col": 0,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s4",
+        "row": 0,
+        "col": 5,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s5",
+        "row": 1,
+        "col": 4,
+        "color": "#F59E0B",
+        "name": "yellow"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 3,
+        "col": 3
+      },
+      {
+        "row": 1,
+        "col": 5
+      },
+      {
+        "row": 3,
+        "col": 2
+      },
+      {
+        "row": 0,
+        "col": 1
+      },
+      {
+        "row": 5,
+        "col": 4
+      },
+      {
+        "row": 0,
+        "col": 0
+      }
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 3,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 1,
+        "col": 1,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 1,
+        "col": 2,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 2,
+        "col": 2,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s3",
+      "s2",
+      "s4",
+      "s5"
+    ],
+    "par_steps": 5,
+    "hint": ""
+  },
+  {
+    "id": "lv_074",
+    "name": "乾坤挪移",
+    "difficulty": 4,
+    "board": {
+      "rows": 6,
+      "cols": 6
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 1,
+        "col": 2,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s2",
+        "row": 4,
+        "col": 0,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s3",
+        "row": 4,
+        "col": 4,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s4",
+        "row": 5,
+        "col": 5,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s5",
+        "row": 2,
+        "col": 0,
+        "color": "#F59E0B",
+        "name": "yellow"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 3,
+        "col": 2
+      },
+      {
+        "row": 3,
+        "col": 0
+      },
+      {
+        "row": 4,
+        "col": 3
+      },
+      {
+        "row": 2,
+        "col": 1
+      },
+      {
+        "row": 3,
+        "col": 3
+      },
+      {
+        "row": 3,
+        "col": 1
+      }
+    ],
+    "targets": [
+      {
+        "row": 2,
+        "col": 4,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 3,
+        "col": 4,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 3,
+        "col": 5,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 4,
+        "col": 5,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s2",
+      "s3",
+      "s4",
+      "s5",
+      "s1"
+    ],
+    "par_steps": 5,
+    "hint": ""
+  },
+  {
+    "id": "lv_075",
+    "name": "风起云涌",
+    "difficulty": 4,
+    "board": {
+      "rows": 6,
+      "cols": 6
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 5,
+        "col": 0,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s2",
+        "row": 1,
+        "col": 2,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s3",
+        "row": 5,
+        "col": 4,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s4",
+        "row": 1,
+        "col": 4,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s5",
+        "row": 0,
+        "col": 5,
+        "color": "#3B82F6",
+        "name": "blue"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 0,
+        "col": 0
+      },
+      {
+        "row": 1,
+        "col": 3
+      },
+      {
+        "row": 0,
+        "col": 2
+      },
+      {
+        "row": 0,
+        "col": 3
+      },
+      {
+        "row": 2,
+        "col": 5
+      },
+      {
+        "row": 2,
+        "col": 2
+      }
+    ],
+    "targets": [
+      {
+        "row": 2,
+        "col": 3,
+        "color": "#F97316",
+        "name": "orange"
+      },
+      {
+        "row": 3,
+        "col": 5,
+        "color": "#F97316",
+        "name": "orange"
+      },
+      {
+        "row": 4,
+        "col": 5,
+        "color": "#F97316",
+        "name": "orange"
+      },
+      {
+        "row": 5,
+        "col": 5,
+        "color": "#F97316",
+        "name": "orange"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s2",
+      "s4",
+      "s3",
+      "s5"
+    ],
+    "par_steps": 5,
+    "hint": ""
+  },
+  {
+    "id": "lv_076",
+    "name": "雷霆万钧",
+    "difficulty": 4,
+    "board": {
+      "rows": 6,
+      "cols": 6
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 4,
+        "col": 0,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s2",
+        "row": 5,
+        "col": 1,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s3",
+        "row": 5,
+        "col": 3,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s4",
+        "row": 2,
+        "col": 5,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s5",
+        "row": 2,
+        "col": 3,
+        "color": "#3B82F6",
+        "name": "blue"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 5,
+        "col": 5
+      },
+      {
+        "row": 1,
+        "col": 5
+      },
+      {
+        "row": 2,
+        "col": 1
+      },
+      {
+        "row": 3,
+        "col": 0
+      },
+      {
+        "row": 1,
+        "col": 1
+      },
+      {
+        "row": 1,
+        "col": 4
+      }
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 2,
+        "color": "#06B6D4",
+        "name": "cyan"
+      },
+      {
+        "row": 0,
+        "col": 3,
+        "color": "#06B6D4",
+        "name": "cyan"
+      },
+      {
+        "row": 0,
+        "col": 4,
+        "color": "#06B6D4",
+        "name": "cyan"
+      },
+      {
+        "row": 3,
+        "col": 2,
+        "color": "#06B6D4",
+        "name": "cyan"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s2",
+      "s3",
+      "s4",
+      "s5"
+    ],
+    "par_steps": 5,
+    "hint": ""
+  },
+  {
+    "id": "lv_077",
+    "name": "排山倒海",
+    "difficulty": 4,
+    "board": {
+      "rows": 6,
+      "cols": 6
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 4,
+        "col": 4,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s2",
+        "row": 2,
+        "col": 2,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s3",
+        "row": 2,
+        "col": 5,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s4",
+        "row": 1,
+        "col": 4,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s5",
+        "row": 1,
+        "col": 0,
+        "color": "#EF4444",
+        "name": "red"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 2,
+        "col": 4
+      },
+      {
+        "row": 5,
+        "col": 5
+      },
+      {
+        "row": 4,
+        "col": 1
+      },
+      {
+        "row": 2,
+        "col": 3
+      },
+      {
+        "row": 0,
+        "col": 1
+      },
+      {
+        "row": 4,
+        "col": 3
+      }
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 5,
+        "color": "#8B5CF6",
+        "name": "purple"
+      },
+      {
+        "row": 3,
+        "col": 2,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 5,
+        "col": 1,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 5,
+        "col": 2,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s3",
+      "s4",
+      "s5",
+      "s2"
+    ],
+    "par_steps": 5,
+    "hint": ""
+  },
+  {
+    "id": "lv_078",
+    "name": "翻江倒海",
+    "difficulty": 4,
+    "board": {
+      "rows": 6,
+      "cols": 6
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 1,
+        "col": 2,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s2",
+        "row": 3,
+        "col": 2,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s3",
+        "row": 4,
+        "col": 1,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s4",
+        "row": 5,
+        "col": 2,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s5",
+        "row": 5,
+        "col": 0,
+        "color": "#F59E0B",
+        "name": "yellow"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 3,
+        "col": 0
+      },
+      {
+        "row": 5,
+        "col": 1
+      },
+      {
+        "row": 0,
+        "col": 1
+      },
+      {
+        "row": 3,
+        "col": 3
+      },
+      {
+        "row": 5,
+        "col": 3
+      },
+      {
+        "row": 3,
+        "col": 1
+      }
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 2,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 1,
+        "col": 1,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 3,
+        "col": 5,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 4,
+        "col": 3,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s2",
+      "s1",
+      "s3",
+      "s4",
+      "s5"
+    ],
+    "par_steps": 5,
+    "hint": ""
+  },
+  {
+    "id": "lv_079",
+    "name": "移山填海",
+    "difficulty": 4,
+    "board": {
+      "rows": 6,
+      "cols": 6
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 4,
+        "col": 0,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s2",
+        "row": 5,
+        "col": 2,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s3",
+        "row": 4,
+        "col": 3,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s4",
+        "row": 1,
+        "col": 5,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s5",
+        "row": 0,
+        "col": 2,
+        "color": "#EF4444",
+        "name": "red"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 0,
+        "col": 5
+      },
+      {
+        "row": 4,
+        "col": 2
+      },
+      {
+        "row": 0,
+        "col": 4
+      },
+      {
+        "row": 3,
+        "col": 0
+      },
+      {
+        "row": 5,
+        "col": 4
+      },
+      {
+        "row": 1,
+        "col": 1
+      }
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 0,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 0,
+        "col": 1,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 1,
+        "col": 0,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 2,
+        "col": 0,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s2",
+      "s3",
+      "s4",
+      "s5"
+    ],
+    "par_steps": 5,
+    "hint": ""
+  },
+  {
+    "id": "lv_080",
+    "name": "石破天惊",
+    "difficulty": 4,
+    "board": {
+      "rows": 6,
+      "cols": 6
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 4,
+        "col": 0,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s2",
+        "row": 1,
+        "col": 3,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s3",
+        "row": 1,
+        "col": 1,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s4",
+        "row": 5,
+        "col": 5,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s5",
+        "row": 3,
+        "col": 1,
+        "color": "#10B981",
+        "name": "green"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 0,
+        "col": 5
+      },
+      {
+        "row": 3,
+        "col": 2
+      },
+      {
+        "row": 2,
+        "col": 2
+      },
+      {
+        "row": 1,
+        "col": 5
+      },
+      {
+        "row": 4,
+        "col": 2
+      },
+      {
+        "row": 5,
+        "col": 2
+      }
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 0,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 0,
+        "col": 1,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 1,
+        "col": 0,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 2,
+        "col": 0,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s2",
+      "s4",
+      "s5",
+      "s1",
+      "s3"
+    ],
+    "par_steps": 5,
+    "hint": ""
+  },
+  {
+    "id": "lv_081",
+    "name": "天地玄黄",
+    "difficulty": 4,
+    "board": {
+      "rows": 6,
+      "cols": 6
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 5,
+        "col": 5,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s2",
+        "row": 1,
+        "col": 2,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s3",
+        "row": 4,
+        "col": 3,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s4",
+        "row": 4,
+        "col": 0,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s5",
+        "row": 2,
+        "col": 5,
+        "color": "#10B981",
+        "name": "green"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 3,
+        "col": 2
+      },
+      {
+        "row": 5,
+        "col": 2
+      },
+      {
+        "row": 0,
+        "col": 4
+      },
+      {
+        "row": 5,
+        "col": 1
+      },
+      {
+        "row": 3,
+        "col": 3
+      },
+      {
+        "row": 5,
+        "col": 0
+      }
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 2,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 1,
+        "col": 1,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 1,
+        "col": 5,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 3,
+        "col": 0,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s3",
+      "s4",
+      "s5",
+      "s2"
+    ],
+    "par_steps": 5,
+    "hint": ""
+  },
+  {
+    "id": "lv_082",
+    "name": "混沌初开",
+    "difficulty": 4,
+    "board": {
+      "rows": 6,
+      "cols": 6
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 5,
+        "col": 1,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s2",
+        "row": 2,
+        "col": 3,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s3",
+        "row": 0,
+        "col": 3,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s4",
+        "row": 2,
+        "col": 1,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s5",
+        "row": 1,
+        "col": 4,
+        "color": "#10B981",
+        "name": "green"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 2,
+        "col": 5
+      },
+      {
+        "row": 2,
+        "col": 2
+      },
+      {
+        "row": 0,
+        "col": 4
+      },
+      {
+        "row": 4,
+        "col": 4
+      },
+      {
+        "row": 3,
+        "col": 3
+      },
+      {
+        "row": 3,
+        "col": 1
+      }
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 0,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 1,
+        "col": 2,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 3,
+        "col": 2,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 5,
+        "col": 4,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s2",
+      "s3",
+      "s4",
+      "s1",
+      "s5"
+    ],
+    "par_steps": 5,
+    "hint": ""
+  },
+  {
+    "id": "lv_083",
+    "name": "沧海桑田",
+    "difficulty": 4,
+    "board": {
+      "rows": 6,
+      "cols": 6
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 0,
+        "col": 2,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s2",
+        "row": 3,
+        "col": 0,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s3",
+        "row": 5,
+        "col": 4,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s4",
+        "row": 5,
+        "col": 1,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s5",
+        "row": 1,
+        "col": 5,
+        "color": "#10B981",
+        "name": "green"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 4,
+        "col": 4
+      },
+      {
+        "row": 1,
+        "col": 2
+      },
+      {
+        "row": 5,
+        "col": 0
+      },
+      {
+        "row": 5,
+        "col": 3
+      },
+      {
+        "row": 4,
+        "col": 2
+      },
+      {
+        "row": 3,
+        "col": 3
+      },
+      {
+        "row": 4,
+        "col": 3
+      },
+      {
+        "row": 2,
+        "col": 3
+      },
+      {
+        "row": 3,
+        "col": 1
+      }
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 1,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 2,
+        "col": 0,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 2,
+        "col": 1,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 3,
+        "col": 2,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s3",
+      "s4",
+      "s2",
+      "s1",
+      "s5"
+    ],
+    "par_steps": 5,
+    "hint": ""
+  },
+  {
+    "id": "lv_084",
+    "name": "斗转星移",
+    "difficulty": 4,
+    "board": {
+      "rows": 6,
+      "cols": 6
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 1,
+        "col": 2,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s2",
+        "row": 4,
+        "col": 0,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s3",
+        "row": 2,
+        "col": 1,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s4",
+        "row": 4,
+        "col": 2,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s5",
+        "row": 0,
+        "col": 3,
+        "color": "#10B981",
+        "name": "green"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 1,
+        "col": 0
+      },
+      {
+        "row": 5,
+        "col": 5
+      },
+      {
+        "row": 1,
+        "col": 4
+      },
+      {
+        "row": 5,
+        "col": 4
+      },
+      {
+        "row": 2,
+        "col": 5
+      },
+      {
+        "row": 3,
+        "col": 0
+      },
+      {
+        "row": 3,
+        "col": 2
+      },
+      {
+        "row": 0,
+        "col": 0
+      },
+      {
+        "row": 3,
+        "col": 4
+      }
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 5,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 2,
+        "col": 3,
+        "color": "#F97316",
+        "name": "orange"
+      },
+      {
+        "row": 4,
+        "col": 3,
+        "color": "#F97316",
+        "name": "orange"
+      },
+      {
+        "row": 4,
+        "col": 5,
+        "color": "#F97316",
+        "name": "orange"
+      }
+    ],
+    "solution": [
+      "s2",
+      "s3",
+      "s1",
+      "s4",
+      "s5"
+    ],
+    "par_steps": 5,
+    "hint": ""
+  },
+  {
+    "id": "lv_085",
+    "name": "大漠孤烟",
+    "difficulty": 4,
+    "board": {
+      "rows": 6,
+      "cols": 6
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 4,
+        "col": 5,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s2",
+        "row": 5,
+        "col": 2,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s3",
+        "row": 5,
+        "col": 4,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s4",
+        "row": 2,
+        "col": 5,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s5",
+        "row": 1,
+        "col": 2,
+        "color": "#EF4444",
+        "name": "red"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 5,
+        "col": 0
+      },
+      {
+        "row": 4,
+        "col": 3
+      },
+      {
+        "row": 3,
+        "col": 3
+      },
+      {
+        "row": 0,
+        "col": 5
+      },
+      {
+        "row": 4,
+        "col": 1
+      },
+      {
+        "row": 0,
+        "col": 4
+      },
+      {
+        "row": 4,
+        "col": 0
+      },
+      {
+        "row": 2,
+        "col": 3
+      },
+      {
+        "row": 2,
+        "col": 4
+      }
+    ],
+    "targets": [
+      {
+        "row": 1,
+        "col": 4,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 1,
+        "col": 5,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 3,
+        "col": 4,
+        "color": "#F97316",
+        "name": "orange"
+      },
+      {
+        "row": 5,
+        "col": 5,
+        "color": "#F97316",
+        "name": "orange"
+      }
+    ],
+    "solution": [
+      "s2",
+      "s3",
+      "s1",
+      "s4",
+      "s5"
+    ],
+    "par_steps": 5,
+    "hint": ""
+  },
+  {
+    "id": "lv_086",
+    "name": "长河落日",
+    "difficulty": 4,
+    "board": {
+      "rows": 6,
+      "cols": 6
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 1,
+        "col": 1,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s2",
+        "row": 0,
+        "col": 4,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s3",
+        "row": 3,
+        "col": 2,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s4",
+        "row": 0,
+        "col": 0,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s5",
+        "row": 4,
+        "col": 1,
+        "color": "#EC4899",
+        "name": "magenta"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 2,
+        "col": 4
+      },
+      {
+        "row": 2,
+        "col": 0
+      },
+      {
+        "row": 4,
+        "col": 4
+      },
+      {
+        "row": 1,
+        "col": 3
+      },
+      {
+        "row": 4,
+        "col": 5
+      },
+      {
+        "row": 1,
+        "col": 0
+      },
+      {
+        "row": 4,
+        "col": 0
+      },
+      {
+        "row": 0,
+        "col": 2
+      },
+      {
+        "row": 3,
+        "col": 0
+      }
+    ],
+    "targets": [
+      {
+        "row": 1,
+        "col": 5,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 2,
+        "col": 5,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 5,
+        "col": 0,
+        "color": "#FB7185",
+        "name": "coral"
+      },
+      {
+        "row": 5,
+        "col": 2,
+        "color": "#FB7185",
+        "name": "coral"
+      }
+    ],
+    "solution": [
+      "s4",
+      "s1",
+      "s5",
+      "s3",
+      "s2"
+    ],
+    "par_steps": 5,
+    "hint": ""
+  },
+  {
+    "id": "lv_087",
+    "name": "万里雪飘",
+    "difficulty": 4,
+    "board": {
+      "rows": 6,
+      "cols": 6
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 5,
+        "col": 0,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s2",
+        "row": 5,
+        "col": 2,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s3",
+        "row": 4,
+        "col": 4,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s4",
+        "row": 3,
+        "col": 5,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s5",
+        "row": 3,
+        "col": 2,
+        "color": "#3B82F6",
+        "name": "blue"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 5,
+        "col": 5
+      },
+      {
+        "row": 2,
+        "col": 0
+      },
+      {
+        "row": 4,
+        "col": 5
+      },
+      {
+        "row": 5,
+        "col": 1
+      },
+      {
+        "row": 2,
+        "col": 4
+      },
+      {
+        "row": 0,
+        "col": 4
+      },
+      {
+        "row": 1,
+        "col": 1
+      },
+      {
+        "row": 3,
+        "col": 0
+      },
+      {
+        "row": 4,
+        "col": 3
+      }
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 3,
+        "color": "#8B5CF6",
+        "name": "purple"
+      },
+      {
+        "row": 0,
+        "col": 5,
+        "color": "#8B5CF6",
+        "name": "purple"
+      },
+      {
+        "row": 2,
+        "col": 2,
+        "color": "#8B5CF6",
+        "name": "purple"
+      },
+      {
+        "row": 3,
+        "col": 3,
+        "color": "#8B5CF6",
+        "name": "purple"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s2",
+      "s3",
+      "s5",
+      "s4"
+    ],
+    "par_steps": 5,
+    "hint": ""
+  },
+  {
+    "id": "lv_088",
+    "name": "千山鸟飞",
+    "difficulty": 4,
+    "board": {
+      "rows": 6,
+      "cols": 6
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 3,
+        "col": 0,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s2",
+        "row": 5,
+        "col": 0,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s3",
+        "row": 4,
+        "col": 4,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s4",
+        "row": 5,
+        "col": 5,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s5",
+        "row": 0,
+        "col": 4,
+        "color": "#3B82F6",
+        "name": "blue"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 1,
+        "col": 1
+      },
+      {
+        "row": 5,
+        "col": 1
+      },
+      {
+        "row": 2,
+        "col": 4
+      },
+      {
+        "row": 0,
+        "col": 3
+      },
+      {
+        "row": 4,
+        "col": 1
+      },
+      {
+        "row": 1,
+        "col": 3
+      },
+      {
+        "row": 1,
+        "col": 4
+      },
+      {
+        "row": 2,
+        "col": 2
+      },
+      {
+        "row": 5,
+        "col": 3
+      }
+    ],
+    "targets": [
+      {
+        "row": 2,
+        "col": 3,
+        "color": "#F97316",
+        "name": "orange"
+      },
+      {
+        "row": 3,
+        "col": 4,
+        "color": "#F97316",
+        "name": "orange"
+      },
+      {
+        "row": 4,
+        "col": 3,
+        "color": "#F97316",
+        "name": "orange"
+      },
+      {
+        "row": 5,
+        "col": 2,
+        "color": "#F97316",
+        "name": "orange"
+      }
+    ],
+    "solution": [
+      "s2",
+      "s4",
+      "s3",
+      "s1",
+      "s5"
+    ],
+    "par_steps": 5,
+    "hint": ""
+  },
+  {
+    "id": "lv_089",
+    "name": "九天揽月",
+    "difficulty": 4,
+    "board": {
+      "rows": 6,
+      "cols": 6
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 4,
+        "col": 3,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s2",
+        "row": 5,
+        "col": 2,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s3",
+        "row": 1,
+        "col": 4,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s4",
+        "row": 1,
+        "col": 2,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s5",
+        "row": 2,
+        "col": 3,
+        "color": "#3B82F6",
+        "name": "blue"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 0,
+        "col": 2
+      },
+      {
+        "row": 4,
+        "col": 5
+      },
+      {
+        "row": 0,
+        "col": 0
+      },
+      {
+        "row": 5,
+        "col": 1
+      },
+      {
+        "row": 2,
+        "col": 2
+      },
+      {
+        "row": 3,
+        "col": 2
+      },
+      {
+        "row": 3,
+        "col": 1
+      },
+      {
+        "row": 3,
+        "col": 4
+      },
+      {
+        "row": 2,
+        "col": 1
+      }
+    ],
+    "targets": [
+      {
+        "row": 4,
+        "col": 4,
+        "color": "#F97316",
+        "name": "orange"
+      },
+      {
+        "row": 5,
+        "col": 4,
+        "color": "#F97316",
+        "name": "orange"
+      },
+      {
+        "row": 5,
+        "col": 5,
+        "color": "#F97316",
+        "name": "orange"
+      }
+    ],
+    "solution": [
+      "s2",
+      "s5",
+      "s1",
+      "s3",
+      "s4"
+    ],
+    "par_steps": 5,
+    "hint": ""
+  },
+  {
+    "id": "lv_090",
+    "name": "五洋捉鳖",
+    "difficulty": 4,
+    "board": {
+      "rows": 6,
+      "cols": 6
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 1,
+        "col": 5,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s2",
+        "row": 1,
+        "col": 0,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s3",
+        "row": 2,
+        "col": 3,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s4",
+        "row": 5,
+        "col": 4,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s5",
+        "row": 3,
+        "col": 2,
+        "color": "#3B82F6",
+        "name": "blue"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 3,
+        "col": 5
+      },
+      {
+        "row": 5,
+        "col": 0
+      },
+      {
+        "row": 2,
+        "col": 2
+      },
+      {
+        "row": 1,
+        "col": 2
+      },
+      {
+        "row": 2,
+        "col": 4
+      },
+      {
+        "row": 4,
+        "col": 0
+      },
+      {
+        "row": 0,
+        "col": 5
+      },
+      {
+        "row": 2,
+        "col": 0
+      },
+      {
+        "row": 0,
+        "col": 4
+      }
+    ],
+    "targets": [
+      {
+        "row": 1,
+        "col": 1,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 3,
+        "col": 0,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 4,
+        "col": 1,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 5,
+        "col": 2,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s3",
+      "s5",
+      "s2",
+      "s4"
+    ],
+    "par_steps": 5,
+    "hint": ""
+  },
+  {
+    "id": "lv_091",
+    "name": "终极奥秘",
+    "difficulty": 5,
+    "board": {
+      "rows": 8,
+      "cols": 8
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 2,
+        "col": 2,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s2",
+        "row": 0,
+        "col": 5,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s3",
+        "row": 1,
+        "col": 7,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s4",
+        "row": 5,
+        "col": 6,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s5",
+        "row": 5,
+        "col": 0,
+        "color": "#3B82F6",
+        "name": "blue"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 3,
+        "col": 5
+      },
+      {
+        "row": 6,
+        "col": 4
+      },
+      {
+        "row": 3,
+        "col": 6
+      },
+      {
+        "row": 4,
+        "col": 7
+      },
+      {
+        "row": 7,
+        "col": 1
+      },
+      {
+        "row": 2,
+        "col": 6
+      },
+      {
+        "row": 3,
+        "col": 2
+      },
+      {
+        "row": 5,
+        "col": 2
+      },
+      {
+        "row": 4,
+        "col": 3
+      },
+      {
+        "row": 4,
+        "col": 4
+      },
+      {
+        "row": 0,
+        "col": 6
+      },
+      {
+        "row": 7,
+        "col": 2
+      }
+    ],
+    "targets": [
+      {
+        "row": 5,
+        "col": 7,
+        "color": "#06B6D4",
+        "name": "cyan"
+      },
+      {
+        "row": 6,
+        "col": 6,
+        "color": "#06B6D4",
+        "name": "cyan"
+      },
+      {
+        "row": 6,
+        "col": 7,
+        "color": "#06B6D4",
+        "name": "cyan"
+      },
+      {
+        "row": 7,
+        "col": 6,
+        "color": "#06B6D4",
+        "name": "cyan"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s2",
+      "s3",
+      "s5",
+      "s4"
+    ],
+    "par_steps": 5,
+    "hint": ""
+  },
+  {
+    "id": "lv_092",
+    "name": "至暗时刻",
+    "difficulty": 5,
+    "board": {
+      "rows": 8,
+      "cols": 8
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 7,
+        "col": 4,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s2",
+        "row": 1,
+        "col": 1,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s3",
+        "row": 7,
+        "col": 6,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s4",
+        "row": 3,
+        "col": 3,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s5",
+        "row": 4,
+        "col": 7,
+        "color": "#EC4899",
+        "name": "magenta"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 5,
+        "col": 1
+      },
+      {
+        "row": 5,
+        "col": 3
+      },
+      {
+        "row": 4,
+        "col": 5
+      },
+      {
+        "row": 1,
+        "col": 5
+      },
+      {
+        "row": 6,
+        "col": 5
+      },
+      {
+        "row": 0,
+        "col": 3
+      },
+      {
+        "row": 6,
+        "col": 7
+      },
+      {
+        "row": 0,
+        "col": 0
+      },
+      {
+        "row": 0,
+        "col": 5
+      },
+      {
+        "row": 5,
+        "col": 5
+      },
+      {
+        "row": 2,
+        "col": 0
+      },
+      {
+        "row": 6,
+        "col": 4
+      }
+    ],
+    "targets": [
+      {
+        "row": 3,
+        "col": 2,
+        "color": "#8B5CF6",
+        "name": "purple"
+      },
+      {
+        "row": 5,
+        "col": 0,
+        "color": "#8B5CF6",
+        "name": "purple"
+      },
+      {
+        "row": 6,
+        "col": 3,
+        "color": "#8B5CF6",
+        "name": "purple"
+      },
+      {
+        "row": 7,
+        "col": 0,
+        "color": "#8B5CF6",
+        "name": "purple"
+      }
+    ],
+    "solution": [
+      "s3",
+      "s1",
+      "s4",
+      "s2",
+      "s5"
+    ],
+    "par_steps": 5,
+    "hint": ""
+  },
+  {
+    "id": "lv_093",
+    "name": "黎明破晓",
+    "difficulty": 5,
+    "board": {
+      "rows": 8,
+      "cols": 8
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 5,
+        "col": 4,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s2",
+        "row": 5,
+        "col": 7,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s3",
+        "row": 0,
+        "col": 3,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s4",
+        "row": 6,
+        "col": 1,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s5",
+        "row": 5,
+        "col": 2,
+        "color": "#3B82F6",
+        "name": "blue"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 4,
+        "col": 2
+      },
+      {
+        "row": 3,
+        "col": 4
+      },
+      {
+        "row": 7,
+        "col": 1
+      },
+      {
+        "row": 6,
+        "col": 7
+      },
+      {
+        "row": 0,
+        "col": 1
+      },
+      {
+        "row": 4,
+        "col": 7
+      },
+      {
+        "row": 4,
+        "col": 6
+      },
+      {
+        "row": 0,
+        "col": 6
+      },
+      {
+        "row": 5,
+        "col": 0
+      },
+      {
+        "row": 2,
+        "col": 3
+      },
+      {
+        "row": 5,
+        "col": 1
+      },
+      {
+        "row": 3,
+        "col": 6
+      }
+    ],
+    "targets": [
+      {
+        "row": 6,
+        "col": 0,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 7,
+        "col": 0,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s3",
+      "s2",
+      "s5",
+      "s1",
+      "s4"
+    ],
+    "par_steps": 5,
+    "hint": ""
+  },
+  {
+    "id": "lv_094",
+    "name": "永恒轮回",
+    "difficulty": 5,
+    "board": {
+      "rows": 8,
+      "cols": 8
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 6,
+        "col": 7,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s2",
+        "row": 6,
+        "col": 2,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s3",
+        "row": 4,
+        "col": 1,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s4",
+        "row": 2,
+        "col": 3,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s5",
+        "row": 0,
+        "col": 1,
+        "color": "#10B981",
+        "name": "green"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 1,
+        "col": 5
+      },
+      {
+        "row": 5,
+        "col": 2
+      },
+      {
+        "row": 7,
+        "col": 5
+      },
+      {
+        "row": 0,
+        "col": 5
+      },
+      {
+        "row": 2,
+        "col": 1
+      },
+      {
+        "row": 2,
+        "col": 5
+      },
+      {
+        "row": 3,
+        "col": 5
+      },
+      {
+        "row": 1,
+        "col": 3
+      },
+      {
+        "row": 6,
+        "col": 6
+      },
+      {
+        "row": 1,
+        "col": 0
+      },
+      {
+        "row": 3,
+        "col": 6
+      },
+      {
+        "row": 6,
+        "col": 3
+      }
+    ],
+    "targets": [
+      {
+        "row": 3,
+        "col": 0,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 3,
+        "col": 1,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 3,
+        "col": 2,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 4,
+        "col": 0,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s2",
+      "s3",
+      "s4",
+      "s5"
+    ],
+    "par_steps": 5,
+    "hint": ""
+  },
+  {
+    "id": "lv_095",
+    "name": "无尽深渊",
+    "difficulty": 5,
+    "board": {
+      "rows": 8,
+      "cols": 8
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 4,
+        "col": 1,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s2",
+        "row": 7,
+        "col": 5,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s3",
+        "row": 6,
+        "col": 2,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s4",
+        "row": 3,
+        "col": 4,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s5",
+        "row": 6,
+        "col": 4,
+        "color": "#3B82F6",
+        "name": "blue"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 1,
+        "col": 4
+      },
+      {
+        "row": 3,
+        "col": 5
+      },
+      {
+        "row": 1,
+        "col": 3
+      },
+      {
+        "row": 7,
+        "col": 0
+      },
+      {
+        "row": 5,
+        "col": 5
+      },
+      {
+        "row": 6,
+        "col": 5
+      },
+      {
+        "row": 2,
+        "col": 0
+      },
+      {
+        "row": 5,
+        "col": 2
+      },
+      {
+        "row": 1,
+        "col": 1
+      },
+      {
+        "row": 4,
+        "col": 2
+      },
+      {
+        "row": 4,
+        "col": 6
+      },
+      {
+        "row": 5,
+        "col": 3
+      }
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 7,
+        "color": "#06B6D4",
+        "name": "cyan"
+      },
+      {
+        "row": 1,
+        "col": 6,
+        "color": "#06B6D4",
+        "name": "cyan"
+      },
+      {
+        "row": 2,
+        "col": 5,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 3,
+        "col": 6,
+        "color": "#06B6D4",
+        "name": "cyan"
+      }
+    ],
+    "solution": [
+      "s3",
+      "s1",
+      "s4",
+      "s5",
+      "s2"
+    ],
+    "par_steps": 5,
+    "hint": ""
+  },
+  {
+    "id": "lv_096",
+    "name": "绝对零度",
+    "difficulty": 5,
+    "board": {
+      "rows": 8,
+      "cols": 8
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 2,
+        "col": 0,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s2",
+        "row": 2,
+        "col": 6,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s3",
+        "row": 7,
+        "col": 7,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s4",
+        "row": 6,
+        "col": 5,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s5",
+        "row": 2,
+        "col": 3,
+        "color": "#10B981",
+        "name": "green"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 2,
+        "col": 4
+      },
+      {
+        "row": 6,
+        "col": 4
+      },
+      {
+        "row": 7,
+        "col": 4
+      },
+      {
+        "row": 4,
+        "col": 2
+      },
+      {
+        "row": 6,
+        "col": 1
+      },
+      {
+        "row": 7,
+        "col": 1
+      },
+      {
+        "row": 4,
+        "col": 6
+      },
+      {
+        "row": 3,
+        "col": 7
+      },
+      {
+        "row": 0,
+        "col": 4
+      },
+      {
+        "row": 0,
+        "col": 0
+      },
+      {
+        "row": 1,
+        "col": 4
+      },
+      {
+        "row": 0,
+        "col": 1
+      }
+    ],
+    "targets": [
+      {
+        "row": 4,
+        "col": 1,
+        "color": "#06B6D4",
+        "name": "cyan"
+      },
+      {
+        "row": 4,
+        "col": 3,
+        "color": "#06B6D4",
+        "name": "cyan"
+      },
+      {
+        "row": 5,
+        "col": 3,
+        "color": "#06B6D4",
+        "name": "cyan"
+      },
+      {
+        "row": 6,
+        "col": 0,
+        "color": "#06B6D4",
+        "name": "cyan"
+      }
+    ],
+    "solution": [
+      "s2",
+      "s3",
+      "s4",
+      "s5",
+      "s1"
+    ],
+    "par_steps": 5,
+    "hint": ""
+  },
+  {
+    "id": "lv_097",
+    "name": "量子纠缠",
+    "difficulty": 5,
+    "board": {
+      "rows": 8,
+      "cols": 8
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 0,
+        "col": 0,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s2",
+        "row": 5,
+        "col": 5,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s3",
+        "row": 7,
+        "col": 6,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s4",
+        "row": 4,
+        "col": 4,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s5",
+        "row": 1,
+        "col": 2,
+        "color": "#F59E0B",
+        "name": "yellow"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 7,
+        "col": 0
+      },
+      {
+        "row": 2,
+        "col": 0
+      },
+      {
+        "row": 2,
+        "col": 2
+      },
+      {
+        "row": 2,
+        "col": 3
+      },
+      {
+        "row": 4,
+        "col": 7
+      },
+      {
+        "row": 4,
+        "col": 5
+      },
+      {
+        "row": 3,
+        "col": 5
+      },
+      {
+        "row": 0,
+        "col": 4
+      },
+      {
+        "row": 6,
+        "col": 0
+      },
+      {
+        "row": 6,
+        "col": 1
+      },
+      {
+        "row": 3,
+        "col": 3
+      },
+      {
+        "row": 6,
+        "col": 4
+      }
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 5,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "row": 2,
+        "col": 7,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "row": 4,
+        "col": 3,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "row": 5,
+        "col": 0,
+        "color": "#EF4444",
+        "name": "red"
+      }
+    ],
+    "solution": [
+      "s2",
+      "s3",
+      "s5",
+      "s1",
+      "s4"
+    ],
+    "par_steps": 5,
+    "hint": ""
+  },
+  {
+    "id": "lv_098",
+    "name": "时空裂缝",
+    "difficulty": 5,
+    "board": {
+      "rows": 8,
+      "cols": 8
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 7,
+        "col": 1,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s2",
+        "row": 1,
+        "col": 3,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s3",
+        "row": 2,
+        "col": 7,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s4",
+        "row": 6,
+        "col": 6,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s5",
+        "row": 6,
+        "col": 3,
+        "color": "#10B981",
+        "name": "green"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 4,
+        "col": 1
+      },
+      {
+        "row": 7,
+        "col": 4
+      },
+      {
+        "row": 2,
+        "col": 6
+      },
+      {
+        "row": 3,
+        "col": 1
+      },
+      {
+        "row": 2,
+        "col": 1
+      },
+      {
+        "row": 7,
+        "col": 5
+      },
+      {
+        "row": 6,
+        "col": 2
+      },
+      {
+        "row": 0,
+        "col": 5
+      },
+      {
+        "row": 3,
+        "col": 6
+      },
+      {
+        "row": 5,
+        "col": 7
+      },
+      {
+        "row": 0,
+        "col": 1
+      },
+      {
+        "row": 4,
+        "col": 3
+      }
+    ],
+    "targets": [
+      {
+        "row": 2,
+        "col": 2,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "row": 4,
+        "col": 4,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "row": 6,
+        "col": 4,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "row": 6,
+        "col": 5,
+        "color": "#EF4444",
+        "name": "red"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s3",
+      "s2",
+      "s4",
+      "s5"
+    ],
+    "par_steps": 5,
+    "hint": ""
+  },
+  {
+    "id": "lv_099",
+    "name": "维度崩塌",
+    "difficulty": 5,
+    "board": {
+      "rows": 8,
+      "cols": 8
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 7,
+        "col": 6,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s2",
+        "row": 3,
+        "col": 4,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s3",
+        "row": 5,
+        "col": 7,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s4",
+        "row": 6,
+        "col": 4,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s5",
+        "row": 1,
+        "col": 0,
+        "color": "#EC4899",
+        "name": "magenta"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 7,
+        "col": 0
+      },
+      {
+        "row": 4,
+        "col": 2
+      },
+      {
+        "row": 7,
+        "col": 1
+      },
+      {
+        "row": 4,
+        "col": 0
+      },
+      {
+        "row": 6,
+        "col": 5
+      },
+      {
+        "row": 6,
+        "col": 3
+      },
+      {
+        "row": 1,
+        "col": 1
+      },
+      {
+        "row": 3,
+        "col": 5
+      },
+      {
+        "row": 2,
+        "col": 4
+      },
+      {
+        "row": 7,
+        "col": 2
+      },
+      {
+        "row": 3,
+        "col": 7
+      },
+      {
+        "row": 2,
+        "col": 5
+      }
+    ],
+    "targets": [
+      {
+        "row": 7,
+        "col": 3,
+        "color": "#F97316",
+        "name": "orange"
+      },
+      {
+        "row": 7,
+        "col": 4,
+        "color": "#F97316",
+        "name": "orange"
+      },
+      {
+        "row": 7,
+        "col": 5,
+        "color": "#F97316",
+        "name": "orange"
+      }
+    ],
+    "solution": [
+      "s2",
+      "s3",
+      "s4",
+      "s1",
+      "s5"
+    ],
+    "par_steps": 5,
+    "hint": ""
+  },
+  {
+    "id": "lv_100",
+    "name": "创世之光",
+    "difficulty": 5,
+    "board": {
+      "rows": 8,
+      "cols": 8
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 2,
+        "col": 4,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s2",
+        "row": 6,
+        "col": 0,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s3",
+        "row": 2,
+        "col": 6,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s4",
+        "row": 3,
+        "col": 0,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s5",
+        "row": 0,
+        "col": 0,
+        "color": "#F59E0B",
+        "name": "yellow"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 4,
+        "col": 4
+      },
+      {
+        "row": 3,
+        "col": 3
+      },
+      {
+        "row": 5,
+        "col": 7
+      },
+      {
+        "row": 5,
+        "col": 0
+      },
+      {
+        "row": 6,
+        "col": 6
+      },
+      {
+        "row": 7,
+        "col": 0
+      },
+      {
+        "row": 0,
+        "col": 4
+      },
+      {
+        "row": 5,
+        "col": 1
+      },
+      {
+        "row": 5,
+        "col": 5
+      },
+      {
+        "row": 3,
+        "col": 5
+      },
+      {
+        "row": 4,
+        "col": 5
+      },
+      {
+        "row": 2,
+        "col": 5
+      }
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 1,
+        "color": "#F97316",
+        "name": "orange"
+      },
+      {
+        "row": 0,
+        "col": 2,
+        "color": "#F97316",
+        "name": "orange"
+      },
+      {
+        "row": 1,
+        "col": 1,
+        "color": "#F97316",
+        "name": "orange"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s3",
+      "s4",
+      "s2",
+      "s5"
+    ],
+    "par_steps": 5,
+    "hint": ""
+  },
+  {
+    "id": "lv_101",
+    "name": "终极奥秘",
+    "difficulty": 5,
+    "board": {
+      "rows": 8,
+      "cols": 8
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 6,
+        "col": 4,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s2",
+        "row": 1,
+        "col": 7,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s3",
+        "row": 3,
+        "col": 2,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s4",
+        "row": 1,
+        "col": 5,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s5",
+        "row": 6,
+        "col": 2,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s6",
+        "row": 5,
+        "col": 3,
+        "color": "#3B82F6",
+        "name": "blue"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 7,
+        "col": 1
+      },
+      {
+        "row": 2,
+        "col": 6
+      },
+      {
+        "row": 0,
+        "col": 4
+      },
+      {
+        "row": 0,
+        "col": 2
+      },
+      {
+        "row": 4,
+        "col": 2
+      },
+      {
+        "row": 4,
+        "col": 4
+      },
+      {
+        "row": 0,
+        "col": 1
+      },
+      {
+        "row": 6,
+        "col": 7
+      },
+      {
+        "row": 2,
+        "col": 4
+      },
+      {
+        "row": 2,
+        "col": 5
+      },
+      {
+        "row": 4,
+        "col": 5
+      },
+      {
+        "row": 4,
+        "col": 0
+      },
+      {
+        "row": 1,
+        "col": 6
+      },
+      {
+        "row": 0,
+        "col": 6
+      },
+      {
+        "row": 6,
+        "col": 1
+      },
+      {
+        "row": 2,
+        "col": 2
+      }
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 0,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 4,
+        "col": 1,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 5,
+        "col": 0,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 6,
+        "col": 0,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s4",
+      "s2",
+      "s6",
+      "s3",
+      "s5"
+    ],
+    "par_steps": 6,
+    "hint": ""
+  },
+  {
+    "id": "lv_102",
+    "name": "至暗时刻",
+    "difficulty": 5,
+    "board": {
+      "rows": 8,
+      "cols": 8
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 2,
+        "col": 6,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s2",
+        "row": 5,
+        "col": 5,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s3",
+        "row": 1,
+        "col": 1,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s4",
+        "row": 7,
+        "col": 1,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s5",
+        "row": 2,
+        "col": 3,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s6",
+        "row": 6,
+        "col": 2,
+        "color": "#3B82F6",
+        "name": "blue"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 1,
+        "col": 5
+      },
+      {
+        "row": 3,
+        "col": 1
+      },
+      {
+        "row": 2,
+        "col": 1
+      },
+      {
+        "row": 3,
+        "col": 3
+      },
+      {
+        "row": 7,
+        "col": 5
+      },
+      {
+        "row": 5,
+        "col": 7
+      },
+      {
+        "row": 3,
+        "col": 6
+      },
+      {
+        "row": 1,
+        "col": 4
+      },
+      {
+        "row": 1,
+        "col": 7
+      },
+      {
+        "row": 5,
+        "col": 0
+      },
+      {
+        "row": 4,
+        "col": 0
+      },
+      {
+        "row": 3,
+        "col": 7
+      },
+      {
+        "row": 5,
+        "col": 2
+      },
+      {
+        "row": 2,
+        "col": 5
+      },
+      {
+        "row": 0,
+        "col": 7
+      },
+      {
+        "row": 7,
+        "col": 6
+      }
+    ],
+    "targets": [
+      {
+        "row": 1,
+        "col": 2,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 2,
+        "col": 0,
+        "color": "#FB7185",
+        "name": "coral"
+      },
+      {
+        "row": 3,
+        "col": 2,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 3,
+        "col": 4,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s5",
+      "s3",
+      "s6",
+      "s2",
+      "s4"
+    ],
+    "par_steps": 6,
+    "hint": ""
+  },
+  {
+    "id": "lv_103",
+    "name": "黎明破晓",
+    "difficulty": 5,
+    "board": {
+      "rows": 8,
+      "cols": 8
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 5,
+        "col": 4,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s2",
+        "row": 6,
+        "col": 6,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s3",
+        "row": 0,
+        "col": 2,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s4",
+        "row": 7,
+        "col": 0,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s5",
+        "row": 3,
+        "col": 0,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s6",
+        "row": 1,
+        "col": 5,
+        "color": "#EC4899",
+        "name": "magenta"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 4,
+        "col": 6
+      },
+      {
+        "row": 6,
+        "col": 0
+      },
+      {
+        "row": 5,
+        "col": 5
+      },
+      {
+        "row": 3,
+        "col": 1
+      },
+      {
+        "row": 1,
+        "col": 4
+      },
+      {
+        "row": 7,
+        "col": 5
+      },
+      {
+        "row": 0,
+        "col": 3
+      },
+      {
+        "row": 4,
+        "col": 4
+      },
+      {
+        "row": 3,
+        "col": 2
+      },
+      {
+        "row": 1,
+        "col": 0
+      },
+      {
+        "row": 7,
+        "col": 3
+      },
+      {
+        "row": 1,
+        "col": 1
+      },
+      {
+        "row": 0,
+        "col": 7
+      },
+      {
+        "row": 4,
+        "col": 1
+      },
+      {
+        "row": 0,
+        "col": 6
+      },
+      {
+        "row": 7,
+        "col": 6
+      }
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 4,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 5,
+        "col": 0,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "row": 5,
+        "col": 1,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "row": 5,
+        "col": 2,
+        "color": "#EF4444",
+        "name": "red"
+      }
+    ],
+    "solution": [
+      "s3",
+      "s5",
+      "s1",
+      "s2",
+      "s4",
+      "s6"
+    ],
+    "par_steps": 6,
+    "hint": ""
+  },
+  {
+    "id": "lv_104",
+    "name": "永恒轮回",
+    "difficulty": 5,
+    "board": {
+      "rows": 8,
+      "cols": 8
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 0,
+        "col": 0,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s2",
+        "row": 5,
+        "col": 1,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s3",
+        "row": 2,
+        "col": 7,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s4",
+        "row": 3,
+        "col": 1,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s5",
+        "row": 2,
+        "col": 0,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s6",
+        "row": 5,
+        "col": 6,
+        "color": "#F59E0B",
+        "name": "yellow"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 4,
+        "col": 0
+      },
+      {
+        "row": 2,
+        "col": 2
+      },
+      {
+        "row": 3,
+        "col": 4
+      },
+      {
+        "row": 6,
+        "col": 0
+      },
+      {
+        "row": 4,
+        "col": 4
+      },
+      {
+        "row": 4,
+        "col": 3
+      },
+      {
+        "row": 0,
+        "col": 6
+      },
+      {
+        "row": 3,
+        "col": 2
+      },
+      {
+        "row": 6,
+        "col": 2
+      },
+      {
+        "row": 5,
+        "col": 5
+      },
+      {
+        "row": 7,
+        "col": 5
+      },
+      {
+        "row": 1,
+        "col": 4
+      },
+      {
+        "row": 7,
+        "col": 7
+      },
+      {
+        "row": 1,
+        "col": 5
+      },
+      {
+        "row": 4,
+        "col": 2
+      },
+      {
+        "row": 7,
+        "col": 0
+      }
+    ],
+    "targets": [
+      {
+        "row": 1,
+        "col": 0,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 2,
+        "col": 1,
+        "color": "#06B6D4",
+        "name": "cyan"
+      },
+      {
+        "row": 3,
+        "col": 7,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 5,
+        "col": 3,
+        "color": "#F97316",
+        "name": "orange"
+      }
+    ],
+    "solution": [
+      "s2",
+      "s4",
+      "s5",
+      "s1",
+      "s3",
+      "s6"
+    ],
+    "par_steps": 6,
+    "hint": ""
+  },
+  {
+    "id": "lv_105",
+    "name": "无尽深渊",
+    "difficulty": 5,
+    "board": {
+      "rows": 8,
+      "cols": 8
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 5,
+        "col": 3,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s2",
+        "row": 1,
+        "col": 2,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s3",
+        "row": 0,
+        "col": 4,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s4",
+        "row": 6,
+        "col": 5,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s5",
+        "row": 7,
+        "col": 3,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s6",
+        "row": 4,
+        "col": 6,
+        "color": "#EF4444",
+        "name": "red"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 7,
+        "col": 6
+      },
+      {
+        "row": 3,
+        "col": 4
+      },
+      {
+        "row": 2,
+        "col": 2
+      },
+      {
+        "row": 4,
+        "col": 5
+      },
+      {
+        "row": 4,
+        "col": 3
+      },
+      {
+        "row": 1,
+        "col": 4
+      },
+      {
+        "row": 7,
+        "col": 0
+      },
+      {
+        "row": 7,
+        "col": 2
+      },
+      {
+        "row": 3,
+        "col": 7
+      },
+      {
+        "row": 3,
+        "col": 0
+      },
+      {
+        "row": 0,
+        "col": 6
+      },
+      {
+        "row": 5,
+        "col": 6
+      },
+      {
+        "row": 1,
+        "col": 5
+      },
+      {
+        "row": 5,
+        "col": 7
+      },
+      {
+        "row": 4,
+        "col": 2
+      },
+      {
+        "row": 1,
+        "col": 6
+      }
+    ],
+    "targets": [
+      {
+        "row": 4,
+        "col": 4,
+        "color": "#8B5CF6",
+        "name": "purple"
+      },
+      {
+        "row": 5,
+        "col": 4,
+        "color": "#8B5CF6",
+        "name": "purple"
+      },
+      {
+        "row": 5,
+        "col": 5,
+        "color": "#8B5CF6",
+        "name": "purple"
+      },
+      {
+        "row": 6,
+        "col": 4,
+        "color": "#8B5CF6",
+        "name": "purple"
+      }
+    ],
+    "solution": [
+      "s3",
+      "s2",
+      "s5",
+      "s1",
+      "s4",
+      "s6"
+    ],
+    "par_steps": 6,
+    "hint": ""
+  },
+  {
+    "id": "lv_106",
+    "name": "绝对零度",
+    "difficulty": 5,
+    "board": {
+      "rows": 8,
+      "cols": 8
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 5,
+        "col": 5,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s2",
+        "row": 5,
+        "col": 0,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s3",
+        "row": 1,
+        "col": 7,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s4",
+        "row": 7,
+        "col": 2,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s5",
+        "row": 6,
+        "col": 1,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s6",
+        "row": 4,
+        "col": 1,
+        "color": "#F59E0B",
+        "name": "yellow"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 7,
+        "col": 3
+      },
+      {
+        "row": 4,
+        "col": 2
+      },
+      {
+        "row": 4,
+        "col": 3
+      },
+      {
+        "row": 7,
+        "col": 6
+      },
+      {
+        "row": 4,
+        "col": 5
+      },
+      {
+        "row": 7,
+        "col": 7
+      },
+      {
+        "row": 7,
+        "col": 4
+      },
+      {
+        "row": 2,
+        "col": 6
+      },
+      {
+        "row": 6,
+        "col": 3
+      },
+      {
+        "row": 0,
+        "col": 4
+      },
+      {
+        "row": 1,
+        "col": 4
+      },
+      {
+        "row": 0,
+        "col": 5
+      },
+      {
+        "row": 2,
+        "col": 2
+      },
+      {
+        "row": 5,
+        "col": 2
+      },
+      {
+        "row": 7,
+        "col": 0
+      },
+      {
+        "row": 0,
+        "col": 7
+      }
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 1,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "row": 0,
+        "col": 3,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "row": 1,
+        "col": 2,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "row": 2,
+        "col": 0,
+        "color": "#EF4444",
+        "name": "red"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s2",
+      "s3",
+      "s4",
+      "s5",
+      "s6"
+    ],
+    "par_steps": 6,
+    "hint": ""
+  },
+  {
+    "id": "lv_107",
+    "name": "量子纠缠",
+    "difficulty": 5,
+    "board": {
+      "rows": 8,
+      "cols": 8
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 3,
+        "col": 1,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s2",
+        "row": 0,
+        "col": 2,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s3",
+        "row": 2,
+        "col": 4,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s4",
+        "row": 6,
+        "col": 1,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s5",
+        "row": 6,
+        "col": 3,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s6",
+        "row": 1,
+        "col": 6,
+        "color": "#EC4899",
+        "name": "magenta"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 6,
+        "col": 0
+      },
+      {
+        "row": 5,
+        "col": 0
+      },
+      {
+        "row": 1,
+        "col": 4
+      },
+      {
+        "row": 2,
+        "col": 7
+      },
+      {
+        "row": 5,
+        "col": 6
+      },
+      {
+        "row": 2,
+        "col": 6
+      },
+      {
+        "row": 1,
+        "col": 3
+      },
+      {
+        "row": 0,
+        "col": 1
+      },
+      {
+        "row": 4,
+        "col": 4
+      },
+      {
+        "row": 3,
+        "col": 5
+      },
+      {
+        "row": 0,
+        "col": 7
+      },
+      {
+        "row": 3,
+        "col": 3
+      },
+      {
+        "row": 7,
+        "col": 4
+      },
+      {
+        "row": 5,
+        "col": 3
+      },
+      {
+        "row": 0,
+        "col": 0
+      },
+      {
+        "row": 4,
+        "col": 1
+      }
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 4,
+        "color": "#06B6D4",
+        "name": "cyan"
+      },
+      {
+        "row": 0,
+        "col": 6,
+        "color": "#06B6D4",
+        "name": "cyan"
+      },
+      {
+        "row": 5,
+        "col": 4,
+        "color": "#F97316",
+        "name": "orange"
+      },
+      {
+        "row": 7,
+        "col": 3,
+        "color": "#F97316",
+        "name": "orange"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s2",
+      "s3",
+      "s4",
+      "s5",
+      "s6"
+    ],
+    "par_steps": 6,
+    "hint": ""
+  },
+  {
+    "id": "lv_108",
+    "name": "时空裂缝",
+    "difficulty": 5,
+    "board": {
+      "rows": 8,
+      "cols": 8
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 7,
+        "col": 7,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s2",
+        "row": 2,
+        "col": 2,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s3",
+        "row": 0,
+        "col": 4,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s4",
+        "row": 4,
+        "col": 3,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s5",
+        "row": 5,
+        "col": 7,
+        "color": "#10B981",
+        "name": "green"
+      },
+      {
+        "id": "s6",
+        "row": 0,
+        "col": 7,
+        "color": "#EF4444",
+        "name": "red"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 4,
+        "col": 0
+      },
+      {
+        "row": 4,
+        "col": 6
+      },
+      {
+        "row": 4,
+        "col": 5
+      },
+      {
+        "row": 2,
+        "col": 1
+      },
+      {
+        "row": 3,
+        "col": 2
+      },
+      {
+        "row": 6,
+        "col": 4
+      },
+      {
+        "row": 6,
+        "col": 3
+      },
+      {
+        "row": 0,
+        "col": 0
+      },
+      {
+        "row": 2,
+        "col": 4
+      },
+      {
+        "row": 6,
+        "col": 5
+      },
+      {
+        "row": 6,
+        "col": 0
+      },
+      {
+        "row": 1,
+        "col": 4
+      },
+      {
+        "row": 5,
+        "col": 6
+      },
+      {
+        "row": 1,
+        "col": 2
+      },
+      {
+        "row": 3,
+        "col": 6
+      },
+      {
+        "row": 7,
+        "col": 5
+      }
+    ],
+    "targets": [
+      {
+        "row": 4,
+        "col": 4,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 5,
+        "col": 1,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 6,
+        "col": 6,
+        "color": "#06B6D4",
+        "name": "cyan"
+      },
+      {
+        "row": 7,
+        "col": 1,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s2",
+      "s3",
+      "s4",
+      "s5",
+      "s1",
+      "s6"
+    ],
+    "par_steps": 6,
+    "hint": ""
+  },
+  {
+    "id": "lv_109",
+    "name": "维度崩塌",
+    "difficulty": 5,
+    "board": {
+      "rows": 8,
+      "cols": 8
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 1,
+        "col": 4,
+        "color": "#EF4444",
+        "name": "red"
+      },
+      {
+        "id": "s2",
+        "row": 1,
+        "col": 7,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s3",
+        "row": 0,
+        "col": 1,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s4",
+        "row": 4,
+        "col": 2,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s5",
+        "row": 4,
+        "col": 4,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s6",
+        "row": 0,
+        "col": 3,
+        "color": "#F59E0B",
+        "name": "yellow"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 5,
+        "col": 3
+      },
+      {
+        "row": 2,
+        "col": 2
+      },
+      {
+        "row": 3,
+        "col": 2
+      },
+      {
+        "row": 0,
+        "col": 4
+      },
+      {
+        "row": 1,
+        "col": 3
+      },
+      {
+        "row": 5,
+        "col": 4
+      },
+      {
+        "row": 1,
+        "col": 6
+      },
+      {
+        "row": 2,
+        "col": 6
+      },
+      {
+        "row": 2,
+        "col": 1
+      },
+      {
+        "row": 6,
+        "col": 6
+      },
+      {
+        "row": 7,
+        "col": 1
+      },
+      {
+        "row": 0,
+        "col": 6
+      },
+      {
+        "row": 5,
+        "col": 1
+      },
+      {
+        "row": 4,
+        "col": 0
+      },
+      {
+        "row": 2,
+        "col": 5
+      },
+      {
+        "row": 4,
+        "col": 7
+      }
+    ],
+    "targets": [
+      {
+        "row": 4,
+        "col": 3,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 7,
+        "col": 3,
+        "color": "#FB7185",
+        "name": "coral"
+      },
+      {
+        "row": 7,
+        "col": 6,
+        "color": "#FB7185",
+        "name": "coral"
+      },
+      {
+        "row": 7,
+        "col": 7,
+        "color": "#FB7185",
+        "name": "coral"
+      }
+    ],
+    "solution": [
+      "s1",
+      "s2",
+      "s3",
+      "s5",
+      "s4",
+      "s6"
+    ],
+    "par_steps": 6,
+    "hint": ""
+  },
+  {
+    "id": "lv_110",
+    "name": "创世之光",
+    "difficulty": 5,
+    "board": {
+      "rows": 8,
+      "cols": 8
+    },
+    "sources": [
+      {
+        "id": "s1",
+        "row": 3,
+        "col": 3,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s2",
+        "row": 7,
+        "col": 3,
+        "color": "#F59E0B",
+        "name": "yellow"
+      },
+      {
+        "id": "s3",
+        "row": 2,
+        "col": 0,
+        "color": "#3B82F6",
+        "name": "blue"
+      },
+      {
+        "id": "s4",
+        "row": 7,
+        "col": 0,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s5",
+        "row": 4,
+        "col": 2,
+        "color": "#EC4899",
+        "name": "magenta"
+      },
+      {
+        "id": "s6",
+        "row": 3,
+        "col": 7,
+        "color": "#10B981",
+        "name": "green"
+      }
+    ],
+    "obstacles": [
+      {
+        "row": 5,
+        "col": 5
+      },
+      {
+        "row": 1,
+        "col": 1
+      },
+      {
+        "row": 0,
+        "col": 1
+      },
+      {
+        "row": 5,
+        "col": 1
+      },
+      {
+        "row": 0,
+        "col": 0
+      },
+      {
+        "row": 1,
+        "col": 6
+      },
+      {
+        "row": 0,
+        "col": 2
+      },
+      {
+        "row": 7,
+        "col": 1
+      },
+      {
+        "row": 5,
+        "col": 6
+      },
+      {
+        "row": 7,
+        "col": 7
+      },
+      {
+        "row": 3,
+        "col": 6
+      },
+      {
+        "row": 0,
+        "col": 4
+      },
+      {
+        "row": 1,
+        "col": 2
+      },
+      {
+        "row": 7,
+        "col": 2
+      },
+      {
+        "row": 0,
+        "col": 7
+      },
+      {
+        "row": 5,
+        "col": 2
+      }
+    ],
+    "targets": [
+      {
+        "row": 0,
+        "col": 5,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 3,
+        "col": 5,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 4,
+        "col": 5,
+        "color": "#78716C",
+        "name": "gray-brown"
+      },
+      {
+        "row": 4,
+        "col": 6,
+        "color": "#78716C",
+        "name": "gray-brown"
+      }
+    ],
+    "solution": [
+      "s3",
+      "s1",
+      "s2",
+      "s4",
+      "s5",
+      "s6"
+    ],
+    "par_steps": 6,
+    "hint": ""
+  }
+]

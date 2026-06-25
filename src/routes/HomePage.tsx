@@ -9,8 +9,13 @@ export function HomePage() {
       </p>
       <div style={{ marginTop: 32, display: 'flex', gap: 16, justifyContent: 'center' }}>
         <Link to="/levels">
-          <button style={{ padding: '12px 32px', borderRadius: 8, background: 'var(--accent)', color: '#fff', fontSize: 16 }}>
+          <button style={{ padding: '12px 32px', borderRadius: 8, background: 'var(--accent)', color: '#fff', fontSize: 16, border: 'none', cursor: 'pointer' }}>
             开始游戏
+          </button>
+        </Link>
+        <Link to="/settings">
+          <button style={{ padding: '12px 32px', borderRadius: 8, background: 'var(--card)', color: 'var(--text)', fontSize: 16, border: '1px solid var(--border)', cursor: 'pointer' }}>
+            ⚙ 设置
           </button>
         </Link>
       </div>

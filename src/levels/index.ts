@@ -1,11 +1,12 @@
 import tutorialLevels from './tutorial.json';
 import basicLevels from './basic.json';
+import generatedLevels from './generated.json';
 import type { LevelData } from '../engine/types';
 
 const levelCache = new Map<string, LevelData>();
 
 function loadBuiltinLevels(): void {
-  for (const level of [...tutorialLevels, ...basicLevels]) {
+  for (const level of [...tutorialLevels, ...basicLevels, ...generatedLevels]) {
     levelCache.set(level.id, level as unknown as LevelData);
   }
 }

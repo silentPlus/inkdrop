@@ -1,9 +1,11 @@
-import { useEffect, useCallback } from 'react';
+import { useEffect, useCallback, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useGameStore } from '@/store/gameStore';
 import { useProgressStore } from '@/store/progressStore';
 import { Board } from '@/components/Board';
 import { Toolbar } from '@/components/Toolbar';
+import { WinAnimation } from '@/components/WinAnimation';
+import { adManager } from '@/ads/AdManager';
 
 export function GamePage() {
   const { levelId } = useParams<{ levelId: string }>();
@@ -14,8 +16,36 @@ export function GamePage() {
   const stepCount = useGameStore((s) => s.stepCount);
   const loadLevel = useGameStore((s) => s.loadLevel);
   const onAnimationDone = useGameStore((s) => s.onAnimationDone);
+  const undo = useGameStore((s) => s.undo);
+  const reset = useGameStore((s) => s.reset);
 
   const completeLevel = useProgressStore((s) => s.completeLevel);
+  const [showWinEffect, setShowWinEffect] = useState(false);
+
+  // 通关时播放绽放动画
+  useEffect(() => {
+    if (phase === 'win') {
+      setShowWinEffect(true);
+    } else {
+      setShowWinEffect(false);
+    }
+  }, [phase]);
+
+  // 键盘快捷键
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
+      if (e.key === 'z' || e.key === 'Z') {
+        e.preventDefault();
+        undo();
+      } else if (e.key === 'r' || e.key === 'R') {
+        e.preventDefault();
+        reset();
+      }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [undo, reset]);
 
   // 加载关卡
   useEffect(() => {
@@ -35,15 +65,16 @@ export function GamePage() {
     }
   }, [phase, onAnimationDone]);
 
-  // 通关时记录进度
-  const handleNextLevel = useCallback(() => {
+  // 通关时记录进度 + 插屏广告
+  const handleNextLevel = useCallback(async () => {
     if (board) {
       completeLevel(board.levelId, board.getStars());
+      const num = parseInt(board.levelId.replace('lv_', ''), 10);
+      await adManager.showLevelInterstitial(num);
     }
-    // 跳转到下一关
     if (levelId) {
       const num = parseInt(levelId.replace('lv_', ''), 10);
-      if (num < 30) {
+      if (num < 110) {
         navigate(`/game/lv_${String(num + 1).padStart(3, '0')}`, { replace: true });
       } else {
         navigate('/levels', { replace: true });
@@ -115,6 +146,11 @@ export function GamePage() {
 
       {/* 工具栏 */}
       <Toolbar />
+
+      {/* 通关绽放动画 */}
+      {showWinEffect && (
+        <WinAnimation onDone={() => setShowWinEffect(false)} width={260} height={260} />
+      )}
 
       {/* 通关弹窗 */}
       {phase === 'win' && (

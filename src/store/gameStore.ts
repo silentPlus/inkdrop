@@ -7,6 +7,7 @@ import { flood } from '../engine/InkFlooder';
 import type { FloodAffected, MixEvent } from '../engine/InkFlooder';
 import type { LevelData } from '../engine/types';
 import { loadLevelById } from '../levels';
+import { analytics } from '../utils/analytics';
 
 export type GamePhase = 'idle' | 'loading' | 'playing' | 'animating' | 'win' | 'lose';
 
@@ -49,6 +50,7 @@ export const useGameStore = create<GameState>((set, get) => ({
       stepCount: 0,
       lastFlood: null,
     });
+    analytics.levelStart(id);
   },
 
   clickSource: (sourceId: string) => {
@@ -79,8 +81,10 @@ export const useGameStore = create<GameState>((set, get) => ({
 
     if (board.isComplete()) {
       set({ phase: 'win' });
+      analytics.levelComplete(board.levelId, board.stepCount, board.getStars());
     } else if (board.isDeadlocked()) {
       set({ phase: 'lose' });
+      analytics.levelFail(board.levelId);
     } else {
       set({ phase: 'playing' });
     }
@@ -97,6 +101,7 @@ export const useGameStore = create<GameState>((set, get) => ({
         phase: 'playing',
         lastFlood: null,
       });
+      analytics.undoUsed(board.levelId);
     }
   },
 
@@ -110,5 +115,6 @@ export const useGameStore = create<GameState>((set, get) => ({
       stepCount: 0,
       lastFlood: null,
     });
+    analytics.retryUsed(board.levelId);
   },
 }));

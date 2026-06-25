@@ -315,6 +315,43 @@ export class CanvasRenderer {
     ctx.fillRect(x + 1, y + 1, size - 2, size - 2);
   }
 
+  /* ====================== 水彩纹理缓存 ====================== */
+  private textureCache: Map<string, HTMLCanvasElement> = new Map();
+  private texturesGenerated = false;
+
+  /** 预生成水彩噪点纹理（离屏 Canvas） */
+  private generateTextures(_size: number): void {
+    if (this.texturesGenerated) return;
+    this.texturesGenerated = true;
+
+    const dpr = window.devicePixelRatio || 1;
+    const texSize = 64;
+
+    for (let t = 0; t < 8; t++) {
+      const offscreen = document.createElement('canvas');
+      offscreen.width = texSize * dpr;
+      offscreen.height = texSize * dpr;
+      const tctx = offscreen.getContext('2d')!;
+      tctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+      // 不规则透明斑点模拟水彩纹理
+      const seed = t * 137;
+      for (let i = 0; i < 30; i++) {
+        const cx = ((seed + i * 73) % 100) / 100 * texSize;
+        const cy = ((seed + i * 47) % 100) / 100 * texSize;
+        const r = 2 + ((seed + i * 31) % 8);
+        const alpha = 0.02 + ((seed + i * 19) % 10) / 100;
+
+        tctx.fillStyle = `rgba(255,255,255,${alpha})`;
+        tctx.beginPath();
+        tctx.arc(cx, cy, r, 0, Math.PI * 2);
+        tctx.fill();
+      }
+
+      this.textureCache.set(`tex_${t}`, offscreen);
+    }
+  }
+
   private drawFilledCell(
     ctx: CanvasRenderingContext2D,
     x: number,
@@ -323,22 +360,32 @@ export class CanvasRenderer {
     color: string,
   ): void {
     const pad = 2;
+
+    // 底色
     ctx.fillStyle = color;
     ctx.fillRect(x + pad, y + pad, size - pad * 2, size - pad * 2);
 
-    // 水彩噪点叠加（轻量版：随机透明度斑点）
-    ctx.save();
-    ctx.globalAlpha = 0.1;
-    ctx.fillStyle = 'white';
-    const seed = (x * 31 + y * 17) % 100;
-    for (let i = 0; i < 6; i++) {
-      const dx = ((seed + i * 13) % 10) / 10;
-      const dy = ((seed + i * 7 + 3) % 10) / 10;
-      const r = 1 + ((seed + i) % 4);
-      ctx.beginPath();
-      ctx.arc(x + pad + dx * (size - pad * 2), y + pad + dy * (size - pad * 2), r, 0, Math.PI * 2);
-      ctx.fill();
+    // 水彩纹理叠加
+    this.generateTextures(size);
+    const tex = this.textureCache.get(`tex_${Math.abs((x * 31 + y * 17)) % 8}`);
+    if (tex) {
+      ctx.save();
+      ctx.globalCompositeOperation = 'overlay';
+      ctx.globalAlpha = 0.35;
+      ctx.drawImage(tex, x + pad, y + pad, size - pad * 2, size - pad * 2);
+      ctx.restore();
     }
+
+    // 边缘加深（模拟水彩晕染）
+    ctx.save();
+    ctx.globalAlpha = 0.12;
+    ctx.fillStyle = 'rgba(0,0,0,0.15)';
+    const edge = Math.max(1, size * 0.06);
+    // 四边
+    ctx.fillRect(x + pad, y + pad, size - pad * 2, edge);                      // top
+    ctx.fillRect(x + pad, y + size - pad - edge, size - pad * 2, edge);        // bottom
+    ctx.fillRect(x + pad, y + pad, edge, size - pad * 2);                      // left
+    ctx.fillRect(x + size - pad - edge, y + pad, edge, size - pad * 2);        // right
     ctx.restore();
   }
 
