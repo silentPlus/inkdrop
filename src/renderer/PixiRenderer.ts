@@ -96,6 +96,7 @@ export class PixiRenderer {
     this.offsetY = Math.floor((h - bh) / 2);
 
     this.boardContainer.removeChildren();
+    this.previewContainer.removeChildren();
     this.sourcesContainer.removeChildren();
     this.targetsContainer.removeChildren();
     this.sourceSprites.clear();
@@ -136,14 +137,12 @@ export class PixiRenderer {
     const cs = this.cellSize;
     const ox = this.offsetX;
     const oy = this.offsetY;
-    const pad = 2;
-
     for (let r = 0; r < this.board.rows; r++) {
       for (let c = 0; c < this.board.cols; c++) {
         const cell = this.board.cells[r][c];
-        const x = ox + c * cs + pad;
-        const y = oy + r * cs + pad;
-        const s = cs - pad * 2;
+        const x = ox + c * cs;
+        const y = oy + r * cs;
+        const s = cs;
 
         switch (cell.type) {
           case CellType.Filled: {

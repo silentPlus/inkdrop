@@ -96,12 +96,14 @@ export function GamePage() {
     if (levelId) {
       const num = parseInt(levelId.replace('lv_', ''), 10);
       if (num < 110) {
-        navigate(`/game/lv_${String(num + 1).padStart(3, '0')}`, { replace: true });
+        const nextId = `lv_${String(num + 1).padStart(3, '0')}`;
+        loadLevel(nextId);
+        navigate(`/game/${nextId}`, { replace: true });
       } else {
         navigate('/levels', { replace: true });
       }
     }
-  }, [board, levelId, completeLevel, navigate]);
+  }, [board, levelId, completeLevel, navigate, loadLevel, currentLevel, addGalleryItem]);
 
   const handleRetry = useCallback(() => {
     if (levelId) {

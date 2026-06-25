@@ -197,7 +197,8 @@ export function previewFlood(
           newColor: mixed.hex,
           mixedWith: color,
         });
-        continue;
+        // 与 flood() 保持一致：遇到未激活源点立即终止预览
+        return { cells, mixes };
       }
     }
   }

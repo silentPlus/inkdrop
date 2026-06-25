@@ -62,8 +62,7 @@ export const useGameStore = create<GameState>((set, get) => ({
 
     set({ phase: 'animating' });
 
-    // 保存快照 + 激活
-    board.saveSnapshot();
+    // activateSource 内部已保存快照
     board.activateSource(sourceId);
 
     // 执行扩散
