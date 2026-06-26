@@ -364,26 +364,26 @@
       {
         "row": 3,
         "col": 1,
-        "color": "#FB7185",
-        "name": "coral"
+        "color": "#EC4899",
+        "name": "magenta"
       },
       {
         "row": 4,
         "col": 0,
-        "color": "#FB7185",
-        "name": "coral"
+        "color": "#EC4899",
+        "name": "magenta"
       },
       {
         "row": 4,
         "col": 1,
-        "color": "#FB7185",
-        "name": "coral"
+        "color": "#EC4899",
+        "name": "magenta"
       },
       {
         "row": 4,
         "col": 2,
-        "color": "#FB7185",
-        "name": "coral"
+        "color": "#EC4899",
+        "name": "magenta"
       }
     ],
     "solution": [
@@ -443,26 +443,26 @@
       {
         "row": 0,
         "col": 0,
-        "color": "#FB7185",
-        "name": "coral"
+        "color": "#78716C",
+        "name": "gray-brown"
       },
       {
         "row": 0,
         "col": 1,
-        "color": "#FB7185",
-        "name": "coral"
+        "color": "#78716C",
+        "name": "gray-brown"
       },
       {
         "row": 1,
         "col": 2,
-        "color": "#FB7185",
-        "name": "coral"
+        "color": "#78716C",
+        "name": "gray-brown"
       },
       {
         "row": 2,
         "col": 2,
-        "color": "#FB7185",
-        "name": "coral"
+        "color": "#78716C",
+        "name": "gray-brown"
       }
     ],
     "solution": [
@@ -923,20 +923,20 @@
       {
         "row": 1,
         "col": 0,
-        "color": "#78716C",
-        "name": "gray-brown"
+        "color": "#10B981",
+        "name": "green"
       },
       {
         "row": 1,
         "col": 1,
-        "color": "#78716C",
-        "name": "gray-brown"
+        "color": "#10B981",
+        "name": "green"
       },
       {
         "row": 2,
         "col": 0,
-        "color": "#78716C",
-        "name": "gray-brown"
+        "color": "#10B981",
+        "name": "green"
       }
     ],
     "solution": [
@@ -1075,26 +1075,26 @@
       {
         "row": 1,
         "col": 2,
-        "color": "#78716C",
-        "name": "gray-brown"
+        "color": "#84CC16",
+        "name": "yellow-green"
       },
       {
         "row": 3,
         "col": 2,
-        "color": "#78716C",
-        "name": "gray-brown"
+        "color": "#84CC16",
+        "name": "yellow-green"
       },
       {
         "row": 3,
         "col": 4,
-        "color": "#F97316",
-        "name": "orange"
+        "color": "#F59E0B",
+        "name": "yellow"
       },
       {
         "row": 4,
         "col": 3,
-        "color": "#F97316",
-        "name": "orange"
+        "color": "#F59E0B",
+        "name": "yellow"
       }
     ],
     "solution": [
@@ -1670,26 +1670,26 @@
       {
         "row": 2,
         "col": 0,
-        "color": "#78716C",
-        "name": "gray-brown"
+        "color": "#84CC16",
+        "name": "yellow-green"
       },
       {
         "row": 2,
         "col": 1,
-        "color": "#78716C",
-        "name": "gray-brown"
+        "color": "#84CC16",
+        "name": "yellow-green"
       },
       {
         "row": 3,
         "col": 0,
-        "color": "#78716C",
-        "name": "gray-brown"
+        "color": "#84CC16",
+        "name": "yellow-green"
       },
       {
         "row": 3,
         "col": 1,
-        "color": "#78716C",
-        "name": "gray-brown"
+        "color": "#84CC16",
+        "name": "yellow-green"
       }
     ],
     "solution": [
@@ -2531,14 +2531,14 @@
       {
         "row": 3,
         "col": 4,
-        "color": "#78716C",
-        "name": "gray-brown"
+        "color": "#8B5CF6",
+        "name": "purple"
       },
       {
         "row": 4,
         "col": 2,
-        "color": "#78716C",
-        "name": "gray-brown"
+        "color": "#8B5CF6",
+        "name": "purple"
       }
     ],
     "solution": [
@@ -4048,20 +4048,20 @@
       {
         "row": 0,
         "col": 2,
-        "color": "#78716C",
-        "name": "gray-brown"
+        "color": "#10B981",
+        "name": "green"
       },
       {
         "row": 0,
         "col": 3,
-        "color": "#78716C",
-        "name": "gray-brown"
+        "color": "#10B981",
+        "name": "green"
       },
       {
         "row": 1,
         "col": 3,
-        "color": "#78716C",
-        "name": "gray-brown"
+        "color": "#10B981",
+        "name": "green"
       }
     ],
     "solution": [
@@ -5404,8 +5404,8 @@
       {
         "row": 0,
         "col": 2,
-        "color": "#78716C",
-        "name": "gray-brown"
+        "color": "#EC4899",
+        "name": "magenta"
       },
       {
         "row": 1,
@@ -5511,14 +5511,14 @@
       {
         "row": 0,
         "col": 0,
-        "color": "#78716C",
-        "name": "gray-brown"
+        "color": "#84CC16",
+        "name": "yellow-green"
       },
       {
         "row": 1,
         "col": 2,
-        "color": "#78716C",
-        "name": "gray-brown"
+        "color": "#84CC16",
+        "name": "yellow-green"
       },
       {
         "row": 3,
@@ -5868,14 +5868,14 @@
       {
         "row": 1,
         "col": 4,
-        "color": "#78716C",
-        "name": "gray-brown"
+        "color": "#84CC16",
+        "name": "yellow-green"
       },
       {
         "row": 1,
         "col": 5,
-        "color": "#78716C",
-        "name": "gray-brown"
+        "color": "#84CC16",
+        "name": "yellow-green"
       },
       {
         "row": 3,
@@ -5999,14 +5999,14 @@
       {
         "row": 5,
         "col": 0,
-        "color": "#FB7185",
-        "name": "coral"
+        "color": "#EC4899",
+        "name": "magenta"
       },
       {
         "row": 5,
         "col": 2,
-        "color": "#FB7185",
-        "name": "coral"
+        "color": "#EC4899",
+        "name": "magenta"
       }
     ],
     "solution": [
@@ -7100,14 +7100,14 @@
       {
         "row": 0,
         "col": 7,
-        "color": "#06B6D4",
-        "name": "cyan"
+        "color": "#10B981",
+        "name": "green"
       },
       {
         "row": 1,
         "col": 6,
-        "color": "#06B6D4",
-        "name": "cyan"
+        "color": "#10B981",
+        "name": "green"
       },
       {
         "row": 2,
@@ -7118,8 +7118,8 @@
       {
         "row": 3,
         "col": 6,
-        "color": "#06B6D4",
-        "name": "cyan"
+        "color": "#10B981",
+        "name": "green"
       }
     ],
     "solution": [
@@ -8058,8 +8058,8 @@
       {
         "row": 2,
         "col": 0,
-        "color": "#FB7185",
-        "name": "coral"
+        "color": "#EC4899",
+        "name": "magenta"
       },
       {
         "row": 3,
@@ -8362,8 +8362,8 @@
       {
         "row": 1,
         "col": 0,
-        "color": "#78716C",
-        "name": "gray-brown"
+        "color": "#8B5CF6",
+        "name": "purple"
       },
       {
         "row": 2,
@@ -8982,14 +8982,14 @@
       {
         "row": 4,
         "col": 4,
-        "color": "#78716C",
-        "name": "gray-brown"
+        "color": "#84CC16",
+        "name": "yellow-green"
       },
       {
         "row": 5,
         "col": 1,
-        "color": "#78716C",
-        "name": "gray-brown"
+        "color": "#84CC16",
+        "name": "yellow-green"
       },
       {
         "row": 6,
@@ -9000,8 +9000,8 @@
       {
         "row": 7,
         "col": 1,
-        "color": "#78716C",
-        "name": "gray-brown"
+        "color": "#84CC16",
+        "name": "yellow-green"
       }
     ],
     "solution": [
@@ -9143,20 +9143,20 @@
       {
         "row": 7,
         "col": 3,
-        "color": "#FB7185",
-        "name": "coral"
+        "color": "#EC4899",
+        "name": "magenta"
       },
       {
         "row": 7,
         "col": 6,
-        "color": "#FB7185",
-        "name": "coral"
+        "color": "#EC4899",
+        "name": "magenta"
       },
       {
         "row": 7,
         "col": 7,
-        "color": "#FB7185",
-        "name": "coral"
+        "color": "#EC4899",
+        "name": "magenta"
       }
     ],
     "solution": [
@@ -9292,26 +9292,26 @@
       {
         "row": 0,
         "col": 5,
-        "color": "#78716C",
-        "name": "gray-brown"
+        "color": "#84CC16",
+        "name": "yellow-green"
       },
       {
         "row": 3,
         "col": 5,
-        "color": "#78716C",
-        "name": "gray-brown"
+        "color": "#84CC16",
+        "name": "yellow-green"
       },
       {
         "row": 4,
         "col": 5,
-        "color": "#78716C",
-        "name": "gray-brown"
+        "color": "#84CC16",
+        "name": "yellow-green"
       },
       {
         "row": 4,
         "col": 6,
-        "color": "#78716C",
-        "name": "gray-brown"
+        "color": "#84CC16",
+        "name": "yellow-green"
       }
     ],
     "solution": [
