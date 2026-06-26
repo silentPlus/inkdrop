@@ -168,6 +168,10 @@ export function previewFlood(
   const mixes: MixEvent[] = [];
   const visited = new Set<string>();
 
+  // 标记源点格子为已访问，防止 BFS 从邻居绕回时误识别为"未激活源点"
+  // 对应 flood() 中 activateSource 已将源点格改为 Filled，不会再触发混合
+  visited.add(`${src.row},${src.col}`);
+
   const queue: { row: number; col: number; color: string }[] = [];
   for (const [dr, dc] of DIRS) {
     const nr = src.row + dr;

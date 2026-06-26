@@ -3,7 +3,17 @@
  */
 import { useGameStore } from '@/store/gameStore';
 
-export function Toolbar({ onHint }: { onHint?: () => void }) {
+export function Toolbar({
+  onHint,
+  onColorMix,
+  onTogglePreview,
+  previewMode,
+}: {
+  onHint?: () => void;
+  onColorMix?: () => void;
+  onTogglePreview?: () => void;
+  previewMode?: boolean;
+}) {
   const phase = useGameStore((s) => s.phase);
   const board = useGameStore((s) => s.board);
   const currentLevel = useGameStore((s) => s.currentLevel);
@@ -40,6 +50,19 @@ export function Toolbar({ onHint }: { onHint?: () => void }) {
         onClick={reset}
         disabled={!canAct}
       />
+      <ToolButton
+        label="配色表"
+        icon="🎨"
+        onClick={onColorMix ?? (() => {})}
+        disabled={false}
+      />
+      <ToolButton
+        label={previewMode ? '预览中' : '预览'}
+        icon="👁️"
+        onClick={onTogglePreview ?? (() => {})}
+        disabled={!canAct}
+        active={previewMode}
+      />
       {hasHint && (
         <ToolButton
           label="提示"
@@ -58,12 +81,14 @@ function ToolButton({
   shortcut,
   onClick,
   disabled,
+  active,
 }: {
   label: string;
   icon: string;
   shortcut?: string;
   onClick: () => void;
   disabled: boolean;
+  active?: boolean;
 }) {
   return (
     <button
@@ -77,13 +102,15 @@ function ToolButton({
         gap: 2,
         padding: '6px 18px',
         borderRadius: 10,
-        border: '1px solid var(--border)',
-        background: disabled ? '#f5f5f5' : 'white',
-        color: disabled ? 'var(--text-tertiary)' : 'var(--text)',
+        border: active ? '2px solid var(--accent)' : '1px solid var(--border)',
+        background: active ? 'var(--accent-light)' : disabled ? '#f5f5f5' : 'white',
+        color: active ? 'var(--accent-dark)' : disabled ? 'var(--text-tertiary)' : 'var(--text)',
         fontSize: 13,
         cursor: disabled ? 'default' : 'pointer',
         minWidth: 64,
         opacity: disabled ? 0.5 : 1,
+        fontWeight: active ? 600 : 400,
+        transition: 'border 0.15s, background 0.15s, color 0.15s',
       }}
     >
       <span style={{ fontSize: 22 }}>{icon}</span>

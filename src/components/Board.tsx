@@ -6,7 +6,7 @@ import { useGameStore } from '@/store/gameStore';
 import { useSettingsStore } from '@/store/settingsStore';
 import { PixiRenderer } from '@/renderer/PixiRenderer';
 
-export function Board({ onCapture }: { onCapture?: (fn: () => string) => void }) {
+export function Board({ onCapture, previewMode }: { onCapture?: (fn: () => string) => void; previewMode?: boolean }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const rendererRef = useRef<PixiRenderer | null>(null);
   const board = useGameStore((s) => s.board);
@@ -69,6 +69,11 @@ export function Board({ onCapture }: { onCapture?: (fn: () => string) => void })
   useEffect(() => {
     rendererRef.current?.setTheme(themeId);
   }, [themeId]);
+
+  // 预览模式切换
+  useEffect(() => {
+    rendererRef.current?.setPreviewMode(previewMode ?? false);
+  }, [previewMode]);
 
   useEffect(() => {
     if (rendererRef.current && board) {

@@ -5,6 +5,7 @@ import { useProgressStore } from '@/store/progressStore';
 import { useGalleryStore } from '@/store/galleryStore';
 import { Board } from '@/components/Board';
 import { Toolbar } from '@/components/Toolbar';
+import { ColorMixView } from '@/components/ColorMixView';
 import { WinAnimation } from '@/components/WinAnimation';
 import { adManager } from '@/ads/AdManager';
 
@@ -26,6 +27,8 @@ export function GamePage() {
   const addGalleryItem = useGalleryStore((s) => s.addItem);
   const [showWinEffect, setShowWinEffect] = useState(false);
   const [hintVisible, setHintVisible] = useState(false);
+  const [colorMixVisible, setColorMixVisible] = useState(false);
+  const [previewMode, setPreviewMode] = useState(false);
   const captureRef = useRef<(() => string) | null>(null);
 
   // 通关时播放绽放动画
@@ -215,11 +218,16 @@ export function GamePage() {
         minHeight: 0,
         padding: 8,
       }}>
-        <Board onCapture={(fn) => { captureRef.current = fn; }} />
+        <Board onCapture={(fn) => { captureRef.current = fn; }} previewMode={previewMode} />
       </div>
 
       {/* 工具栏 */}
-      <Toolbar onHint={handleHint} />
+      <Toolbar
+        onHint={handleHint}
+        onColorMix={() => setColorMixVisible(true)}
+        onTogglePreview={() => setPreviewMode((v) => !v)}
+        previewMode={previewMode}
+      />
 
       {/* 通关绽放动画 */}
       {showWinEffect && (
@@ -417,6 +425,11 @@ export function GamePage() {
             </button>
           </div>
         </div>
+      )}
+
+      {/* 配色参考面板 */}
+      {colorMixVisible && (
+        <ColorMixView onClose={() => setColorMixVisible(false)} />
       )}
     </div>
   );

@@ -22,6 +22,7 @@ export class PixiRenderer {
   private gridContainer = new Container(); // 网格线独立容器，置顶
   private mixOverlayContainer = new Container(); // 颜色混合过渡叠加
   private particlesContainer = new Container(); // 粒子尾迹
+  private mixPreviewContainer = new Container(); // 混合预览环（方案 C）
   private board: GameBoard | null = null;
   private colorblindMode = false;
   private theme: Theme = THEMES[0];
@@ -33,6 +34,10 @@ export class PixiRenderer {
   private cellContainerMap = new Map<string, Container>();
   private obstacleMap = new Map<string, Container>();     // 障碍物震动用
   private obstacleBasePos = new Map<string, { x: number; y: number }>(); // 原始坐标
+
+  // 预览模式（手机端替代长按）
+  previewMode = false;
+  private activePreviewSourceId: string | null = null;
 
   // 水彩纹理
   private textures: Texture[] = [];
@@ -80,15 +85,23 @@ export class PixiRenderer {
     r.app.stage.addChild(r.boardContainer);
     r.app.stage.addChild(r.previewContainer);
     r.app.stage.addChild(r.targetsContainer);
+    r.app.stage.addChild(r.mixPreviewContainer); // 混合预览环：targets之上、source之下
     r.app.stage.addChild(r.mixOverlayContainer);
     r.app.stage.addChild(r.sourcesContainer);
     r.app.stage.addChild(r.particlesContainer);
     r.app.stage.addChild(r.gridContainer); // 网格线在最顶层，不被任何元素覆盖
     r.gridContainer.eventMode = 'none'; // 透传点击
     r.mixOverlayContainer.eventMode = 'none';
+    r.mixPreviewContainer.eventMode = 'none';
     r.particlesContainer.eventMode = 'none';
     r.app.stage.eventMode = 'static';
     r.app.stage.hitArea = r.app.screen;
+    // 预览模式下点击空白区域取消预览
+    r.app.stage.on('pointertap', () => {
+      if (r.previewMode && r.activePreviewSourceId) {
+        r.clearActivePreview();
+      }
+    });
     r.startTime = performance.now();
 
     r.app.ticker.add(() => r.updateSources());
@@ -133,13 +146,16 @@ export class PixiRenderer {
     this.gridContainer.removeChildren();
     this.mixOverlayContainer.removeChildren();
     this.particlesContainer.removeChildren();
+    this.mixPreviewContainer.removeChildren();
     this.sourceSprites.clear();
     this.cellContainerMap.clear();
     this.obstacleMap.clear();
     this.obstacleBasePos.clear();
+    this.activePreviewSourceId = null;
 
     this.drawCells();
     this.drawGrid();
+    this.updatePreviewIndicator();
   }
 
   /* ========== 网格 ========== */
@@ -371,11 +387,23 @@ export class PixiRenderer {
     ctr.eventMode = 'static';
     ctr.cursor = 'pointer';
     ctr.hitArea = new Rectangle(-r - 4, -r - 4, (r + 4) * 2, (r + 4) * 2);
-    ctr.on('pointertap', () => this.onSourceClick?.(sourceId));
+    // 点击处理：预览模式 vs 直接扩散
+    ctr.on('pointertap', (e) => {
+      e.stopPropagation();
+      if (this.previewMode) {
+        this.handlePreviewTap(sourceId);
+      } else {
+        this.onSourceClick?.(sourceId);
+      }
+    });
 
-    // hover 预览
-    ctr.on('pointerover', () => this.showPreview(sourceId));
-    ctr.on('pointerout', () => this.hidePreview());
+    // hover 预览（桌面端）
+    ctr.on('pointerover', () => {
+      if (!this.previewMode) this.showPreview(sourceId);
+    });
+    ctr.on('pointerout', () => {
+      if (!this.previewMode) this.hidePreview();
+    });
 
     const glow = new Graphics();
     glow.circle(0, 0, r + 2).fill({ color: this.theme.sourceGlow, alpha: 0.25 });
@@ -429,6 +457,7 @@ export class PixiRenderer {
     if (!this.board) return;
     const result = previewFlood(this.board, sourceId);
     this.previewContainer.removeChildren();
+    this.mixPreviewContainer.removeChildren();
 
     const cs = this.cellSize;
     for (const { row, col, color } of result.cells) {
@@ -440,10 +469,107 @@ export class PixiRenderer {
       g.rect(x, y, s, s).fill({ color: hex, alpha: 0.35 });
       this.previewContainer.addChild(g);
     }
+
+    // 方案 C：在会被混合的源点上绘制外圈，展示混合结果色
+    for (const mix of result.mixes) {
+      const srcSprite = this.sourceSprites.get(mix.sourceId);
+      if (!srcSprite) continue;
+      const hex = parseInt(mix.newColor.replace('#', ''), 16);
+      // 外圈光环：混合后颜色
+      const ring = new Graphics();
+      ring.circle(0, 0, cs * 0.42).fill({ color: hex, alpha: 0.25 });
+      ring.circle(0, 0, cs * 0.42).stroke({ width: 2.5, color: hex });
+      ring.circle(0, 0, cs * 0.48).stroke({ width: 1, color: hex, alpha: 0.4 });
+      ring.x = srcSprite.x;
+      ring.y = srcSprite.y;
+      this.mixPreviewContainer.addChild(ring);
+    }
   }
 
   private hidePreview(): void {
     this.previewContainer.removeChildren();
+    this.mixPreviewContainer.removeChildren();
+  }
+
+  /* ========== 预览模式（手机端） ========== */
+
+  /** 开启/关闭预览模式 */
+  setPreviewMode(enabled: boolean): void {
+    this.previewMode = enabled;
+    this.clearActivePreview();
+    this.updatePreviewIndicator();
+  }
+
+  /** 预览模式下点击源点的处理 */
+  private handlePreviewTap(sourceId: string): void {
+    if (this.activePreviewSourceId === null) {
+      // 首次点击：显示预览
+      this.activePreviewSourceId = sourceId;
+      this.showPreview(sourceId);
+      this.updatePreviewIndicator();
+    } else if (this.activePreviewSourceId === sourceId) {
+      // 再次点击同一源点：确认扩散
+      this.clearActivePreview();
+      this.onSourceClick?.(sourceId);
+    } else {
+      // 切换到另一个源点
+      this.activePreviewSourceId = sourceId;
+      this.showPreview(sourceId);
+      this.updatePreviewIndicator();
+    }
+  }
+
+  /** 清除活动预览 */
+  clearActivePreview(): void {
+    this.activePreviewSourceId = null;
+    this.hidePreview();
+    this.updatePreviewIndicator();
+  }
+
+  /** 更新源点的预览模式视觉指示（虚线外环） */
+  private updatePreviewIndicator(): void {
+    // 清除所有源点的指示器
+    for (const [, sprite] of this.sourceSprites) {
+      // 移除已有的指示器（通过 label 识别）
+      const existing = sprite.getChildByLabel('preview-indicator');
+      if (existing) sprite.removeChild(existing);
+    }
+
+    if (!this.previewMode) return;
+
+    const cs = this.cellSize;
+    // 为所有可点击的源点添加虚线环
+    for (const src of this.board?.sources ?? []) {
+      if (src.activated) continue;
+      const sprite = this.sourceSprites.get(src.id);
+      if (!sprite) continue;
+
+      const indicator = new Graphics();
+      indicator.label = 'preview-indicator';
+      const isActive = src.id === this.activePreviewSourceId;
+      const color = isActive ? 0x7C3AED : 0x94A3B8;
+      const alpha = isActive ? 0.6 : 0.3;
+
+      // 虚线外环
+      const r = cs * 0.35;
+      // 用点线转描边
+      indicator.setStrokeStyle({ width: 2, color, alpha });
+      const segments = 16;
+      for (let i = 0; i < segments; i++) {
+        const a1 = (i / segments) * Math.PI * 2;
+        const a2 = ((i + 0.5) / segments) * Math.PI * 2;
+        indicator.moveTo(Math.cos(a1) * r, Math.sin(a1) * r);
+        indicator.lineTo(Math.cos(a2) * r, Math.sin(a2) * r);
+      }
+      indicator.stroke();
+
+      // 激活源点额外的高亮光晕
+      if (isActive) {
+        indicator.circle(0, 0, r + 2).stroke({ width: 1.5, color: 0x7C3AED, alpha: 0.4 });
+      }
+
+      sprite.addChildAt(indicator, 0);
+    }
   }
 
   /* ========== 脉动动画 ========== */
